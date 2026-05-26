@@ -1,0 +1,15 @@
+# 환경 변수 파일
+.env
+.env.local
+
+# 의존성 폴더
+node_modules/
+
+# 빌드 결과물 및 로그
+dist/
+build/
+*.log
+.DS_Store
+
+models/
+index/

@@ -1,0 +1,294 @@
+[
+  {
+    "question": "Who is the spouse of the Green performer?",
+    "gold_answer": "Miquette Giraudy",
+    "task_type": "bridge",
+    "sub_queries": [
+      "Who is the Green performer?",
+      "Who is the spouse of the identified Green performer?"
+    ],
+    "steps": {
+      "0": {
+        "sub_query": "Who is the Green performer?",
+        "retrieved_titles": [
+          "Miquette Giraudy",
+          "List of show business families",
+          "The Odd Life of Timothy Green",
+          "Little Green (song)",
+          "The Main Attraction (album)"
+        ],
+        "intermediate_answer": "Not found in documents.",
+        "confidence": 1.0,
+        "score_1": null,
+        "score_2": null,
+        "flag": "skipped"
+      },
+      "1": {
+        "sub_query": "Who is the spouse of the identified Green performer?",
+        "retrieved_titles": [
+          "List of show business families",
+          "Miquette Giraudy",
+          "Mok Kwai-lan",
+          "The Odd Life of Timothy Green",
+          "Little Green (song)"
+        ],
+        "intermediate_answer": "Not found in documents.",
+        "confidence": 0.0,
+        "score_1": 0.08509904500702023,
+        "score_2": 0.0,
+        "flag": "uncertain",
+        "refined_query": "Who is the spouse of the identified Green performer, considering that this information was not found in the documents?",
+        "refined_titles": [
+          "List of show business families",
+          "Miquette Giraudy",
+          "Mok Kwai-lan",
+          "The Odd Life of Timothy Green",
+          "Green (Steve Hillage album)"
+        ]
+      },
+      "final": {
+        "final_answer": "Not found in documents.",
+        "score_1": 2.5612803787922245e-06,
+        "score_2": 0.08509904500702023,
+        "confidence": 2.5612803787922245e-06,
+        "flag": "regenerated",
+        "regenerated_answer": "Not found in documents."
+      }
+    },
+    "final_answer": "Not found in documents.",
+    "elapsed_sec": 16.95,
+    "error": null
+  },
+  {
+    "question": "Who founded the company that distributed the film UHF?",
+    "gold_answer": "Mike Medavoy",
+    "task_type": "bridge",
+    "sub_queries": [
+      "Find the company that distributed the film UHF.",
+      "Find the founder of the company identified in the first sub-query."
+    ],
+    "steps": {
+      "0": {
+        "sub_query": "Find the company that distributed the film UHF.",
+        "retrieved_titles": [
+          "Amblin Entertainment",
+          "SModcast Pictures",
+          "UHF (film)",
+          "Videodrome",
+          "Marketwired"
+        ],
+        "intermediate_answer": "The company that distributed the film UHF is Orion Pictures.",
+        "confidence": 1.0,
+        "score_1": null,
+        "score_2": null,
+        "flag": "skipped"
+      },
+      "1": {
+        "sub_query": "Find the founder of the company identified in the first sub-query.",
+        "retrieved_titles": [
+          "Kirtland Records",
+          "Mike Medavoy",
+          "Amblin Entertainment",
+          "Sleaszy Rider Records",
+          "DeSoto Records"
+        ],
+        "intermediate_answer": "The founder of Orion Pictures is Morris Mike Medavoy.",
+        "confidence": 0.9999996940977731,
+        "score_1": 0.9999996940977731,
+        "score_2": 1.0,
+        "flag": "verified"
+      },
+      "final": {
+        "final_answer": "Morris Mike Medavoy",
+        "score_1": 1.0,
+        "score_2": 0.11920292202211755,
+        "confidence": 0.11920292202211755,
+        "flag": "regenerated",
+        "regenerated_answer": "Morris Mike Medavoy."
+      }
+    },
+    "final_answer": "Morris Mike Medavoy.",
+    "elapsed_sec": 9.43,
+    "error": null
+  },
+  {
+    "question": "What administrative territorial entity is the owner of Ciudad Deportiva located?",
+    "gold_answer": "Tamaulipas",
+    "task_type": "bridge",
+    "sub_queries": [
+      "Find the owner of Ciudad Deportiva",
+      "Find the administrative territorial entity of the owner"
+    ],
+    "steps": {
+      "0": {
+        "sub_query": "Find the owner of Ciudad Deportiva",
+        "retrieved_titles": [
+          "Juan Carlos Espinoza Mercado",
+          "Ciudad Deportiva (Nuevo Laredo)",
+          "Ciudad del Niño metro station",
+          "Estadio Unión Tarma",
+          "Sportivo Italiano"
+        ],
+        "intermediate_answer": "Not found in documents.",
+        "confidence": 1.0,
+        "score_1": null,
+        "score_2": null,
+        "flag": "skipped"
+      },
+      "1": {
+        "sub_query": "Find the administrative territorial entity of the owner",
+        "retrieved_titles": [
+          "Pangi Territory",
+          "Ofu Airport",
+          "Tumaraa",
+          "Minsk Region",
+          "Australia"
+        ],
+        "intermediate_answer": "Not found in documents.",
+        "confidence": 0.0,
+        "score_1": 0.14804719803168948,
+        "score_2": 0.0,
+        "flag": "uncertain",
+        "refined_query": "Given that the administrative territorial entity of the owner was not found in the documents, can you provide any additional details or context that might help identify it?",
+        "refined_titles": [
+          "French Algeria",
+          "Minsk Region",
+          "Tumaraa",
+          "Ofu Airport",
+          "Australia"
+        ]
+      },
+      "final": {
+        "final_answer": "Not found in documents.",
+        "score_1": 8.939692042058911e-06,
+        "score_2": 0.20181322226037882,
+        "confidence": 8.939692042058911e-06,
+        "flag": "regenerated",
+        "regenerated_answer": "Not found in documents."
+      }
+    },
+    "final_answer": "Not found in documents.",
+    "elapsed_sec": 13.86,
+    "error": null
+  },
+  {
+    "question": "Where is Ulrich Walter's employer headquartered?",
+    "gold_answer": "Cologne",
+    "task_type": "bridge",
+    "sub_queries": [
+      "Find Ulrich Walter's employer",
+      "Find the headquarters location of Ulrich Walter's employer"
+    ],
+    "steps": {
+      "0": {
+        "sub_query": "Find Ulrich Walter's employer",
+        "retrieved_titles": [
+          "Ulrich Walter",
+          "Ulrich Walser House",
+          "Ulrich Franzen",
+          "Schlage",
+          "Richmond, Virginia"
+        ],
+        "intermediate_answer": "Not found in documents.",
+        "confidence": 1.0,
+        "score_1": null,
+        "score_2": null,
+        "flag": "skipped"
+      },
+      "1": {
+        "sub_query": "Find the headquarters location of Ulrich Walter's employer",
+        "retrieved_titles": [
+          "General Electric",
+          "John Deere World Headquarters",
+          "Ulrich Walser House",
+          "Richmond, Virginia",
+          "Ulrich Walter"
+        ],
+        "intermediate_answer": "Not found in documents.",
+        "confidence": 0.0,
+        "score_1": 0.2689414213699951,
+        "score_2": 0.0,
+        "flag": "uncertain",
+        "refined_query": "What is the headquarters location of Ulrich Walter's employer, considering that this information was not found in the documents?",
+        "refined_titles": [
+          "Ulrich Franzen",
+          "Ulrich Walser House",
+          "Cork (city)",
+          "General Electric",
+          "Ulrich Walter"
+        ]
+      },
+      "final": {
+        "final_answer": "Not found.",
+        "score_1": 8.481096084836677e-05,
+        "score_2": 0.1066905939456512,
+        "confidence": 8.481096084836677e-05,
+        "flag": "regenerated",
+        "regenerated_answer": "Not found."
+      }
+    },
+    "final_answer": "Not found.",
+    "elapsed_sec": 17.26,
+    "error": null
+  },
+  {
+    "question": "Which company owns the manufacturer of Learjet 60?",
+    "gold_answer": "Bombardier Inc.",
+    "task_type": "bridge",
+    "sub_queries": [
+      "Find the manufacturer of Learjet 60",
+      "Find the company that owns the manufacturer of Learjet 60"
+    ],
+    "steps": {
+      "0": {
+        "sub_query": "Find the manufacturer of Learjet 60",
+        "retrieved_titles": [
+          "Learjet 60",
+          "Aerojet",
+          "List of Bombardier CRJ operators",
+          "Wagner Manufacturing Company",
+          "Datsun"
+        ],
+        "intermediate_answer": "The manufacturer of Learjet 60 is Bombardier Aerospace.",
+        "confidence": 1.0,
+        "score_1": null,
+        "score_2": null,
+        "flag": "skipped"
+      },
+      "1": {
+        "sub_query": "Find the company that owns the manufacturer of Learjet 60",
+        "retrieved_titles": [
+          "Learjet 60",
+          "Aerojet",
+          "Wagner Manufacturing Company",
+          "List of Bombardier CRJ operators",
+          "Piping Technology and Products"
+        ],
+        "intermediate_answer": "Bombardier Aerospace is owned by Bombardier Inc.",
+        "confidence": 1.3709558994135834e-06,
+        "score_1": 1.3709558994135834e-06,
+        "score_2": 1.0,
+        "flag": "uncertain",
+        "refined_query": "Identify the company that owns Bombardier Aerospace, the manufacturer of Learjet 60.",
+        "refined_titles": [
+          "Learjet 60",
+          "Aerojet",
+          "List of Bombardier CRJ operators",
+          "Piping Technology and Products",
+          "Plansee SE"
+        ]
+      },
+      "final": {
+        "final_answer": "Bombardier Inc.",
+        "score_1": 1.0,
+        "score_2": 0.320821300824607,
+        "confidence": 0.320821300824607,
+        "flag": "regenerated",
+        "regenerated_answer": "Bombardier Inc. owns Bombardier Aerospace."
+      }
+    },
+    "final_answer": "Bombardier Inc. owns Bombardier Aerospace.",
+    "elapsed_sec": 15.43,
+    "error": null
+  }
+]

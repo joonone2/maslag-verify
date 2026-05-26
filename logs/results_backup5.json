@@ -1,0 +1,584 @@
+[
+  {
+    "question": "Were Scott Derrickson and Ed Wood of the same nationality?",
+    "gold_answer": "yes",
+    "task_type": "comparison",
+    "sub_queries": [
+      "What is the nationality of Scott Derrickson?",
+      "What is the nationality of Ed Wood?"
+    ],
+    "steps": {
+      "0": {
+        "sub_query": "What is the nationality of Scott Derrickson?",
+        "retrieved_titles": [
+          "Scott Derrickson",
+          "Adam Collis",
+          "Tyler Bates",
+          "Conrad Brooks",
+          "Doctor Strange (2016 film)"
+        ],
+        "intermediate_answer": "American",
+        "confidence": 1.0,
+        "score_1": null,
+        "score_2": null,
+        "flag": "skipped"
+      },
+      "1": {
+        "sub_query": "What is the nationality of Ed Wood?",
+        "retrieved_titles": [
+          "Ed Wood",
+          "Conrad Brooks",
+          "Woodson, Arkansas",
+          "Ed Wood (film)",
+          "Adam Collis"
+        ],
+        "intermediate_answer": "Ed Wood was American, and Scott Derrickson is also American. Yes, their nationalities are the same.",
+        "confidence": 1.0,
+        "score_1": 1.0,
+        "score_2": 1.0,
+        "flag": "refined",
+        "refined_query": "What is the nationality of Ed Wood, and is it the same as Scott Derrickson's nationality?",
+        "refined_titles": [
+          "Conrad Brooks",
+          "Adam Collis",
+          "Ed Wood",
+          "Woodson, Arkansas",
+          "Scott Derrickson"
+        ],
+        "score_1_initial": 0.010986952993442215,
+        "score_2_initial": 1.0,
+        "failure_type": "IRRELEVANT"
+      },
+      "final": {
+        "final_answer": "yes",
+        "is_not_found": false,
+        "flag": "passed"
+      }
+    },
+    "final_answer": "yes",
+    "elapsed_sec": 6.84,
+    "error": null
+  },
+  {
+    "question": "What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?",
+    "gold_answer": "Chief of Protocol",
+    "task_type": "bridge",
+    "sub_queries": [
+      "Who portrayed Corliss Archer in the film Kiss and Tell?",
+      "What government position did that person hold?"
+    ],
+    "steps": {
+      "0": {
+        "sub_query": "Who portrayed Corliss Archer in the film Kiss and Tell?",
+        "retrieved_titles": [
+          "A Kiss for Corliss",
+          "Kiss and Tell (1945 film)",
+          "Janet Waldo",
+          "Charles Craft",
+          "Shirley Temple"
+        ],
+        "intermediate_answer": "Shirley Temple",
+        "confidence": 1.0,
+        "score_1": null,
+        "score_2": null,
+        "flag": "skipped"
+      },
+      "1": {
+        "sub_query": "What government position did that person hold?",
+        "retrieved_titles": [
+          "Secretary of State for Constitutional Affairs",
+          "Lord High Treasurer",
+          "Shirley Temple",
+          "Charles Craft",
+          "Village accountant"
+        ],
+        "intermediate_answer": "Shirley Temple held the positions of United States ambassador to Ghana and to Czechoslovakia, and served as Chief of Protocol of the United States.",
+        "confidence": 0.11920292202211753,
+        "score_1": 0.11920292202211753,
+        "score_2": 1.0,
+        "flag": "uncertain",
+        "refined_query": "What government position did Shirley Temple hold?",
+        "refined_titles": [
+          "Shirley Temple",
+          "A Kiss for Corliss",
+          "Secretary of State for Constitutional Affairs",
+          "Kiss and Tell (1945 film)",
+          "Janet Waldo"
+        ]
+      },
+      "final": {
+        "final_answer": "ambassador",
+        "is_not_found": false,
+        "flag": "passed"
+      }
+    },
+    "final_answer": "ambassador",
+    "elapsed_sec": 10.11,
+    "error": null
+  },
+  {
+    "question": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+    "gold_answer": "Animorphs",
+    "task_type": "bridge",
+    "sub_queries": [
+      "Identify the science fantasy young adult series told in first person.",
+      "Find the companion books that narrate the stories of enslaved worlds and alien species related to the identified series."
+    ],
+    "steps": {
+      "0": {
+        "sub_query": "Identify the science fantasy young adult series told in first person.",
+        "retrieved_titles": [
+          "Animorphs",
+          "Left Behind: The Kids",
+          "The Hork-Bajir Chronicles",
+          "Shadowshaper",
+          "The Divide trilogy"
+        ],
+        "intermediate_answer": "Animorphs",
+        "confidence": 1.0,
+        "score_1": null,
+        "score_2": null,
+        "flag": "skipped"
+      },
+      "1": {
+        "sub_query": "Find the companion books that narrate the stories of enslaved worlds and alien species related to the identified series.",
+        "retrieved_titles": [
+          "The Hork-Bajir Chronicles",
+          "Left Behind: The Kids",
+          "Animorphs",
+          "List of Square Enix companion books",
+          "The Divide trilogy"
+        ],
+        "intermediate_answer": "The companion book that narrates the story of enslaved worlds related to the Animorphs series is \"The Hork-Bajir Chronicles.\" It tells the story of how the Yeerks enslaved the Hork-Bajir and includes perspectives from characters involved in the conflict.",
+        "confidence": 0.2450850131323717,
+        "score_1": 0.2450850131323717,
+        "score_2": 1.0,
+        "flag": "uncertain",
+        "refined_query": "Identify companion books that narrate the stories of enslaved worlds and alien species specifically related to the Animorphs series.",
+        "refined_titles": [
+          "The Hork-Bajir Chronicles",
+          "Animorphs",
+          "Left Behind: The Kids",
+          "List of Square Enix companion books",
+          "The Divide trilogy"
+        ]
+      },
+      "final": {
+        "final_answer": "Animorphs",
+        "is_not_found": false,
+        "flag": "passed"
+      }
+    },
+    "final_answer": "Animorphs",
+    "elapsed_sec": 11.87,
+    "error": null
+  },
+  {
+    "question": "Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?",
+    "gold_answer": "no",
+    "task_type": "comparison",
+    "sub_queries": [
+      "Find the neighborhood of Laleli Mosque",
+      "Find the neighborhood of Esma Sultan Mansion"
+    ],
+    "steps": {
+      "0": {
+        "sub_query": "Find the neighborhood of Laleli Mosque",
+        "retrieved_titles": [
+          "Laleli Mosque",
+          "Djamaâ el Kebir",
+          "Sultan Ahmed Mosque",
+          "Esma Sultan Mansion",
+          "Gevheri Kadın"
+        ],
+        "intermediate_answer": "Laleli, Fatih, Istanbul, Turkey.",
+        "confidence": 1.0,
+        "score_1": null,
+        "score_2": null,
+        "flag": "skipped"
+      },
+      "1": {
+        "sub_query": "Find the neighborhood of Esma Sultan Mansion",
+        "retrieved_titles": [
+          "Esma Sultan Mansion",
+          "Esma Sultan",
+          "Esma Sultan (daughter of Abdul Hamid I)",
+          "Esma Sultan (daughter of Ahmed III)",
+          "Esma Sultan (daughter of Abdülaziz)"
+        ],
+        "intermediate_answer": "The Esma Sultan Mansion is located in the Ortaköy neighborhood of Istanbul, while the Laleli Mosque is in the Laleli neighborhood of Fatih, Istanbul. Therefore, they are not in the same neighborhood.",
+        "confidence": 0.14804719803168948,
+        "score_1": 0.14804719803168948,
+        "score_2": 1.0,
+        "flag": "uncertain",
+        "refined_query": "What neighborhood is the Esma Sultan Mansion located in, and is it the same neighborhood as the Laleli Mosque?",
+        "refined_titles": [
+          "Esma Sultan Mansion",
+          "Laleli Mosque",
+          "Sultan Ahmed Mosque",
+          "Djamaâ el Kebir",
+          "Esma Sultan (daughter of Abdülaziz)"
+        ],
+        "score_1_initial": 2.430021756933832e-05,
+        "score_2_initial": 1.0,
+        "failure_type": "IRRELEVANT"
+      },
+      "final": {
+        "final_answer": "no",
+        "is_not_found": false,
+        "flag": "passed"
+      }
+    },
+    "final_answer": "no",
+    "elapsed_sec": 9.18,
+    "error": null
+  },
+  {
+    "question": "The director of the romantic comedy \"Big Stone Gap\" is based in what New York city?",
+    "gold_answer": "Greenwich Village, New York City",
+    "task_type": "bridge",
+    "sub_queries": [
+      "Who is the director of the romantic comedy Big Stone Gap?",
+      "In which New York city is the director based?"
+    ],
+    "steps": {
+      "0": {
+        "sub_query": "Who is the director of the romantic comedy Big Stone Gap?",
+        "retrieved_titles": [
+          "Big Stone Gap (film)",
+          "I Love NY (2015 film)",
+          "Nola (film)",
+          "Just Another Romantic Wrestling Comedy",
+          "Adriana Trigiani"
+        ],
+        "intermediate_answer": "Adriana Trigiani",
+        "confidence": 1.0,
+        "score_1": null,
+        "score_2": null,
+        "flag": "skipped"
+      },
+      "1": {
+        "sub_query": "In which New York city is the director based?",
+        "retrieved_titles": [
+          "Adriana Trigiani",
+          "I Love NY (2015 film)",
+          "Big Stone Gap (film)",
+          "Nola (film)",
+          "Just Another Romantic Wrestling Comedy"
+        ],
+        "intermediate_answer": "Adriana Trigiani is based in Greenwich Village, New York City.",
+        "confidence": 0.03732688734412946,
+        "score_1": 0.03732688734412946,
+        "score_2": 1.0,
+        "flag": "uncertain",
+        "refined_query": "In which New York city is the director Adriana Trigiani based?",
+        "refined_titles": [
+          "Adriana Trigiani",
+          "Big Stone Gap (film)",
+          "Nola (film)",
+          "I Love NY (2015 film)",
+          "Just Another Romantic Wrestling Comedy"
+        ]
+      },
+      "final": {
+        "final_answer": "Greenwich Village",
+        "is_not_found": false,
+        "flag": "passed"
+      }
+    },
+    "final_answer": "Greenwich Village",
+    "elapsed_sec": 9.28,
+    "error": null
+  },
+  {
+    "question": "2014 S/S is the debut album of a South Korean boy group that was formed by who?",
+    "gold_answer": "YG Entertainment",
+    "task_type": "bridge",
+    "sub_queries": [
+      "Who is the South Korean boy group that released the album 2014 S/S?",
+      "Who formed the South Korean boy group that released the album 2014 S/S?"
+    ],
+    "steps": {
+      "0": {
+        "sub_query": "Who is the South Korean boy group that released the album 2014 S/S?",
+        "retrieved_titles": [
+          "2014 S/S",
+          "Madtown",
+          "SF9 (band)",
+          "Winner (band)",
+          "BTS discography"
+        ],
+        "intermediate_answer": "The South Korean boy group that released the album 2014 S/S is WINNER.",
+        "confidence": 1.0,
+        "score_1": null,
+        "score_2": null,
+        "flag": "skipped"
+      },
+      "1": {
+        "sub_query": "Who formed the South Korean boy group that released the album 2014 S/S?",
+        "retrieved_titles": [
+          "2014 S/S",
+          "Madtown",
+          "Winner (band)",
+          "SF9 (band)",
+          "BTS discography"
+        ],
+        "intermediate_answer": "WINNER was formed by YG Entertainment.",
+        "confidence": 0.40733340004593027,
+        "score_1": 0.40733340004593027,
+        "score_2": 1.0,
+        "flag": "uncertain",
+        "refined_query": "Who formed the South Korean boy group WINNER that released the album 2014 S/S?",
+        "refined_titles": [
+          "2014 S/S",
+          "Winner (band)",
+          "Madtown",
+          "List of songs written by Ravi",
+          "SF9 (band)"
+        ]
+      },
+      "final": {
+        "final_answer": "YG Entertainment",
+        "is_not_found": false,
+        "flag": "passed"
+      }
+    },
+    "final_answer": "YG Entertainment",
+    "elapsed_sec": 9.3,
+    "error": null
+  },
+  {
+    "question": "Who was known by his stage name Aladin and helped organizations improve their performance as a consultant?",
+    "gold_answer": "Eenasul Fateh",
+    "task_type": "bridge",
+    "sub_queries": [
+      "Find the real name of the person known by the stage name Aladin.",
+      "Find the organizations that this person helped improve their performance as a consultant."
+    ],
+    "steps": {
+      "0": {
+        "sub_query": "Find the real name of the person known by the stage name Aladin.",
+        "retrieved_titles": [
+          "Eenasul Fateh",
+          "ELDee",
+          "Mick (DJ)",
+          "Method Man",
+          "Lil Ru"
+        ],
+        "intermediate_answer": "Eenasul Fateh",
+        "confidence": 1.0,
+        "score_1": null,
+        "score_2": null,
+        "flag": "skipped"
+      },
+      "1": {
+        "sub_query": "Find the organizations that this person helped improve their performance as a consultant.",
+        "retrieved_titles": [
+          "Management consulting",
+          "James P. Comer",
+          "Amaruk Kayshapanta",
+          "Indriati Iskak",
+          "Eenasul Fateh"
+        ],
+        "intermediate_answer": "Not found in documents.",
+        "confidence": 0.0,
+        "score_1": 0.0,
+        "score_2": 0.0,
+        "flag": "uncertain",
+        "refined_query": "Find the organizations that Eenasul Fateh helped improve their performance as a consultant.",
+        "refined_titles": [
+          "Eenasul Fateh",
+          "Management consulting",
+          "Amaruk Kayshapanta",
+          "Indriati Iskak",
+          "James P. Comer"
+        ]
+      },
+      "final": {
+        "final_answer": "Eenasul Fateh",
+        "is_not_found": false,
+        "flag": "passed"
+      }
+    },
+    "final_answer": "Eenasul Fateh",
+    "elapsed_sec": 8.19,
+    "error": null
+  },
+  {
+    "question": "The arena where the Lewiston Maineiacs played their home games can seat how many people?",
+    "gold_answer": "3,677 seated",
+    "task_type": "bridge",
+    "sub_queries": [
+      "What is the name of the arena where the Lewiston Maineiacs played their home games?",
+      "What is the seating capacity of the arena?"
+    ],
+    "steps": {
+      "0": {
+        "sub_query": "What is the name of the arena where the Lewiston Maineiacs played their home games?",
+        "retrieved_titles": [
+          "Lewiston Maineiacs",
+          "Dwyer Arena",
+          "Case Gym",
+          "2006–07 QMJHL season",
+          "2007 Memorial Cup"
+        ],
+        "intermediate_answer": "Androscoggin Bank Colisée",
+        "confidence": 1.0,
+        "score_1": null,
+        "score_2": null,
+        "flag": "skipped"
+      },
+      "1": {
+        "sub_query": "What is the seating capacity of the arena?",
+        "retrieved_titles": [
+          "Dwyer Arena",
+          "Case Gym",
+          "Robins Center",
+          "Billings Bulls",
+          "Androscoggin Bank Colisée"
+        ],
+        "intermediate_answer": "The seating capacity of the Androscoggin Bank Colisée is 3,677.",
+        "confidence": 0.20181322226037882,
+        "score_1": 0.20181322226037882,
+        "score_2": 1.0,
+        "flag": "uncertain",
+        "refined_query": "What is the seating capacity of the Androscoggin Bank Colisée?",
+        "refined_titles": [
+          "Androscoggin Bank Colisée",
+          "Dwyer Arena",
+          "Case Gym",
+          "Lewiston Maineiacs",
+          "Billings Bulls"
+        ]
+      },
+      "final": {
+        "final_answer": "3,677",
+        "is_not_found": false,
+        "flag": "passed"
+      }
+    },
+    "final_answer": "3,677",
+    "elapsed_sec": 12.89,
+    "error": null
+  },
+  {
+    "question": "Who is older, Annie Morton or Terry Richardson?",
+    "gold_answer": "Terry Richardson",
+    "task_type": "comparison",
+    "sub_queries": [
+      "What is the birthdate of Annie Morton?",
+      "What is the birthdate of Terry Richardson?"
+    ],
+    "steps": {
+      "0": {
+        "sub_query": "What is the birthdate of Annie Morton?",
+        "retrieved_titles": [
+          "Annie Morton",
+          "Madonna (book)",
+          "Amanda Lepore",
+          "Piano Girl",
+          "Snoecks"
+        ],
+        "intermediate_answer": "October 8, 1970",
+        "confidence": 1.0,
+        "score_1": null,
+        "score_2": null,
+        "flag": "skipped"
+      },
+      "1": {
+        "sub_query": "What is the birthdate of Terry Richardson?",
+        "retrieved_titles": [
+          "Kenton Richardson",
+          "Terry Richardson",
+          "Snoecks",
+          "Amanda Lepore",
+          "Lady Gaga x Terry Richardson"
+        ],
+        "intermediate_answer": "Terry Richardson was born on August 14, 1965, while Annie Morton was born on October 8, 1970. Therefore, Terry Richardson is older than Annie Morton by approximately 5 years and 2 months.",
+        "confidence": 0.4378234991142019,
+        "score_1": 0.4378234991142019,
+        "score_2": 1.0,
+        "flag": "uncertain",
+        "refined_query": "What is the birthdate of Terry Richardson, and how does it compare to the birthdate of Annie Morton?",
+        "refined_titles": [
+          "Annie Morton",
+          "Snoecks",
+          "Amanda Lepore",
+          "Terry Richardson",
+          "Madonna (book)"
+        ],
+        "score_1_initial": 0.042087727915618836,
+        "score_2_initial": 1.0,
+        "failure_type": "IRRELEVANT"
+      },
+      "final": {
+        "final_answer": "Terry Richardson",
+        "is_not_found": false,
+        "flag": "passed"
+      }
+    },
+    "final_answer": "Terry Richardson",
+    "elapsed_sec": 9.7,
+    "error": null
+  },
+  {
+    "question": "Are Local H and For Against both from the United States?",
+    "gold_answer": "yes",
+    "task_type": "comparison",
+    "sub_queries": [
+      "Where is Local H from?",
+      "Where is For Against from?"
+    ],
+    "steps": {
+      "0": {
+        "sub_query": "Where is Local H from?",
+        "retrieved_titles": [
+          "Local H",
+          "Ophur",
+          "Hallelujah! I'm a Bum (album)",
+          "Suffrajett",
+          "Mendocino County GMO Ban"
+        ],
+        "intermediate_answer": "Local H is from Zion, Illinois.",
+        "confidence": 1.0,
+        "score_1": null,
+        "score_2": null,
+        "flag": "skipped"
+      },
+      "1": {
+        "sub_query": "Where is For Against from?",
+        "retrieved_titles": [
+          "For Against",
+          "Mendocino County GMO Ban",
+          "Suffrajett",
+          "Local H",
+          "Ophur"
+        ],
+        "intermediate_answer": "Yes, For Against is a band from the United States.",
+        "confidence": 8.481096084836677e-05,
+        "score_1": 8.481096084836677e-05,
+        "score_2": 1.0,
+        "flag": "uncertain",
+        "refined_query": "Is For Against also a band from the United States?",
+        "refined_titles": [
+          "For Against",
+          "Suffrajett",
+          "Ophur",
+          "Local H",
+          "Mendocino County GMO Ban"
+        ],
+        "score_1_initial": 0.0009110511944006453,
+        "score_2_initial": 1.0,
+        "failure_type": "IRRELEVANT"
+      },
+      "final": {
+        "final_answer": "yes",
+        "is_not_found": false,
+        "flag": "passed"
+      }
+    },
+    "final_answer": "yes",
+    "elapsed_sec": 10.55,
+    "error": null
+  }
+]
