@@ -7,18 +7,21 @@ import os
 import math
 from dotenv import load_dotenv
 from openai import OpenAI
+from utils.llm import increment
 
 load_dotenv()
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 MODEL = "gpt-4o-mini"
 
 
-def get_yesno_prob(prompt: str) -> float:
+def get_yesno_prob(prompt: str, label: str = "score_1") -> float:
     """
     Yes/No 질문에 대해 Yes 확률 반환 (0~1)
     top_logprobs에서 Yes/No 찾아서 정규화.
     둘 다 없으면 텍스트 응답으로 fallback (0.85 or 0.15 - 극단값 피함)
     """
+    increment(label)
+
     response = client.chat.completions.create(
         model=MODEL,
         messages=[{"role": "user", "content": prompt}],
@@ -42,7 +45,6 @@ def get_yesno_prob(prompt: str) -> float:
         elif token_lower == "no":
             no_prob = prob
 
-    # Yes/No 둘 다 top_logprobs에 없는 경우 - 완화된 fallback
     if yes_prob == 0.0 and no_prob == 0.0:
         top_token = ""
         if choice.logprobs and choice.logprobs.content:

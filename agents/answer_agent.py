@@ -59,4 +59,5 @@ def generate_final_answer(question: str, pool: EvidencePool) -> str:
             {"role": "user", "content": user},
         ],
         max_tokens=64,
+        label="answer",
     )

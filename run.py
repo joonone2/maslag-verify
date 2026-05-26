@@ -53,6 +53,7 @@ from tqdm import tqdm
 
 from datasets import load_dataset
 from pipeline import run_pipeline
+from utils.llm import reset_counts, get_counts, get_total
 from retriever.dense_retriever import DenseRetriever
 
 INDEX_PATH = "index/hotpot.index"
@@ -122,12 +123,15 @@ def main():
         context     = item["paragraphs"] if args.dataset == "musique" else item["context"]
 
         print(f"\n[{i+1}/{len(samples)}] Q: {question}")
+        reset_counts()
         result = run_pipeline(
             question=question,
             gold_answer=gold_answer,
             retriever=retriever,
             context=context,
         )
+        result["llm_calls"] = get_counts()
+        result["llm_calls_total"] = get_total()
         print(f"  → Predicted: {result['final_answer']}")
         print(f"  → Gold:      {gold_answer}")
         print(f"  → Time:      {result['elapsed_sec']}s")
@@ -154,7 +158,8 @@ def _print_summary(results: list[dict]):
         for step in r.get("steps", {}).values():
             if isinstance(step, dict):
                 flag = step.get("flag", "unknown")
-                flag_counts[flag] = flag_counts.get(flag, 0) + 1
+                if flag is not None:
+                    flag_counts[flag] = flag_counts.get(flag, 0) + 1
 
     print("\n" + "="*50)
     print(f"실험 요약 (n={total})")

@@ -17,6 +17,7 @@ from agents.retrieval import retrieve_and_answer
 from agents.answer_agent import generate_final_answer
 from modules.verification import verify
 from modules.final_verify import final_verify
+from agents.query_refiner import refine_next_query, is_not_found as _is_not_found
 
 
 def run_pipeline(
@@ -46,6 +47,23 @@ def run_pipeline(
 
         # ── 2. 각 서브쿼리 처리 ─────────────────────
         for step_idx, sub_query in enumerate(sub_queries):
+
+            # 동적 쿼리 조정: 이전 스텝이 Not Found면 현재 쿼리 재생성
+            if step_idx > 0:
+                prev_step = pool.steps.get(step_idx - 1, {})
+                prev_answer = prev_step.get("intermediate_answer", "")
+                prev_sub_query = prev_step.get("sub_query", "")
+                if _is_not_found(prev_answer):
+                    refined = refine_next_query(
+                        original_query=sub_query,
+                        prev_sub_query=prev_sub_query,
+                        prev_answer=prev_answer,
+                        question=question,
+                    )
+                    print(f"  [Step {step_idx}] 쿼리 동적 조정: {sub_query!r}")
+                    print(f"              → {refined!r}")
+                    sub_query = refined
+
             print(f"  [Step {step_idx}] Retrieve & Answer: {sub_query!r}")
 
             retrieve_and_answer(sub_query, pool, retriever, step_idx)
@@ -61,7 +79,7 @@ def run_pipeline(
         print("  [Answer Agent] 최종 답변 생성 중...")
         final_answer = generate_final_answer(question, pool)
 
-        # ── 4. Final Verification ────────────────────
+        # ── 4. Final Verify (Not Found 체크) ─────────
         print("  [Final Verify] 최종 답변 검증 중...")
         final_answer = final_verify(question, pool, final_answer)
 

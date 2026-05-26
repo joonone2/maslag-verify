@@ -72,6 +72,7 @@ def retrieve_and_answer(
             {"role": "user", "content": user},
         ],
         max_tokens=128,
+        label="retrieval",
     )
 
     pool.add(
