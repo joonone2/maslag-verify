@@ -43,6 +43,7 @@ def run_pipeline(
         task_type = plan_result["type"]
         sub_queries = plan_result["sub_queries"]
         pool.task_type = task_type
+        pool.question = question
         print(f"  [Planner] type={task_type}, {len(sub_queries)} sub-queries: {sub_queries}")
 
         # ── 2. 각 서브쿼리 처리 ─────────────────────

@@ -10,6 +10,7 @@ from pool.evidence_pool import EvidencePool
 from retriever.dense_retriever import DenseRetriever
 from utils.logprobs import get_yesno_prob
 from utils.llm import call_llm
+from agents.planner import replan_failed_step
 
 
 # ─────────────────────────────────────────────
@@ -77,7 +78,7 @@ def _verify_bridge(step_idx: int, pool: EvidencePool, retriever: DenseRetriever)
     score_1, score_2 = _compute_bridge_scores(prev_answer, curr_answer)
     confidence = min(score_1, score_2)
 
-    if confidence >= 0.7:
+    if confidence >= 0.5:
         pool.update_verification(step_idx, confidence, "verified", score_1, score_2)
         return {
             "flag": "verified",
@@ -87,11 +88,9 @@ def _verify_bridge(step_idx: int, pool: EvidencePool, retriever: DenseRetriever)
             "verify_type": "bridge",
         }
     else:
-        failure_type = classify_failure(prev_answer, curr_answer)
-        result = _refine_and_retry_bridge(step_idx, pool, failure_type, retriever)
+        result = _refine_and_retry_bridge(step_idx, pool, retriever)
         result["score_1_initial"] = score_1
         result["score_2_initial"] = score_2
-        result["failure_type"] = failure_type
         result["verify_type"] = "bridge"
         return result
 
@@ -169,7 +168,7 @@ def _verify_comparison(
     score_1, score_2 = _compute_comparison_scores(question, sub_query, curr_answer)
     confidence = min(score_1, score_2)
 
-    if confidence >= 0.7:
+    if confidence >= 0.5:
         pool.update_verification(step_idx, confidence, "verified", score_1, score_2)
         return {
             "flag": "verified",
@@ -179,18 +178,14 @@ def _verify_comparison(
             "verify_type": "comparison",
         }
     else:
-        # 어떤 점수가 낮은지로 실패 유형 판단
-        failure_type = _classify_comparison_failure(score_1, score_2)
         result = _refine_and_retry_comparison(
-            step_idx, pool, retriever, question, failure_type
+            step_idx, pool, retriever, question
         )
         result["score_1_initial"] = score_1
         result["score_2_initial"] = score_2
-        result["failure_type"] = failure_type
         result["verify_type"] = "comparison"
         pool.steps[step_idx]["score_1_initial"] = score_1
         pool.steps[step_idx]["score_2_initial"] = score_2
-        pool.steps[step_idx]["failure_type"] = failure_type
         return result
 
 
@@ -284,7 +279,6 @@ def _refine_and_retry_comparison(
     pool: EvidencePool,
     retriever: DenseRetriever,
     question: str,
-    failure_type: str,
     max_retry: int = 2,
 ) -> dict:
     final_confidence = 0.0
@@ -292,11 +286,17 @@ def _refine_and_retry_comparison(
     final_s2 = 0.0
 
     for attempt in range(max_retry):
-        refined_query = _generate_comparison_refined_query(
-            sub_query=pool.steps[step_idx]["sub_query"],
+        successful_steps = {
+            k: v for k, v in pool.steps.items()
+            if isinstance(v, dict)
+            and k != step_idx
+            and v.get("flag") in ("skipped", "verified", "refined")
+        }
+        refined_query = replan_failed_step(
             question=question,
-            curr_answer=pool.steps[step_idx]["intermediate_answer"],
-            failure_type=failure_type,
+            failed_sub_query=pool.steps[step_idx]["sub_query"],
+            failed_answer=pool.steps[step_idx]["intermediate_answer"],
+            successful_steps=successful_steps,
         )
 
         new_docs = retriever.search(refined_query, top_k=5)
@@ -414,7 +414,6 @@ def _generate_answer(refined_query: str, docs: list, prev_context: dict) -> str:
 def _refine_and_retry_bridge(
     step_idx: int,
     pool: EvidencePool,
-    failure_type: str,
     retriever: DenseRetriever,
     max_retry: int = 2,
 ) -> dict:
@@ -423,11 +422,18 @@ def _refine_and_retry_bridge(
     final_s2 = 0.0
 
     for attempt in range(max_retry):
-        refined_query = _generate_bridge_refined_query(
-            sub_query=pool.steps[step_idx]["sub_query"],
-            prev_answer=pool.get_latest_answer(step_idx),
-            curr_answer=pool.steps[step_idx]["intermediate_answer"],
-            failure_type=failure_type,
+        # 성공한 스텝 수집
+        successful_steps = {
+            k: v for k, v in pool.steps.items()
+            if isinstance(v, dict)
+            and k != step_idx
+            and v.get("flag") in ("skipped", "verified", "refined")
+        }
+        refined_query = replan_failed_step(
+            question=pool.question if hasattr(pool, "question") else "",
+            failed_sub_query=pool.steps[step_idx]["sub_query"],
+            failed_answer=pool.steps[step_idx]["intermediate_answer"],
+            successful_steps=successful_steps,
         )
 
         new_docs = retriever.search(refined_query, top_k=5)

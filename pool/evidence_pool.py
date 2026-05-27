@@ -11,6 +11,7 @@ class EvidencePool:
     def __init__(self):
         self.steps: dict = {}
         self.task_type: str = "bridge"  # bridge | comparison
+        self.question: str = ""
 
     def add(self, step_idx: int, sub_query: str, retrieved_titles: list, intermediate_answer: str):
         self.steps[step_idx] = {
