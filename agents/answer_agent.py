@@ -17,28 +17,27 @@ into a single, direct answer to the original question.
 - For yes/no questions: answer ONLY "yes" or "no"
 - For factual questions: answer with the minimum necessary words
   (name, place, date, number — no full sentences)
-- If a step is marked [uncertain], treat it as low-confidence
-  and rely on other steps if possible
-- If information is contradictory across steps, use the higher-confidence step
-- If no verified information is available, say "Not found"
+- Steps marked [uncertain] may still contain useful information.
+  Use all available information to synthesize the best possible answer.
+- If information is contradictory across steps, use the higher-confidence step.
+- Only say "Not found" if every single step returned "Not found in documents."
 
 ## Output
 One word, phrase, or "yes"/"no" — nothing more."""
 
 
 def _format_verified(verified: dict) -> str:
+    """필요한 정보만 전달: sub_query + answer + flag"""
     if not verified:
         return "(No verified information available)"
     parts = []
     for idx in sorted(verified.keys()):
         step = verified[idx]
         flag = step.get("flag", "unknown")
-        confidence = step.get("confidence")
-        conf_str = f", confidence={confidence:.3f}" if confidence is not None else ""
         parts.append(
-            f"Step {idx} [{flag}{conf_str}]\n"
-            f"Sub-query: {step['sub_query']}\n"
-            f"Answer: {step['intermediate_answer']}"
+            f"Step {idx} [{flag}]\n"
+            f"Q: {step['sub_query']}\n"
+            f"A: {step['intermediate_answer']}"
         )
     return "\n\n".join(parts)
 
@@ -49,7 +48,7 @@ def generate_final_answer(question: str, pool: EvidencePool) -> str:
 
     user = (
         f"Original question: {question}\n\n"
-        f"Verified information from each step:\n{context}\n\n"
+        f"Information from each step:\n{context}\n\n"
         "Synthesize a final answer following the rules above."
     )
 
