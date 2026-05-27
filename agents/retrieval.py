@@ -53,11 +53,24 @@ def retrieve_and_answer(
     retriever: ContextRetriever,
     step_idx: int,
 ) -> dict:
-    # 검색
-    docs = retriever.search(sub_query, top_k=5)
-
     # 이전 컨텍스트
     prev_context = pool.get_previous_verified(step_idx)
+
+    # 검색 쿼리 확장 (bridge 타입, Step 0 성공시 이전 답변을 쿼리에 추가)
+    search_query = sub_query
+    if prev_context and pool.task_type == "bridge" and step_idx > 0:
+        prev_answers = [
+            v.get("intermediate_answer", "")
+            for v in prev_context.values()
+            if isinstance(v, dict)
+            and v.get("intermediate_answer")
+            and not any(kw in v.get("intermediate_answer", "").lower()
+                       for kw in ["not found", "i don't know", "unknown"])
+        ]
+        if prev_answers:
+            search_query = f"{sub_query} {' '.join(prev_answers)}"
+
+    docs = retriever.search(search_query, top_k=5)
 
     user = (
         f"Sub-query: {sub_query}\n\n"
