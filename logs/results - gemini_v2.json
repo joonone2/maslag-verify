@@ -42,11 +42,11 @@
         "final_answer": "yes",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: boolean yes/no | [A-Category]: boolean yes/no | [Alignment]: Yes"
+        "reasoning": "The question asks if two individuals share the same nationality, and the answer provided is a 'yes', which is a valid response to the question."
       }
     },
     "final_answer": "yes",
-    "elapsed_sec": 12.27,
+    "elapsed_sec": 11.21,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -103,11 +103,11 @@
         "final_answer": "United States ambassador to Ghana",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A specific government position held by a person. | [A-Category]: A specific government position (United States ambassador to Ghana). | [Alignment]: Yes"
+        "reasoning": "The question asks for a government position, and the answer provides a specific government position (United States ambassador to Ghana), which is a valid response."
       }
     },
     "final_answer": "United States ambassador to Ghana",
-    "elapsed_sec": 15.57,
+    "elapsed_sec": 9.17,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -127,7 +127,7 @@
     "task_type": "bridge",
     "sub_queries": [
       "What is the name of the science fantasy young adult series told in first person?",
-      "What are the titles of the companion books that narrate the stories of enslaved worlds and alien species?"
+      "What are the titles of the companion books that narrate the stories of enslaved worlds and alien species in that series?"
     ],
     "steps": {
       "0": {
@@ -146,7 +146,7 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What are the titles of the companion books that narrate the stories of enslaved worlds and alien species?",
+        "sub_query": "What are the titles of the companion books that narrate the stories of enslaved worlds and alien species in that series?",
         "retrieved_titles": [
           "The Hork-Bajir Chronicles",
           "Animorphs",
@@ -154,7 +154,7 @@
           "Left Behind: The Kids",
           "Victoria Hanley"
         ],
-        "intermediate_answer": "The Hork-Bajir Chronicles",
+        "intermediate_answer": "The Hork-Bajir Chronicles.",
         "confidence": 0.6,
         "score_1": 0.6,
         "score_2": null,
@@ -164,11 +164,11 @@
         "final_answer": "Animorphs",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A science fantasy young adult series with companion books about enslaved worlds and alien species. | [A-Category]: A specific young adult book series. | [Alignment]: Yes"
+        "reasoning": "The answer 'Animorphs' is a series that fits the category of a young adult series and is told in first person, thus it does not violate the categorical constraints of the question."
       }
     },
     "final_answer": "Animorphs",
-    "elapsed_sec": 12.07,
+    "elapsed_sec": 10.27,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -216,8 +216,8 @@
           "Esma Sultan (daughter of Abdülaziz)"
         ],
         "intermediate_answer": "Ortaköy neighborhood, Istanbul, Turkey.",
-        "confidence": 0.6,
-        "score_1": 0.6,
+        "confidence": 0.8,
+        "score_1": 0.8,
         "score_2": null,
         "flag": "verified"
       },
@@ -225,11 +225,11 @@
         "final_answer": "no",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: boolean yes/no | [A-Category]: boolean no | [Alignment]: Yes"
+        "reasoning": "The question asks if two locations are in the same neighborhood, and the answer is a yes/no response. This aligns with the categorical constraint of the question."
       }
     },
     "final_answer": "no",
-    "elapsed_sec": 7.02,
+    "elapsed_sec": 15.38,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -248,18 +248,18 @@
     "gold_answer": "Greenwich Village, New York City",
     "task_type": "bridge",
     "sub_queries": [
-      "Who is the director of the romantic comedy 'Big Stone Gap'?",
-      "In which New York city is the director based?"
+      "Who is the director of the romantic comedy Big Stone Gap?",
+      "What New York city is the director based in?"
     ],
     "steps": {
       "0": {
-        "sub_query": "Who is the director of the romantic comedy 'Big Stone Gap'?",
+        "sub_query": "Who is the director of the romantic comedy Big Stone Gap?",
         "retrieved_titles": [
           "Big Stone Gap (film)",
           "I Love NY (2015 film)",
           "Nola (film)",
           "Just Another Romantic Wrestling Comedy",
-          "Hamish and Andy's Gap Year"
+          "Adriana Trigiani"
         ],
         "intermediate_answer": "Adriana Trigiani",
         "confidence": 1.0,
@@ -268,17 +268,17 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "In which New York city is the director based?",
+        "sub_query": "What New York city is the director based in?",
         "retrieved_titles": [
           "Adriana Trigiani",
           "Big Stone Gap (film)",
+          "Nola (film)",
           "Just Another Romantic Wrestling Comedy",
-          "Great Eastern Conventions",
-          "Nola (film)"
+          "I Love NY (2015 film)"
         ],
         "intermediate_answer": "Greenwich Village, New York City.",
-        "confidence": 0.8,
-        "score_1": 0.8,
+        "confidence": 1.0,
+        "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
@@ -286,11 +286,11 @@
         "final_answer": "Greenwich Village",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a geographic location | [A-Category]: a geographic location | [Alignment]: Yes"
+        "reasoning": "The question asks for a city, and the answer provided is a city name."
       }
     },
     "final_answer": "Greenwich Village",
-    "elapsed_sec": 8.57,
+    "elapsed_sec": 10.16,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -347,11 +347,11 @@
         "final_answer": "YG Entertainment",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The name of the company that formed a South Korean boy group. | [A-Category]: The name of a company. | [Alignment]: Yes"
+        "reasoning": "The question asks for 'who' formed the group, and the answer 'YG Entertainment' is an organization, which can be considered as a valid entity that forms groups."
       }
     },
     "final_answer": "YG Entertainment",
-    "elapsed_sec": 8.37,
+    "elapsed_sec": 11.57,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -370,12 +370,12 @@
     "gold_answer": "Eenasul Fateh",
     "task_type": "bridge",
     "sub_queries": [
-      "Find the real name of the person known by the stage name Aladin.",
-      "Find the organizations that this person helped improve their performance as a consultant."
+      "Find the real name of the person known by the stage name Aladin",
+      "Find the organizations that this person helped improve their performance as a consultant"
     ],
     "steps": {
       "0": {
-        "sub_query": "Find the real name of the person known by the stage name Aladin.",
+        "sub_query": "Find the real name of the person known by the stage name Aladin",
         "retrieved_titles": [
           "Eenasul Fateh",
           "ELDee",
@@ -390,7 +390,7 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Find the organizations that this person helped improve their performance as a consultant.",
+        "sub_query": "Find the organizations that this person helped improve their performance as a consultant",
         "retrieved_titles": [
           "Eenasul Fateh",
           "Management consulting",
@@ -403,24 +403,24 @@
         "score_1": 0.0,
         "score_2": null,
         "flag": "uncertain",
-        "refined_query": "Find the names of organizations that Eenasul Fateh, known by the stage name Aladin, has worked with as a performance improvement consultant.",
+        "refined_query": "Find the specific organizations that Eenasul Fateh, known by the stage name Aladin, has worked with as a consultant to improve their performance.",
         "refined_titles": [
           "Eenasul Fateh",
           "ELDee",
           "Mick (DJ)",
           "Criss Angel",
-          "Method Man"
+          "Amaruk Kayshapanta"
         ]
       },
       "final": {
         "final_answer": "Eenasul Fateh",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A person's name who was known by the stage name Aladin and worked as a consultant. | [A-Category]: A person's name. | [Alignment]: Yes"
+        "reasoning": "The question asks for a person known by a stage name and the answer provides a person's name, which is consistent with the request."
       }
     },
     "final_answer": "Eenasul Fateh",
-    "elapsed_sec": 10.03,
+    "elapsed_sec": 12.1,
     "error": null,
     "llm_calls": {
       "planner": 2,
@@ -477,11 +477,11 @@
         "final_answer": "3,677",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The seating capacity of an arena | [A-Category]: A numerical value representing a quantity | [Alignment]: Yes"
+        "reasoning": "The question asks for a seating capacity, which is a numerical value, and the answer provided is a number (3,677), thus it does not violate any categorical constraints."
       }
     },
     "final_answer": "3,677",
-    "elapsed_sec": 11.1,
+    "elapsed_sec": 11.91,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -538,11 +538,11 @@
         "final_answer": "Terry Richardson",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A person's name | [A-Category]: A person's name | [Alignment]: Yes"
+        "reasoning": "The question asks who is older, and the answer provides a person's name, which is appropriate for the context."
       }
     },
     "final_answer": "Terry Richardson",
-    "elapsed_sec": 7.76,
+    "elapsed_sec": 6.72,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -561,35 +561,35 @@
     "gold_answer": "yes",
     "task_type": "comparison",
     "sub_queries": [
-      "Find the country of origin for Local H",
-      "Find the country of origin for For Against"
+      "Where is Local H from?",
+      "Where is For Against from?"
     ],
     "steps": {
       "0": {
-        "sub_query": "Find the country of origin for Local H",
+        "sub_query": "Where is Local H from?",
         "retrieved_titles": [
           "Local H",
-          "Mendocino County GMO Ban",
-          "Amherst, Massachusetts",
           "Ophur",
-          "For Against"
+          "Hallelujah! I'm a Bum (album)",
+          "Suffrajett",
+          "Mendocino County GMO Ban"
         ],
-        "intermediate_answer": "Local H is an American rock band.",
+        "intermediate_answer": "Local H is from Zion, Illinois.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Find the country of origin for For Against",
+        "sub_query": "Where is For Against from?",
         "retrieved_titles": [
           "For Against",
           "Mendocino County GMO Ban",
+          "Suffrajett",
           "Local H",
-          "Ophur",
-          "Suffrajett"
+          "Ophur"
         ],
-        "intermediate_answer": "For Against is a band from the United States.",
+        "intermediate_answer": "For Against is from Lincoln, Nebraska.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -599,11 +599,11 @@
         "final_answer": "yes",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: boolean yes/no | [A-Category]: boolean yes/no | [Alignment]: Yes"
+        "reasoning": "The question asks if both bands are from the United States, and the answer 'yes' is a valid response to that question."
       }
     },
     "final_answer": "yes",
-    "elapsed_sec": 7.98,
+    "elapsed_sec": 9.44,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -660,11 +660,11 @@
         "final_answer": "Kansas Song",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The name of a fight song | [A-Category]: The name of a song | [Alignment]: Yes"
+        "reasoning": "The question asks for the name of a fight song, and the answer 'Kansas Song' is a name, which fits the categorical requirement."
       }
     },
     "final_answer": "Kansas Song",
-    "elapsed_sec": 9.05,
+    "elapsed_sec": 9.47,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -721,11 +721,11 @@
         "final_answer": "David Weissman",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a person's name | [A-Category]: a person's name | [Alignment]: Yes"
+        "reasoning": "The question asks for a screenwriter, and the answer provided is a person's name, which fits the categorical constraint."
       }
     },
     "final_answer": "David Weissman",
-    "elapsed_sec": 8.96,
+    "elapsed_sec": 6.94,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -773,8 +773,8 @@
           "Faction Punk"
         ],
         "intermediate_answer": "1999",
-        "confidence": 0.8,
-        "score_1": 0.8,
+        "confidence": 0.6,
+        "score_1": 0.6,
         "score_2": null,
         "flag": "verified"
       },
@@ -782,11 +782,11 @@
         "final_answer": "1999",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a specific year | [A-Category]: a specific year | [Alignment]: Yes"
+        "reasoning": "The question asks for a 'year', and the answer provided is a 'year' (1999), which does not violate the categorical constraint."
       }
     },
     "final_answer": "1999",
-    "elapsed_sec": 9.4,
+    "elapsed_sec": 9.55,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -833,18 +833,18 @@
           "Carl B. Stokes United States Courthouse",
           "Hounsfield Heights/Briar Hill, Calgary"
         ],
-        "intermediate_answer": "888 7th Avenue is currently used as the corporate headquarters for Vornado Realty Trust and also houses the Red Eye Grill at street level. Additionally, it is the location of Pershing Square Capital Management.",
-        "confidence": 0.8,
-        "score_1": 0.8,
+        "intermediate_answer": "888 7th Avenue is currently used as the corporate headquarters for Vornado Realty Trust and is an office skyscraper, thus it is utilized for real estate purposes.",
+        "confidence": 1.0,
+        "score_1": 1.0,
         "score_2": null,
         "flag": "refined",
-        "refined_query": "What is the current use of 888 7th Avenue in terms of real estate?",
+        "refined_query": "What is the current use of 888 7th Avenue, and is it utilized for real estate purposes?",
         "refined_titles": [
           "888 7th Avenue",
           "Random House Tower",
+          "Carl B. Stokes United States Courthouse",
           "Hounsfield Heights/Briar Hill, Calgary",
-          "Villard (imprint)",
-          "Pershing Square Capital Management"
+          "South Phoenix"
         ],
         "score_1_initial": 0.0,
         "score_2_initial": null
@@ -853,11 +853,11 @@
         "final_answer": "yes",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: boolean yes/no | [A-Category]: boolean yes/no | [Alignment]: Yes"
+        "reasoning": "The question asks if both locations are used for real estate, and the answer 'yes' is a valid response to that inquiry."
       }
     },
     "final_answer": "yes",
-    "elapsed_sec": 14.83,
+    "elapsed_sec": 12.02,
     "error": null,
     "llm_calls": {
       "planner": 2,
@@ -877,7 +877,7 @@
     "task_type": "bridge",
     "sub_queries": [
       "Who was the football manager that recruited David Beckham?",
-      "What was the timeframe during which that manager managed Manchester United?"
+      "During what timeframe did that manager manage Manchester United?"
     ],
     "steps": {
       "0": {
@@ -896,11 +896,11 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What was the timeframe during which that manager managed Manchester United?",
+        "sub_query": "During what timeframe did that manager manage Manchester United?",
         "retrieved_titles": [
           "Matt Busby",
-          "Ernest Mangnall",
           "Alex Ferguson",
+          "Ernest Mangnall",
           "1995–96 Manchester United F.C. season",
           "Joshua Parlby"
         ],
@@ -913,12 +913,12 @@
       "final": {
         "final_answer": "1986 to 2013",
         "is_not_found": false,
-        "flag": "passed",
-        "reasoning": "[Q-Constraint]: A specific timeframe during which a football manager managed Manchester United. | [A-Category]: A specific timeframe (1986 to 2013). | [Alignment]: Yes"
+        "flag": "contradicted",
+        "reasoning": "The question asks for a timeframe, but the answer provides a range of years instead of a specific timeframe."
       }
     },
     "final_answer": "1986 to 2013",
-    "elapsed_sec": 7.3,
+    "elapsed_sec": 8.16,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -950,7 +950,7 @@
           "Narrow Hills Provincial Park",
           "Shawnee State Fishing Lake"
         ],
-        "intermediate_answer": "Brown County, Kansas, United States.",
+        "intermediate_answer": "Brown State Fishing Lake is located in the United States, specifically in Kansas.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -963,9 +963,9 @@
           "Brown State Fishing Lake",
           "Osage State Fishing Lake",
           "Neosho State Fishing Lake",
-          "Higgins Lake, Michigan"
+          "Higgins Lake"
         ],
-        "intermediate_answer": "9,984",
+        "intermediate_answer": "The population of Brown County, Kansas is 9,984.",
         "confidence": 0.6,
         "score_1": 0.6,
         "score_2": null,
@@ -975,11 +975,11 @@
         "final_answer": "9,984",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A specific population number | [A-Category]: A specific population number | [Alignment]: Yes"
+        "reasoning": "The question asks for a population number, and the answer provided is a numerical value representing inhabitants, which is consistent with the categorical constraint."
       }
     },
     "final_answer": "9,984",
-    "elapsed_sec": 10.47,
+    "elapsed_sec": 9.83,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -1036,11 +1036,11 @@
         "final_answer": "North Atlantic Conference",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The name of a conference that the Vermont Catamounts men's soccer team competed in from 1988 to 1996. | [A-Category]: The name of a conference (North Atlantic Conference). | [Alignment]: Yes"
+        "reasoning": "The question asks for the name of a conference, and the answer provided is also the name of a conference, which aligns with the categorical constraint."
       }
     },
     "final_answer": "North Atlantic Conference",
-    "elapsed_sec": 21.89,
+    "elapsed_sec": 11.41,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -1097,11 +1097,11 @@
         "final_answer": "yes",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: boolean yes/no | [A-Category]: boolean yes/no | [Alignment]: Yes"
+        "reasoning": "The question asks if both individuals are opera composers, and the answer 'yes' correctly affirms that they both belong to that category."
       }
     },
     "final_answer": "yes",
-    "elapsed_sec": 7.84,
+    "elapsed_sec": 7.05,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -1120,20 +1120,20 @@
     "gold_answer": "1969 until 1974",
     "task_type": "bridge",
     "sub_queries": [
-      "Who was the president during Roger O. Egeberg's term as Assistant Secretary for Health and Scientific Affairs?",
+      "During which president's administration did Roger O. Egeberg serve as Assistant Secretary for Health and Scientific Affairs?",
       "What years did that president serve?"
     ],
     "steps": {
       "0": {
-        "sub_query": "Who was the president during Roger O. Egeberg's term as Assistant Secretary for Health and Scientific Affairs?",
+        "sub_query": "During which president's administration did Roger O. Egeberg serve as Assistant Secretary for Health and Scientific Affairs?",
         "retrieved_titles": [
           "Roger O. Egeberg",
           "Bradford P. Campbell",
-          "Steven K. Galson",
+          "Robert R. Hood",
           "Douglas J. Bennet",
-          "Robert R. Hood"
+          "Steven K. Galson"
         ],
-        "intermediate_answer": "Richard Nixon",
+        "intermediate_answer": "Nixon administration",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -1158,11 +1158,11 @@
         "final_answer": "1969 to 1974",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A range of years during which a president served. | [A-Category]: A specific range of years (1969 to 1974). | [Alignment]: Yes"
+        "reasoning": "The question asks for the years during which Roger O. Egeberg served, and the answer provides a range of years (1969 to 1974), which is a valid response to the question."
       }
     },
     "final_answer": "1969 to 1974",
-    "elapsed_sec": 8.73,
+    "elapsed_sec": 8.39,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -1181,18 +1181,18 @@
     "gold_answer": "Robert Erskine Childers DSC",
     "task_type": "comparison",
     "sub_queries": [
-      "Find the nationality of Henry Roth",
-      "Find the nationality of Robert Erskine Childers"
+      "Find the country of origin for Henry Roth",
+      "Find the country of origin for Robert Erskine Childers"
     ],
     "steps": {
       "0": {
-        "sub_query": "Find the nationality of Henry Roth",
+        "sub_query": "Find the country of origin for Henry Roth",
         "retrieved_titles": [
           "Henry Roth",
           "Robert Caesar Childers",
           "Robert Barton",
           "Robert Erskine Childers",
-          "Asgard (yacht)"
+          "Molly Childers"
         ],
         "intermediate_answer": "American",
         "confidence": 1.0,
@@ -1201,17 +1201,17 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Find the nationality of Robert Erskine Childers",
+        "sub_query": "Find the country of origin for Robert Erskine Childers",
         "retrieved_titles": [
           "Robert Caesar Childers",
           "Robert Erskine Childers",
-          "Robert Barton",
           "Molly Childers",
-          "Erskine Barton Childers"
+          "Erskine Barton Childers",
+          "Robert Barton"
         ],
-        "intermediate_answer": "Irish",
-        "confidence": 0.8,
-        "score_1": 0.8,
+        "intermediate_answer": "Ireland",
+        "confidence": 0.6,
+        "score_1": 0.6,
         "score_2": null,
         "flag": "verified"
       },
@@ -1222,7 +1222,7 @@
       }
     },
     "final_answer": "Not found",
-    "elapsed_sec": 5.38,
+    "elapsed_sec": 5.49,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -1269,7 +1269,7 @@
           "2014 Bahrain Grand Prix",
           "Eduardo Troconis"
         ],
-        "intermediate_answer": "Pedro Rodríguez and Sergio Pérez",
+        "intermediate_answer": "Pedro Rodríguez and Sergio Pérez.",
         "confidence": 0.8,
         "score_1": 0.8,
         "score_2": null,
@@ -1279,11 +1279,11 @@
         "final_answer": "Pedro Rodríguez",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A person's name | [A-Category]: A person's name | [Alignment]: Yes"
+        "reasoning": "The question asks for a 'Mexican Formula One race car driver', and the answer 'Pedro Rodríguez' is a person's name, which fits the category of a driver."
       }
     },
     "final_answer": "Pedro Rodríguez",
-    "elapsed_sec": 10.31,
+    "elapsed_sec": 10.63,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -1330,9 +1330,9 @@
           "The House That Jack Built (1967 film)",
           "Hip Hip Pooh-Ray!"
         ],
-        "intermediate_answer": "Dr. Robotnik is the character voiced by Jim Cummings who is associated with a hedgehog, specifically from the \"Sonic the Hedgehog\" franchise.",
-        "confidence": 0.6,
-        "score_1": 0.6,
+        "intermediate_answer": "Dr. Robotnik is the character voiced by Jim Cummings who is associated with a hedgehog, specifically in the \"Sonic the Hedgehog\" franchise.",
+        "confidence": 0.8,
+        "score_1": 0.8,
         "score_2": null,
         "flag": "refined",
         "refined_query": "What character voiced by Jim Cummings is a hedgehog?",
@@ -1347,12 +1347,12 @@
       "final": {
         "final_answer": "Dr. Robotnik",
         "is_not_found": false,
-        "flag": "passed",
-        "reasoning": "[Q-Constraint]: A person's name who voiced a character. | [A-Category]: A person's name (Dr. Robotnik). | [Alignment]: Yes"
+        "flag": "contradicted",
+        "reasoning": "The question asks for a hedgehog, but the answer provided is Dr. Robotnik, who is a character associated with Sonic the Hedgehog, not a hedgehog himself."
       }
     },
     "final_answer": "Dr. Robotnik",
-    "elapsed_sec": 10.83,
+    "elapsed_sec": 12.32,
     "error": null,
     "llm_calls": {
       "planner": 2,
@@ -1371,18 +1371,18 @@
     "gold_answer": "keyboard function keys",
     "task_type": "bridge",
     "sub_queries": [
-      "What program was the Apple Remote originally designed to interact with?",
-      "What other devices can control the program that the Apple Remote was originally designed to interact with?"
+      "Identify the program that the Apple Remote was originally designed to interact with.",
+      "Find other devices that can control the identified program."
     ],
     "steps": {
       "0": {
-        "sub_query": "What program was the Apple Remote originally designed to interact with?",
+        "sub_query": "Identify the program that the Apple Remote was originally designed to interact with.",
         "retrieved_titles": [
           "Apple Remote",
           "Apple Remote Desktop",
-          "Siri Remote",
           "Front Row (software)",
-          "NetSupport Manager"
+          "Siri Remote",
+          "MacScan"
         ],
         "intermediate_answer": "The Apple Remote was originally designed to interact with the Front Row media program.",
         "confidence": 1.0,
@@ -1391,17 +1391,17 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What other devices can control the program that the Apple Remote was originally designed to interact with?",
+        "sub_query": "Find other devices that can control the identified program.",
         "retrieved_titles": [
-          "Apple Remote",
           "Front Row (software)",
+          "Apple Remote",
           "Siri Remote",
-          "Apple Remote Desktop",
-          "NetSupport Manager"
+          "NetSupport Manager",
+          "Apple Remote Desktop"
         ],
-        "intermediate_answer": "The program that the Apple Remote was originally designed to interact with can also be controlled by the keyboard function keys.",
-        "confidence": 0.8,
-        "score_1": 0.8,
+        "intermediate_answer": "The Apple Remote and the keyboard function keys can control the Front Row media program.",
+        "confidence": 1.0,
+        "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
@@ -1409,11 +1409,11 @@
         "final_answer": "keyboard function keys",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a device that can control the program Apple Remote was originally designed to interact with | [A-Category]: a type of input device (keyboard function keys) | [Alignment]: Yes"
+        "reasoning": "The answer 'keyboard function keys' refers to a type of device that can control the same program as the Apple Remote, which aligns with the question's request for alternatives."
       }
     },
     "final_answer": "keyboard function keys",
-    "elapsed_sec": 11.34,
+    "elapsed_sec": 9.36,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -1432,20 +1432,20 @@
     "gold_answer": "Badly Drawn Boy",
     "task_type": "comparison",
     "sub_queries": [
-      "Find the number of instruments used by Badly Drawn Boy",
-      "Find the number of instruments used by Wolf Alice",
-      "Find the number of members in Badly Drawn Boy",
-      "Find the number of members in Wolf Alice"
+      "What is the number of instruments used by Badly Drawn Boy?",
+      "What is the number of people in Badly Drawn Boy?",
+      "What is the number of instruments used by Wolf Alice?",
+      "What is the number of people in Wolf Alice?"
     ],
     "steps": {
       "0": {
-        "sub_query": "Find the number of instruments used by Badly Drawn Boy",
+        "sub_query": "What is the number of instruments used by Badly Drawn Boy?",
         "retrieved_titles": [
           "The Hour of Bewilderbeast",
-          "About a Boy (soundtrack)",
           "Badly Drawn Boy",
-          "Under an Hour",
-          "Badly Drawn Boy discography"
+          "About a Boy (soundtrack)",
+          "Badly Drawn Boy discography",
+          "Under an Hour"
         ],
         "intermediate_answer": "Not found in documents.",
         "confidence": 1.0,
@@ -1454,31 +1454,6 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Find the total number of instruments used by Wolf Alice in their performances.",
-        "retrieved_titles": [
-          "Wolf Alice",
-          "Under an Hour",
-          "The Hour of Bewilderbeast",
-          "Tom Rothrock",
-          "About a Boy (soundtrack)"
-        ],
-        "intermediate_answer": "Not found in documents.",
-        "confidence": 0.0,
-        "score_1": 0.0,
-        "score_2": null,
-        "flag": "uncertain",
-        "refined_query": "Find the total number of instruments used by Wolf Alice during their live performances or concerts.",
-        "refined_titles": [
-          "Wolf Alice",
-          "Under an Hour",
-          "The Hour of Bewilderbeast",
-          "Tom Rothrock",
-          "About a Boy (soundtrack)"
-        ],
-        "score_1_initial": 0.0,
-        "score_2_initial": null
-      },
-      "2": {
         "sub_query": "What is the total number of members in the band Badly Drawn Boy?",
         "retrieved_titles": [
           "Badly Drawn Boy",
@@ -1492,7 +1467,7 @@
         "score_1": 0.0,
         "score_2": null,
         "flag": "uncertain",
-        "refined_query": "How many members are in the band Badly Drawn Boy, including all musicians and performers?",
+        "refined_query": "How many members are currently in the band Badly Drawn Boy, including both musicians and any additional performers?",
         "refined_titles": [
           "Badly Drawn Boy",
           "The Hour of Bewilderbeast",
@@ -1503,16 +1478,41 @@
         "score_1_initial": 0.0,
         "score_2_initial": null
       },
+      "2": {
+        "sub_query": "How many instruments does the band Wolf Alice typically use in their performances?",
+        "retrieved_titles": [
+          "Wolf Alice",
+          "Under an Hour",
+          "The Hour of Bewilderbeast",
+          "Tom Rothrock",
+          "Badly Drawn Boy discography"
+        ],
+        "intermediate_answer": "Not found in documents.",
+        "confidence": 0.0,
+        "score_1": 0.0,
+        "score_2": null,
+        "flag": "uncertain",
+        "refined_query": "What is the typical number of instruments used by Wolf Alice during their live performances?",
+        "refined_titles": [
+          "Wolf Alice",
+          "Under an Hour",
+          "The Hour of Bewilderbeast",
+          "Tom Rothrock",
+          "About a Boy (soundtrack)"
+        ],
+        "score_1_initial": 0.0,
+        "score_2_initial": null
+      },
       "3": {
-        "sub_query": "What is the total number of members in the band Wolf Alice, and what instruments do they play?",
+        "sub_query": "What is the total number of members in the band Wolf Alice?",
         "retrieved_titles": [
           "Wolf Alice",
           "The Hour of Bewilderbeast",
           "Under an Hour",
           "Badly Drawn Boy",
-          "Badly Drawn Boy discography"
+          "Tom Rothrock"
         ],
-        "intermediate_answer": "Wolf Alice has four members: Ellie Rowsell (vocals, guitar), Joff Oddie (guitars, vocals), Theo Ellis (bass), and Joel Amey (drums, vocals).",
+        "intermediate_answer": "Four members.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -1525,7 +1525,7 @@
       }
     },
     "final_answer": "Not found",
-    "elapsed_sec": 17.6,
+    "elapsed_sec": 29.47,
     "error": null,
     "llm_calls": {
       "planner": 3,
@@ -1544,12 +1544,12 @@
     "gold_answer": "World's Best Goalkeeper",
     "task_type": "bridge",
     "sub_queries": [
-      "What is the name of Kasper Schmeichel's father?",
-      "What was the IFFHS award given to Kasper Schmeichel's father in 1992?"
+      "Who is the father of Kasper Schmeichel?",
+      "What was the IFFHS award voted for in 1992?"
     ],
     "steps": {
       "0": {
-        "sub_query": "What is the name of Kasper Schmeichel's father?",
+        "sub_query": "Who is the father of Kasper Schmeichel?",
         "retrieved_titles": [
           "Kasper Schmeichel",
           "Peter Schmeichel",
@@ -1564,7 +1564,7 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What was the IFFHS award given to Kasper Schmeichel's father in 1992?",
+        "sub_query": "What was the IFFHS award voted for in 1992?",
         "retrieved_titles": [
           "Peter Schmeichel",
           "IFFHS World's Best Goalkeeper",
@@ -1579,14 +1579,14 @@
         "flag": "verified"
       },
       "final": {
-        "final_answer": "IFFHS World's Best Goalkeeper",
+        "final_answer": "World's Best Goalkeeper",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The title or award received by a person in a specific year. | [A-Category]: An award title. | [Alignment]: Yes"
+        "reasoning": "The question asks for an award given to Kasper Schmeichel's father, and the answer provided is a title that fits within the context of awards, specifically related to goalkeeping."
       }
     },
-    "final_answer": "IFFHS World's Best Goalkeeper",
-    "elapsed_sec": 9.88,
+    "final_answer": "World's Best Goalkeeper",
+    "elapsed_sec": 13.83,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -1603,20 +1603,20 @@
   {
     "question": "Who was the writer of These Boots Are Made for Walkin' and who died in 2007?",
     "gold_answer": "Barton Lee Hazlewood",
-    "task_type": "bridge",
+    "task_type": "comparison",
     "sub_queries": [
-      "Who wrote These Boots Are Made for Walkin'?",
+      "Who wrote the song These Boots Are Made for Walkin'?",
       "Who died in 2007?"
     ],
     "steps": {
       "0": {
-        "sub_query": "Who wrote These Boots Are Made for Walkin'?",
+        "sub_query": "Who wrote the song These Boots Are Made for Walkin'?",
         "retrieved_titles": [
           "These Boots Are Made for Walkin'",
           "Boots (album)",
           "Boots (EP)",
-          "Nancy Sinatra",
-          "Puss N' Boots/These Boots Are Made for Walkin'"
+          "Puss N' Boots/These Boots Are Made for Walkin'",
+          "Nancy Sinatra"
         ],
         "intermediate_answer": "Lee Hazlewood",
         "confidence": 1.0,
@@ -1627,13 +1627,13 @@
       "1": {
         "sub_query": "Who died in 2007?",
         "retrieved_titles": [
-          "Lee Hazlewood",
           "Jim Shoulders",
           "Death of Abdul Wali",
+          "Lee Hazlewood",
           "Nancy Sinatra",
-          "The Twenty-fifth Anniversary Anthology"
+          "Kon Kan"
         ],
-        "intermediate_answer": "Lee Hazlewood and Jim Shoulders both died in 2007.",
+        "intermediate_answer": "James A. Shoulders (June 20, 2007) and Lee Hazlewood (August 4, 2007).",
         "confidence": 0.8,
         "score_1": 0.8,
         "score_2": null,
@@ -1643,23 +1643,23 @@
         "final_answer": "Lee Hazlewood",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A person's name who wrote a specific song and died in a specific year. | [A-Category]: A person's name. | [Alignment]: Yes"
+        "reasoning": "The question asks for a 'writer' and a person who 'died in 2007', and the answer 'Lee Hazlewood' is a person's name, which fits the categorical requirement of the question."
       }
     },
     "final_answer": "Lee Hazlewood",
-    "elapsed_sec": 12.33,
+    "elapsed_sec": 9.09,
     "error": null,
     "llm_calls": {
       "planner": 1,
       "retrieval": 2,
       "score_1": 1,
-      "refine_query": 1,
+      "refine_query": 0,
       "answer": 1,
       "final_verify": 1,
       "logprob": 0,
       "other": 0
     },
-    "llm_calls_total": 7
+    "llm_calls_total": 6
   },
   {
     "question": "The 2011–12 VCU Rams men's basketball team, led by third year head coach Shaka Smart, represented Virginia Commonwealth University which was founded in what year?",
@@ -1704,11 +1704,11 @@
         "final_answer": "1968",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a specific year | [A-Category]: a specific year | [Alignment]: Yes"
+        "reasoning": "The question asks for the year Virginia Commonwealth University was founded, and the answer provided is a year (1968), which is consistent with the categorical constraint."
       }
     },
     "final_answer": "1968",
-    "elapsed_sec": 10.05,
+    "elapsed_sec": 9.83,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -1759,11 +1759,11 @@
         "final_answer": "yes",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: boolean yes/no | [A-Category]: boolean yes/no | [Alignment]: Yes"
+        "reasoning": "The question asks if both Dictyosperma and Huernia are described as a genus, and the answer 'yes' appropriately addresses this inquiry without violating any categorical constraints."
       }
     },
     "final_answer": "yes",
-    "elapsed_sec": 6.4,
+    "elapsed_sec": 8.95,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -1795,7 +1795,7 @@
           "Henry J. Kaiser",
           "Nutri Ventures – The Quest for the 7 Kingdoms"
         ],
-        "intermediate_answer": "Henry J. Kaiser",
+        "intermediate_answer": "Kaiser Ventures corporation was founded by Henry J. Kaiser.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -1820,11 +1820,11 @@
         "final_answer": "Henry J. Kaiser",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a person's name | [A-Category]: a person's name | [Alignment]: Yes"
+        "reasoning": "The question asks for a person, and the answer provided is a person's name."
       }
     },
     "final_answer": "Henry J. Kaiser",
-    "elapsed_sec": 8.22,
+    "elapsed_sec": 9.77,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -1871,33 +1871,40 @@
           "Arena of Khazan",
           "Mercenaries, Spies and Private Eyes"
         ],
-        "intermediate_answer": "Crusaders of Khazan, Arena of Khazan",
-        "confidence": 0.6,
-        "score_1": 0.6,
+        "intermediate_answer": "Not found in documents.",
+        "confidence": 0.0,
+        "score_1": 0.0,
         "score_2": null,
-        "flag": "verified"
+        "flag": "uncertain",
+        "refined_query": "What is the name of the specific adventure module in Tunnels and Trolls created by Ken St. Andre?",
+        "refined_titles": [
+          "Tunnels &amp; Trolls",
+          "Tunnels &amp; Trolls: Crusaders of Khazan",
+          "Arena of Khazan",
+          "Mercenaries, Spies and Private Eyes",
+          "Ken St. Andre"
+        ]
       },
       "final": {
-        "final_answer": "Crusaders of Khazan",
-        "is_not_found": false,
-        "flag": "passed",
-        "reasoning": "[Q-Constraint]: The name of an adventure in a specific role-playing game. | [A-Category]: The name of an adventure. | [Alignment]: Yes"
+        "final_answer": "Not found",
+        "is_not_found": true,
+        "flag": "not_found"
       }
     },
-    "final_answer": "Crusaders of Khazan",
-    "elapsed_sec": 8.51,
+    "final_answer": "Not found",
+    "elapsed_sec": 14.12,
     "error": null,
     "llm_calls": {
-      "planner": 1,
+      "planner": 2,
       "retrieval": 2,
       "score_1": 1,
       "refine_query": 1,
       "answer": 1,
-      "final_verify": 1,
+      "final_verify": 0,
       "logprob": 0,
-      "other": 0
+      "other": 1
     },
-    "llm_calls_total": 7
+    "llm_calls_total": 8
   },
   {
     "question": "When was Poison's album \"Shut Up, Make Love\" released?",
@@ -1926,11 +1933,11 @@
         "final_answer": "March 14, 2000",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: specific date | [A-Category]: specific date | [Alignment]: Yes"
+        "reasoning": "The question asks for a release date, and the answer provides a specific date, which is a valid response."
       }
     },
     "final_answer": "March 14, 2000",
-    "elapsed_sec": 4.75,
+    "elapsed_sec": 5.35,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -1971,11 +1978,11 @@
         "final_answer": "Fujioka, Gunma, Japan",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A geographic location | [A-Category]: A geographic location | [Alignment]: Yes"
+        "reasoning": "The question asks for a location (where Buck-Tick hails from), and the answer provides a specific place (Fujioka, Gunma, Japan), which is a valid response."
       }
     },
     "final_answer": "Fujioka, Gunma, Japan",
-    "elapsed_sec": 5.15,
+    "elapsed_sec": 5.73,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -1994,18 +2001,18 @@
     "gold_answer": "Charles Eugène",
     "task_type": "bridge",
     "sub_queries": [
-      "Who was the French ace pilot and adventurer associated with L'Oiseau Blanc?",
+      "Who was the French ace pilot known for flying L'Oiseau Blanc?",
       "What is L'Oiseau Blanc?"
     ],
     "steps": {
       "0": {
-        "sub_query": "Who was the French ace pilot and adventurer associated with L'Oiseau Blanc?",
+        "sub_query": "Who was the French ace pilot known for flying L'Oiseau Blanc?",
         "retrieved_titles": [
-          "François Coli",
           "Georges Madon",
+          "François Coli",
           "Charles Nungesser",
-          "L'Oiseau Blanc",
-          "Paul Sauvage (aviator)"
+          "Paul Sauvage (aviator)",
+          "L'Oiseau Blanc"
         ],
         "intermediate_answer": "François Coli and Charles Nungesser.",
         "confidence": 1.0,
@@ -2029,14 +2036,14 @@
         "flag": "verified"
       },
       "final": {
-        "final_answer": "Charles Nungesser",
+        "final_answer": "François Coli",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a person's name | [A-Category]: a person's name | [Alignment]: Yes"
+        "reasoning": "The question asks for a French ace pilot and adventurer, and the answer is a person's name, which fits the category of 'who'."
       }
     },
-    "final_answer": "Charles Nungesser",
-    "elapsed_sec": 9.06,
+    "final_answer": "François Coli",
+    "elapsed_sec": 11.31,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -2093,11 +2100,11 @@
         "final_answer": "no",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: boolean yes/no | [A-Category]: boolean yes/no | [Alignment]: Yes"
+        "reasoning": "The question asks if both documentaries are American, and the answer is a 'no', which is a valid response to the yes/no question."
       }
     },
     "final_answer": "no",
-    "elapsed_sec": 7.55,
+    "elapsed_sec": 7.87,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -2154,11 +2161,11 @@
         "final_answer": "Letters to Cleo",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: Which band had more members? | [A-Category]: Band name | [Alignment]: Yes"
+        "reasoning": "The answer provided is a band name, which is appropriate given that the question asks which band had more members."
       }
     },
     "final_answer": "Letters to Cleo",
-    "elapsed_sec": 8.07,
+    "elapsed_sec": 7.56,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -2198,12 +2205,12 @@
       "final": {
         "final_answer": "1923",
         "is_not_found": false,
-        "flag": "passed",
-        "reasoning": "[Q-Constraint]: a specific date | [A-Category]: a specific date | [Alignment]: Yes"
+        "flag": "contradicted",
+        "reasoning": "The question asks for a specific event related to the end of a civil war, which should be a date or year, but the answer provided is a year (1923) that does not align with the historical context of the Russian Civil War, thus violating the expected accuracy of the answer."
       }
     },
     "final_answer": "1923",
-    "elapsed_sec": 4.27,
+    "elapsed_sec": 6.48,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -2260,11 +2267,11 @@
         "final_answer": "2000",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a specific year | [A-Category]: a specific year | [Alignment]: Yes"
+        "reasoning": "The question asks for a 'year', and the answer provided is also a 'year' (2000), which does not violate the categorical constraint."
       }
     },
     "final_answer": "2000",
-    "elapsed_sec": 8.41,
+    "elapsed_sec": 9.13,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -2311,29 +2318,29 @@
           "Freetown Memorial",
           "Alamein Memorial"
         ],
-        "intermediate_answer": "The Alamein Memorial specifically commemorates the fallen of World War II.",
+        "intermediate_answer": "The Alamein Memorial is specifically dedicated to commemorating the fallen of World War II.",
         "confidence": 0.8,
         "score_1": 0.8,
         "score_2": null,
         "flag": "refined",
-        "refined_query": "Find the name of the memorial that specifically commemorates the fallen of World War II.",
+        "refined_query": "Find the name of the memorial specifically dedicated to commemorating the fallen of World War II.",
         "refined_titles": [
           "Rainham War Memorial",
           "Vietnam War Memorial, Hanoi",
           "Alamein Memorial",
           "Portsmouth Naval Memorial",
-          "Freetown Memorial"
+          "Tower Hill Memorial"
         ]
       },
       "final": {
         "final_answer": "World War II",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The question requires the identification of a specific war. | [A-Category]: The answer identifies a specific war, World War II. | [Alignment]: Yes"
+        "reasoning": "The question asks for a war, and the answer provided is a war (World War II), which aligns with the categorical constraint."
       }
     },
     "final_answer": "World War II",
-    "elapsed_sec": 12.57,
+    "elapsed_sec": 15.13,
     "error": null,
     "llm_calls": {
       "planner": 2,
@@ -2389,12 +2396,12 @@
       "final": {
         "final_answer": "no",
         "is_not_found": false,
-        "flag": "passed",
-        "reasoning": "[Q-Constraint]: boolean yes/no | [A-Category]: boolean no | [Alignment]: Yes"
+        "flag": "contradicted",
+        "reasoning": "The question asks if both airports are located in Michigan, which requires a yes/no answer regarding their locations. The synthesized final answer 'no' does not provide a categorical violation, but the context implies that one of the airports is not in Michigan, which contradicts the question's requirement for both to be in Michigan."
       }
     },
     "final_answer": "no",
-    "elapsed_sec": 7.3,
+    "elapsed_sec": 18.09,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -2413,12 +2420,12 @@
     "gold_answer": "New York City",
     "task_type": "bridge",
     "sub_queries": [
-      "What university did Ralph Hefferline work at?",
-      "In which city is that university located?"
+      "What university did Ralph Hefferline teach at?",
+      "What city is that university located in?"
     ],
     "steps": {
       "0": {
-        "sub_query": "What university did Ralph Hefferline work at?",
+        "sub_query": "What university did Ralph Hefferline teach at?",
         "retrieved_titles": [
           "Ralph Hefferline",
           "David C. Funder",
@@ -2426,22 +2433,22 @@
           "Stanley Coren",
           "Frank L. Schmidt"
         ],
-        "intermediate_answer": "Columbia University",
+        "intermediate_answer": "Columbia University.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "In which city is that university located?",
+        "sub_query": "What city is that university located in?",
         "retrieved_titles": [
           "Columbia University",
           "Ralph Hefferline",
           "Princeton Neuroscience Institute",
           "Stanley Coren",
-          "Abraham Maslow"
+          "Mathematically Alive"
         ],
-        "intermediate_answer": "New York City",
+        "intermediate_answer": "New York City.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -2451,11 +2458,11 @@
         "final_answer": "New York City",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a geographic location | [A-Category]: a geographic location | [Alignment]: Yes"
+        "reasoning": "The question asks for a city, and the answer provided is a city name."
       }
     },
     "final_answer": "New York City",
-    "elapsed_sec": 11.77,
+    "elapsed_sec": 10.65,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -2503,8 +2510,8 @@
           "Russkiy Toy"
         ],
         "intermediate_answer": "The ancestors of the Scotch Collie include Roman Cattle Dogs, Native Celtic Dogs, Viking Herding Spitzes, and the Gordon and Irish Setters.",
-        "confidence": 0.8,
-        "score_1": 0.8,
+        "confidence": 1.0,
+        "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
@@ -2512,11 +2519,11 @@
         "final_answer": "Scotch Collie",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The question requires the identification of a specific dog breed based on its ancestry. | [A-Category]: The answer identifies a specific dog breed, the Scotch Collie. | [Alignment]: Yes"
+        "reasoning": "The question asks for a dog breed, and the answer provided is also a dog breed, which does not violate any categorical constraints."
       }
     },
     "final_answer": "Scotch Collie",
-    "elapsed_sec": 8.83,
+    "elapsed_sec": 16.71,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -2535,18 +2542,18 @@
     "gold_answer": "Mumbai",
     "task_type": "bridge",
     "sub_queries": [
-      "Find the company that Sachin Warrier worked for as a software engineer",
-      "Find the headquarters of that company"
+      "What company did Sachin Warrier work for as a software engineer?",
+      "Where is that company headquartered?"
     ],
     "steps": {
       "0": {
-        "sub_query": "Find the company that Sachin Warrier worked for as a software engineer",
+        "sub_query": "What company did Sachin Warrier work for as a software engineer?",
         "retrieved_titles": [
           "Sachin Bansal",
-          "Sachin Warrier",
-          "Wes McKinney",
           "Alec Muffett",
-          "Kanave Kalayathe"
+          "Sachin Warrier",
+          "William Connolley",
+          "Wes McKinney"
         ],
         "intermediate_answer": "Tata Consultancy Services",
         "confidence": 1.0,
@@ -2555,13 +2562,13 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Find the headquarters of that company",
+        "sub_query": "Where is that company headquartered?",
         "retrieved_titles": [
           "Tata Consultancy Services",
           "Sachin Bansal",
           "Sachin Warrier",
-          "Divya S. Menon",
-          "Kanave Kalayathe"
+          "William Connolley",
+          "Divya S. Menon"
         ],
         "intermediate_answer": "Mumbai, Maharashtra",
         "confidence": 1.0,
@@ -2573,11 +2580,11 @@
         "final_answer": "Mumbai, Maharashtra",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a geographic location | [A-Category]: a geographic location | [Alignment]: Yes"
+        "reasoning": "The question asks for the headquarters location of a company, which is appropriately answered with a city name."
       }
     },
     "final_answer": "Mumbai, Maharashtra",
-    "elapsed_sec": 8.57,
+    "elapsed_sec": 14.7,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -2634,11 +2641,11 @@
         "final_answer": "1962",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The year of birth of the author of a manga series. | [A-Category]: A specific year. | [Alignment]: Yes"
+        "reasoning": "The question asks for the year of birth of the author, and the answer provided is a year (1962), which aligns with the categorical constraint of the question."
       }
     },
     "final_answer": "1962",
-    "elapsed_sec": 8.63,
+    "elapsed_sec": 13.36,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -2680,26 +2687,26 @@
         "sub_query": "What was secured for Ethiopia as a result of that battle?",
         "retrieved_titles": [
           "Battle of Adwa",
-          "Giuseppe Arimondi",
-          "Second Battle of Agordat",
           "Treaty of Addis Ababa",
-          "First Italo-Ethiopian War"
+          "Second Battle of Agordat",
+          "Giuseppe Arimondi",
+          "Ethiopia–Japan relations"
         ],
-        "intermediate_answer": "Ethiopian sovereignty.",
+        "intermediate_answer": "Ethiopian sovereignty was secured as a result of the Battle of Adwa.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
       "final": {
-        "final_answer": "Ethiopian sovereignty.",
+        "final_answer": "Ethiopian sovereignty",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The outcome or significance of a battle in relation to a country's status or sovereignty. | [A-Category]: A statement regarding the sovereignty of Ethiopia. | [Alignment]: Yes"
+        "reasoning": "The question asks what the battle secured for Ethiopia, and the answer 'Ethiopian sovereignty' is a valid response that aligns with the context of the question."
       }
     },
-    "final_answer": "Ethiopian sovereignty.",
-    "elapsed_sec": 9.88,
+    "final_answer": "Ethiopian sovereignty",
+    "elapsed_sec": 12.12,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -2764,11 +2771,11 @@
         "final_answer": "Lyndon Johnson",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a person's name | [A-Category]: a person's name | [Alignment]: Yes"
+        "reasoning": "The question asks for a United States Vice President, and the answer provided is Lyndon Johnson, who served as Vice President."
       }
     },
     "final_answer": "Lyndon Johnson",
-    "elapsed_sec": 15.38,
+    "elapsed_sec": 12.93,
     "error": null,
     "llm_calls": {
       "planner": 2,
@@ -2825,11 +2832,11 @@
         "final_answer": "Yellowcraig",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A geographic location | [A-Category]: A geographic location | [Alignment]: Yes"
+        "reasoning": "The question asks for a coastal area, and the answer 'Yellowcraig' is a coastal area, which aligns with the categorical constraint."
       }
     },
     "final_answer": "Yellowcraig",
-    "elapsed_sec": 9.28,
+    "elapsed_sec": 23.14,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -2848,37 +2855,37 @@
     "gold_answer": "Phil Spector",
     "task_type": "bridge",
     "sub_queries": [
-      "What is the first track on the box set Back to Mono?",
-      "Who is the writer of the song inspired by words on a tombstone?"
+      "Identify the song that was inspired by words on a tombstone and is the first track on the box set Back to Mono.",
+      "Find the writer of the identified song."
     ],
     "steps": {
       "0": {
-        "sub_query": "What is the first track on the box set Back to Mono?",
+        "sub_query": "Identify the song that was inspired by words on a tombstone and is the first track on the box set Back to Mono.",
         "retrieved_titles": [
           "Back to Mono (1958–1969)",
+          "To Know Him Is to Love Him",
           "Chrome, Smoke &amp; BBQ",
           "Led Zeppelin Boxed Set 2",
-          "Radiohead Box Set",
-          "The Doors: Vinyl Box Set"
+          "Nashville Rebel (box set)"
         ],
-        "intermediate_answer": "The first track on the box set Back to Mono is \"To Know Him Is to Love Him.\"",
+        "intermediate_answer": "\"To Know Him Is to Love Him\"",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Who is the writer of the song inspired by words on a tombstone?",
+        "sub_query": "Find the writer of the identified song.",
         "retrieved_titles": [
           "To Know Him Is to Love Him",
           "Back to Mono (1958–1969)",
-          "Chrome, Smoke &amp; BBQ",
           "Nashville Rebel (box set)",
+          "Chrome, Smoke &amp; BBQ",
           "Led Zeppelin Boxed Set 2"
         ],
         "intermediate_answer": "Phil Spector",
-        "confidence": 0.6,
-        "score_1": 0.6,
+        "confidence": 1.0,
+        "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
@@ -2886,11 +2893,11 @@
         "final_answer": "Phil Spector",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a person's name | [A-Category]: a person's name | [Alignment]: Yes"
+        "reasoning": "The question asks for the writer of a song, and the answer provided is a person's name, which is appropriate for the query."
       }
     },
     "final_answer": "Phil Spector",
-    "elapsed_sec": 9.4,
+    "elapsed_sec": 10.36,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -2958,7 +2965,7 @@
       }
     },
     "final_answer": "Not found",
-    "elapsed_sec": 8.37,
+    "elapsed_sec": 11.16,
     "error": null,
     "llm_calls": {
       "planner": 2,
@@ -3015,11 +3022,11 @@
         "final_answer": "yes",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: boolean yes/no | [A-Category]: boolean yes/no | [Alignment]: Yes"
+        "reasoning": "The question asks if both Ferocactus and Silene are types of plants, and the answer 'yes' correctly affirms that both are indeed types of plants, thus adhering to the categorical constraints."
       }
     },
     "final_answer": "yes",
-    "elapsed_sec": 6.58,
+    "elapsed_sec": 9.34,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -3084,11 +3091,11 @@
         "final_answer": "English Electric Canberra",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A specific type of military aircraft used in World War II | [A-Category]: A specific military aircraft model | [Alignment]: Yes"
+        "reasoning": "The question asks for a British first-generation jet-powered medium bomber, and the answer 'English Electric Canberra' fits this category as it is a type of aircraft."
       }
     },
     "final_answer": "English Electric Canberra",
-    "elapsed_sec": 15.36,
+    "elapsed_sec": 11.9,
     "error": null,
     "llm_calls": {
       "planner": 2,
@@ -3107,18 +3114,18 @@
     "gold_answer": "2009 Big 12 Conference",
     "task_type": "bridge",
     "sub_queries": [
-      "What year did the Colorado Buffaloes have a record of 2-6 in conference play?",
-      "Which conference was the Colorado Buffaloes part of during that year?"
+      "Find the year when the Colorado Buffaloes had a record of 2-6 in conference play.",
+      "Identify the conference that the Colorado Buffaloes were part of during that year."
     ],
     "steps": {
       "0": {
-        "sub_query": "What year did the Colorado Buffaloes have a record of 2-6 in conference play?",
+        "sub_query": "Find the year when the Colorado Buffaloes had a record of 2-6 in conference play.",
         "retrieved_titles": [
-          "1989 Colorado Buffaloes football team",
           "2011 Colorado Buffaloes football team",
-          "2015 Colorado Buffaloes football team",
+          "1989 Colorado Buffaloes football team",
           "2012 Colorado Buffaloes football team",
-          "2014 Colorado Buffaloes football team"
+          "2014 Colorado Buffaloes football team",
+          "2015 Colorado Buffaloes football team"
         ],
         "intermediate_answer": "Not found in documents.",
         "confidence": 1.0,
@@ -3127,28 +3134,29 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "In which NCAA conference did the Colorado Buffaloes compete during the year they recorded a 2-6 conference play record?",
+        "sub_query": "In which year did the Colorado Buffaloes play in a conference where they had a record of 2-6, and what was the name of that conference?",
         "retrieved_titles": [
-          "2015–16 Colorado Buffaloes men's basketball team",
-          "2016–17 Colorado Buffaloes men's basketball team",
           "1989 Colorado Buffaloes football team",
-          "2014–15 Colorado Buffaloes men's basketball team",
-          "2011 Colorado Buffaloes football team"
+          "2011 Colorado Buffaloes football team",
+          "2015 Colorado Buffaloes football team",
+          "2014 Colorado Buffaloes football team",
+          "2012 Colorado Buffaloes football team"
         ],
-        "intermediate_answer": "Pac-12 Conference",
-        "confidence": 1.0,
-        "score_1": 1.0,
+        "intermediate_answer": "In 2011, the Colorado Buffaloes had a record of 2-7 in the Pac-12 Conference.",
+        "confidence": 0.6,
+        "score_1": 0.6,
         "score_2": null,
         "flag": "verified"
       },
       "final": {
-        "final_answer": "Not found",
-        "is_not_found": true,
-        "flag": "not_found"
+        "final_answer": "2011 Pac-12",
+        "is_not_found": false,
+        "flag": "passed",
+        "reasoning": "The answer provides both a year (2011) and a conference (Pac-12), which aligns with the question's request for a year and conference."
       }
     },
-    "final_answer": "Not found",
-    "elapsed_sec": 6.31,
+    "final_answer": "2011 Pac-12",
+    "elapsed_sec": 11.5,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -3156,11 +3164,11 @@
       "score_1": 1,
       "refine_query": 0,
       "answer": 1,
-      "final_verify": 0,
+      "final_verify": 1,
       "logprob": 0,
       "other": 1
     },
-    "llm_calls_total": 6
+    "llm_calls_total": 7
   },
   {
     "question": "In 1991 Euromarché was bought by a chain that operated how any hypermarkets at the end of 2016?",
@@ -3196,8 +3204,8 @@
           "Uno-X"
         ],
         "intermediate_answer": "1,462 hypermarkets.",
-        "confidence": 0.6,
-        "score_1": 0.6,
+        "confidence": 0.8,
+        "score_1": 0.8,
         "score_2": null,
         "flag": "verified"
       },
@@ -3205,11 +3213,11 @@
         "final_answer": "1,462",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The number of hypermarkets operated by a chain at the end of 2016. | [A-Category]: A specific numerical value representing a count. | [Alignment]: Yes"
+        "reasoning": "The question asks for a number of hypermarkets, and the answer provides a numerical value (1,462), which is consistent with the type of information requested."
       }
     },
     "final_answer": "1,462",
-    "elapsed_sec": 8.74,
+    "elapsed_sec": 11.36,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -3228,18 +3236,18 @@
     "gold_answer": "Indianapolis Motor Speedway",
     "task_type": "bridge",
     "sub_queries": [
-      "What race track in the midwest hosts a 500 mile race?",
-      "When is the 500 mile race held?"
+      "What is the name of the race track in the Midwest?",
+      "What type of race is held at that track every May?"
     ],
     "steps": {
       "0": {
-        "sub_query": "What race track in the midwest hosts a 500 mile race?",
+        "sub_query": "What is the name of the race track in the Midwest?",
         "retrieved_titles": [
+          "Indianapolis Motor Speedway",
           "Lean Horse Ultramarathon",
           "1957 Indianapolis 500",
-          "Indianapolis Motor Speedway",
           "Carolina Dodge Dealers 400",
-          "Subway 400"
+          "Orange County Fair Speedway"
         ],
         "intermediate_answer": "Indianapolis Motor Speedway",
         "confidence": 1.0,
@@ -3248,17 +3256,17 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "When is the 500 mile race held?",
+        "sub_query": "What type of race is held at that track every May?",
         "retrieved_titles": [
           "1957 Indianapolis 500",
-          "Lean Horse Ultramarathon",
+          "Indianapolis Motor Speedway",
           "Carolina Dodge Dealers 400",
           "Subway 400",
-          "Indianapolis Motor Speedway"
+          "Lean Horse Ultramarathon"
         ],
-        "intermediate_answer": "The 500 mile race is held on May 30.",
-        "confidence": 0.8,
-        "score_1": 0.8,
+        "intermediate_answer": "Indianapolis 500",
+        "confidence": 1.0,
+        "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
@@ -3266,11 +3274,11 @@
         "final_answer": "Indianapolis Motor Speedway",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A specific race track that hosts a 500 mile race every May in the Midwest. | [A-Category]: A specific race track name. | [Alignment]: Yes"
+        "reasoning": "The question asks for a race track, and the answer provided is a race track, which is the Indianapolis Motor Speedway."
       }
     },
     "final_answer": "Indianapolis Motor Speedway",
-    "elapsed_sec": 8.71,
+    "elapsed_sec": 10.42,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -3289,18 +3297,18 @@
     "gold_answer": "Rome",
     "task_type": "bridge",
     "sub_queries": [
-      "What is the name of the film based on an opera by Giacomo Puccini that stars the 'Prince of tenors'?",
-      "In what city was that film starred by the 'Prince of tenors'?"
+      "Find the name of the film based on an opera by Giacomo Puccini that stars the 'Prince of tenors'",
+      "Find the city where that film was starred in"
     ],
     "steps": {
       "0": {
-        "sub_query": "What is the name of the film based on an opera by Giacomo Puccini that stars the 'Prince of tenors'?",
+        "sub_query": "Find the name of the film based on an opera by Giacomo Puccini that stars the 'Prince of tenors'",
         "retrieved_titles": [
           "Tosca (1956 film)",
           "La Bohème (1988 film)",
-          "O mio babbino caro",
+          "Gianni Schicchi",
           "Cesira Ferrani",
-          "Gianni Schicchi"
+          "O mio babbino caro"
         ],
         "intermediate_answer": "Tosca",
         "confidence": 1.0,
@@ -3309,41 +3317,49 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "In what city was that film starred by the 'Prince of tenors'?",
+        "sub_query": "Find the city where that film was starred in",
         "retrieved_titles": [
           "Tosca (1956 film)",
+          "Festival Puccini",
           "La Bohème (1988 film)",
           "Cesira Ferrani",
-          "Ron Bottcher",
-          "Franco Corelli"
+          "Gianni Schicchi"
         ],
-        "intermediate_answer": "Rome",
-        "confidence": 0.8,
-        "score_1": 0.8,
+        "intermediate_answer": "The film \"Tosca,\" starring the \"Prince of tenors,\" was filmed in Rome.",
+        "confidence": 1.0,
+        "score_1": 1.0,
         "score_2": null,
-        "flag": "verified"
+        "flag": "refined",
+        "refined_query": "Find the city where the film \"Tosca,\" starring the \"Prince of tenors,\" was filmed.",
+        "refined_titles": [
+          "Tosca (1956 film)",
+          "La Bohème (1988 film)",
+          "Festival Puccini",
+          "Cesira Ferrani",
+          "Jacopo Puccini"
+        ]
       },
       "final": {
         "final_answer": "Rome",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a geographic location | [A-Category]: a geographic location | [Alignment]: Yes"
+        "reasoning": "The question asks for a 'city' and the answer provided is 'Rome', which is a valid city."
       }
     },
     "final_answer": "Rome",
-    "elapsed_sec": 10.18,
+    "elapsed_sec": 13.81,
     "error": null,
     "llm_calls": {
-      "planner": 1,
+      "planner": 2,
       "retrieval": 2,
-      "score_1": 1,
+      "score_1": 2,
       "refine_query": 1,
       "answer": 1,
       "final_verify": 1,
       "logprob": 0,
-      "other": 0
+      "other": 1
     },
-    "llm_calls_total": 7
+    "llm_calls_total": 10
   },
   {
     "question": "Ellie Goulding worked with what other writers on her third studio album, Delirium?",
@@ -3375,7 +3391,7 @@
       }
     },
     "final_answer": "Not found",
-    "elapsed_sec": 3.95,
+    "elapsed_sec": 4.63,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -3431,12 +3447,12 @@
       "final": {
         "final_answer": "Marion",
         "is_not_found": false,
-        "flag": "passed",
-        "reasoning": "[Q-Constraint]: A specific geographic location (an Australian city). | [A-Category]: A specific geographic location (Marion). | [Alignment]: Yes"
+        "flag": "contradicted",
+        "reasoning": "The question asks for an 'Australian city', but the answer 'Marion' refers to a suburb, not a city."
       }
     },
     "final_answer": "Marion",
-    "elapsed_sec": 11.9,
+    "elapsed_sec": 17.25,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -3455,16 +3471,16 @@
     "gold_answer": "Drifting",
     "task_type": "bridge",
     "sub_queries": [
-      "What is D1NZ?",
-      "What is the oversteering technique used in D1NZ?"
+      "What is the oversteering technique used in D1NZ?",
+      "What are the characteristics of that oversteering technique?"
     ],
     "steps": {
       "0": {
-        "sub_query": "What is D1NZ?",
+        "sub_query": "What is the oversteering technique used in D1NZ?",
         "retrieved_titles": [
+          "Drifting (motorsport)",
           "Raaz Pichhle Janam Ka",
           "Rising Star (France)",
-          "Night School: the Web Series",
           "Ripley's Believe It or Not! (TV series)",
           "Raimund Harmstorf"
         ],
@@ -3475,26 +3491,26 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What oversteering technique is primarily utilized in D1NZ drifting competitions?",
+        "sub_query": "What are the characteristics of the oversteering technique commonly used in drift racing, specifically in the context of D1NZ?",
         "retrieved_titles": [
           "Drifting (motorsport)",
-          "D1NZ",
-          "Rising Star (France)",
+          "Ripley's Believe It or Not! (TV series)",
           "Raaz Pichhle Janam Ka",
-          "Ripley's Believe It or Not! (TV series)"
+          "Rising Star (France)",
+          "D1NZ"
         ],
         "intermediate_answer": "Not found in documents.",
         "confidence": 0.0,
         "score_1": 0.0,
         "score_2": null,
         "flag": "uncertain",
-        "refined_query": "What specific oversteering technique is most commonly used by drivers in D1NZ drifting competitions?",
+        "refined_query": "What specific characteristics define the oversteering technique utilized in D1NZ drift racing?",
         "refined_titles": [
           "Drifting (motorsport)",
           "Raaz Pichhle Janam Ka",
-          "D1NZ",
           "Rising Star (France)",
-          "Ripley's Believe It or Not! (TV series)"
+          "Ripley's Believe It or Not! (TV series)",
+          "D1NZ"
         ]
       },
       "final": {
@@ -3504,7 +3520,7 @@
       }
     },
     "final_answer": "Not found",
-    "elapsed_sec": 8.18,
+    "elapsed_sec": 8.84,
     "error": null,
     "llm_calls": {
       "planner": 2,
@@ -3561,11 +3577,11 @@
         "final_answer": "Keith Bostic",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A person's name | [A-Category]: A person's name | [Alignment]: Yes"
+        "reasoning": "The question asks for who is younger, and the answer provides a person's name, which is appropriate for the question."
       }
     },
     "final_answer": "Keith Bostic",
-    "elapsed_sec": 8.82,
+    "elapsed_sec": 9.82,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -3597,7 +3613,7 @@
           "Willoughton",
           "Boston, Lincolnshire"
         ],
-        "intermediate_answer": "Kirton End is located in the Boston district of Lincolnshire, England.",
+        "intermediate_answer": "Kirton End is located in Boston, Lincolnshire, England.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -3606,35 +3622,35 @@
       "1": {
         "sub_query": "What was the population of that city according to the 2001 census?",
         "retrieved_titles": [
-          "Kirton End",
           "Kirton, Nottinghamshire",
+          "Kirton End",
           "Willoughton",
           "Kirton, Suffolk",
           "Boston, Lincolnshire"
         ],
-        "intermediate_answer": "The population of Boston, Lincolnshire, according to the 2001 census, was 35,124.",
+        "intermediate_answer": "The population of Boston, Lincolnshire, England according to the 2001 census was 35,124.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
         "flag": "refined",
-        "refined_query": "What was the population of Boston, Lincolnshire, according to the 2001 census?",
+        "refined_query": "What was the population of Boston, Lincolnshire, England according to the 2001 census?",
         "refined_titles": [
           "Boston, Lincolnshire",
           "Kirton, Nottinghamshire",
           "Willoughton",
           "Borough of Berwick-upon-Tweed",
-          "Kirton End"
+          "2001 Bangladesh census"
         ]
       },
       "final": {
         "final_answer": "35,124",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A specific population number of a city based on census data. | [A-Category]: A specific population number. | [Alignment]: Yes"
+        "reasoning": "The question asks for the population of a city, and the answer provides a numerical population figure, which is appropriate for the context."
       }
     },
     "final_answer": "35,124",
-    "elapsed_sec": 10.23,
+    "elapsed_sec": 10.96,
     "error": null,
     "llm_calls": {
       "planner": 2,
@@ -3691,11 +3707,11 @@
         "final_answer": "yes",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: boolean yes/no | [A-Category]: boolean yes/no | [Alignment]: Yes"
+        "reasoning": "The question asks if both Cypress and Ajuga are genera, and the answer 'yes' correctly addresses the categorical nature of the question."
       }
     },
     "final_answer": "yes",
-    "elapsed_sec": 6.87,
+    "elapsed_sec": 7.9,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -3714,32 +3730,32 @@
     "gold_answer": "shortest player ever to play in the National Basketball Association",
     "task_type": "bridge",
     "sub_queries": [
-      "Who was a member of the Charlotte Hornets during the 1992-93 season?",
-      "What distinction does the head coach of the WNBA team Charlotte Sting hold?"
+      "Identify the former NBA player who was a member of the Charlotte Hornets during the 1992-93 season",
+      "Find the distinction held by that former NBA player who was also the head coach for the WNBA team Charlotte Sting"
     ],
     "steps": {
       "0": {
-        "sub_query": "Who was a member of the Charlotte Hornets during the 1992-93 season?",
+        "sub_query": "Identify the former NBA player who was a member of the Charlotte Hornets during the 1992-93 season",
         "retrieved_titles": [
           "1992–93 Charlotte Hornets season",
           "Muggsy Bogues",
-          "Charlotte Hornets",
           "Charlotte Hornets draft history",
-          "2014–15 Charlotte Hornets season"
+          "2014–15 Charlotte Hornets season",
+          "Charlotte Hornets"
         ],
-        "intermediate_answer": "Alonzo Mourning, Larry Johnson, Muggsy Bogues",
+        "intermediate_answer": "Alonzo Mourning",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What distinction does the head coach of the WNBA team Charlotte Sting hold?",
+        "sub_query": "Find the distinction held by that former NBA player who was also the head coach for the WNBA team Charlotte Sting",
         "retrieved_titles": [
-          "List of Texas Tech Lady Raiders in the WNBA Draft",
-          "Ayana Walker",
           "Muggsy Bogues",
-          "2014–15 Charlotte Hornets season",
+          "Ayana Walker",
+          "List of Texas Tech Lady Raiders in the WNBA Draft",
+          "1992–93 Charlotte Hornets season",
           "2003 WNBA season"
         ],
         "intermediate_answer": "Not found in documents.",
@@ -3747,13 +3763,13 @@
         "score_1": 0.0,
         "score_2": null,
         "flag": "uncertain",
-        "refined_query": "What notable achievements or distinctions does Muggsy Bogues have as the head coach of the WNBA team Charlotte Sting?",
+        "refined_query": "What specific distinction or honor is held by Alonzo Mourning, the former NBA player who was the head coach for the WNBA team Charlotte Sting?",
         "refined_titles": [
           "Muggsy Bogues",
-          "List of Texas Tech Lady Raiders in the WNBA Draft",
           "Ayana Walker",
-          "2014–15 Charlotte Hornets season",
-          "2003 WNBA season"
+          "List of Texas Tech Lady Raiders in the WNBA Draft",
+          "1992–93 Charlotte Hornets season",
+          "2014–15 Charlotte Hornets season"
         ]
       },
       "final": {
@@ -3763,19 +3779,19 @@
       }
     },
     "final_answer": "Not found",
-    "elapsed_sec": 10.12,
+    "elapsed_sec": 16.41,
     "error": null,
     "llm_calls": {
       "planner": 2,
       "retrieval": 2,
-      "score_1": 1,
+      "score_1": 0,
       "refine_query": 1,
       "answer": 1,
       "final_verify": 0,
       "logprob": 0,
       "other": 1
     },
-    "llm_calls_total": 8
+    "llm_calls_total": 7
   },
   {
     "question": "What is the name of the executive producer of the film that has a score composed by Jerry Goldsmith?",
@@ -3831,7 +3847,7 @@
       }
     },
     "final_answer": "Not found",
-    "elapsed_sec": 6.78,
+    "elapsed_sec": 9.63,
     "error": null,
     "llm_calls": {
       "planner": 2,
@@ -3888,11 +3904,11 @@
         "final_answer": "Virginia Woolf",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A person's name | [A-Category]: A person's name | [Alignment]: Yes"
+        "reasoning": "The question asks for who was born earlier, and the answer provides a person's name, which is appropriate for the question."
       }
     },
     "final_answer": "Virginia Woolf",
-    "elapsed_sec": 7.03,
+    "elapsed_sec": 9.67,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -3911,12 +3927,12 @@
     "gold_answer": "821",
     "task_type": "bridge",
     "sub_queries": [
-      "Find the nursery rhyme that inspired What Are Little Girls Made Of?",
-      "Find the Roud Folk Song Index number for the identified nursery rhyme."
+      "What is the nursery rhyme that inspired What Are Little Girls Made Of?",
+      "What is the Roud Folk Song Index number of the nursery rhyme?"
     ],
     "steps": {
       "0": {
-        "sub_query": "Find the nursery rhyme that inspired What Are Little Girls Made Of?",
+        "sub_query": "What is the nursery rhyme that inspired What Are Little Girls Made Of?",
         "retrieved_titles": [
           "What Are Little Boys Made Of?",
           "Pretty Little Dutch Girl",
@@ -3931,15 +3947,15 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Find the Roud Folk Song Index number for the identified nursery rhyme.",
+        "sub_query": "What is the Roud Folk Song Index number of the nursery rhyme?",
         "retrieved_titles": [
           "What Are Little Boys Made Of?",
           "Row, Row, Row Your Boat",
-          "Did You Ever See a Lassie?",
           "Pretty Little Dutch Girl",
-          "Billy Boy"
+          "Billy Boy",
+          "Aiken Drum"
         ],
-        "intermediate_answer": "The Roud Folk Song Index number for \"What Are Little Boys Made Of?\" is 821.",
+        "intermediate_answer": "The Roud Folk Song Index number of the nursery rhyme \"What Are Little Boys Made Of?\" is 821.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -3949,11 +3965,11 @@
         "final_answer": "821",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: Roud Folk Song Index number | [A-Category]: Roud Folk Song Index number | [Alignment]: Yes"
+        "reasoning": "The question asks for a numerical index (Roud Folk Song Index), and the answer provided is a number (821), which is consistent with the categorical constraint."
       }
     },
     "final_answer": "821",
-    "elapsed_sec": 8.31,
+    "elapsed_sec": 10.29,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -3972,18 +3988,18 @@
     "gold_answer": "more than 70 countries",
     "task_type": "bridge",
     "sub_queries": [
-      "Find the name of the other corporation that Scott Parkin has criticized.",
-      "Find the number of countries where the other corporation operates."
+      "Find out which corporation Scott Parkin has criticized along with Exxonmobil.",
+      "Determine how many countries that corporation operates in."
     ],
     "steps": {
       "0": {
-        "sub_query": "Find the name of the other corporation that Scott Parkin has criticized.",
+        "sub_query": "Find out which corporation Scott Parkin has criticized along with Exxonmobil.",
         "retrieved_titles": [
           "Scott Parkin",
-          "Religious Technology Center",
-          "Mobil Producing Nigeria",
           "Exxon",
-          "Yvonne Ridley"
+          "Mobil Producing Nigeria",
+          "Religious Technology Center",
+          "Oregon and Transcontinental Company"
         ],
         "intermediate_answer": "Halliburton",
         "confidence": 1.0,
@@ -3992,29 +4008,29 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Find the number of countries where the other corporation operates.",
+        "sub_query": "Determine how many countries that corporation operates in.",
         "retrieved_titles": [
-          "Mobil Producing Nigeria",
           "Halliburton",
+          "Mobil Producing Nigeria",
           "Exxon",
           "Scott Parkin",
           "Oregon and Transcontinental Company"
         ],
         "intermediate_answer": "More than 70 countries.",
-        "confidence": 0.8,
-        "score_1": 0.8,
+        "confidence": 1.0,
+        "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
       "final": {
-        "final_answer": "More than 70 countries.",
+        "final_answer": "more than 70 countries",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The number of countries in which a corporation operates. | [A-Category]: A numerical value representing a quantity (more than 70). | [Alignment]: Yes"
+        "reasoning": "The question asks for the number of countries in which the corporation operates, and the answer provides a numerical value ('more than 70 countries'), which is a valid response to the question."
       }
     },
-    "final_answer": "More than 70 countries.",
-    "elapsed_sec": 9.52,
+    "final_answer": "more than 70 countries",
+    "elapsed_sec": 8.77,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4071,11 +4087,11 @@
         "final_answer": "Charmed",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The name of a supernatural drama series. | [A-Category]: The name of a television series. | [Alignment]: Yes"
+        "reasoning": "The question asks for a WB supernatural drama series, and the answer 'Charmed' is indeed a WB supernatural drama series."
       }
     },
     "final_answer": "Charmed",
-    "elapsed_sec": 8.86,
+    "elapsed_sec": 9.36,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4094,18 +4110,18 @@
     "gold_answer": "International Boxing Hall of Fame",
     "task_type": "bridge",
     "sub_queries": [
-      "What organization recognized Vince Phillips as a junior welterweight champion?",
+      "What organization recognized Vince Phillips' junior welterweight title?",
       "What larger Hall of Fame is associated with that organization?"
     ],
     "steps": {
       "0": {
-        "sub_query": "What organization recognized Vince Phillips as a junior welterweight champion?",
+        "sub_query": "What organization recognized Vince Phillips' junior welterweight title?",
         "retrieved_titles": [
           "Vince Phillips",
           "Andrew Murray (Guyanese boxer)",
           "Bunny Grant",
-          "Julian Holland (boxer)",
-          "Zab Judah"
+          "Zab Judah",
+          "Julian Holland (boxer)"
         ],
         "intermediate_answer": "IBF (International Boxing Federation)",
         "confidence": 1.0,
@@ -4132,11 +4148,11 @@
         "final_answer": "International Boxing Hall of Fame",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The name of a larger Hall of Fame recognized by an organization that sanctioned Vince Phillips' junior welterweight title. | [A-Category]: The name of a specific Hall of Fame. | [Alignment]: Yes"
+        "reasoning": "The question asks for a larger Hall of Fame associated with a junior welterweight title, and the answer provided is a recognized Hall of Fame, which fits the category."
       }
     },
     "final_answer": "International Boxing Hall of Fame",
-    "elapsed_sec": 9.6,
+    "elapsed_sec": 11.79,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4188,7 +4204,7 @@
         "score_1": 0.0,
         "score_2": null,
         "flag": "uncertain",
-        "refined_query": "How many consecutive weeks did the lead single from Usher's album \"Confessions\" stay at number one on the Billboard Hot 100 charts?",
+        "refined_query": "How many consecutive weeks did the lead single from Usher's album \"Confessions\" stay at number one on the charts?",
         "refined_titles": [
           "No One (Alicia Keys song)",
           "U Know What's Up",
@@ -4204,7 +4220,7 @@
       }
     },
     "final_answer": "Not found",
-    "elapsed_sec": 7.54,
+    "elapsed_sec": 9.77,
     "error": null,
     "llm_calls": {
       "planner": 2,
@@ -4272,7 +4288,7 @@
       }
     },
     "final_answer": "Not found",
-    "elapsed_sec": 8.63,
+    "elapsed_sec": 8.16,
     "error": null,
     "llm_calls": {
       "planner": 2,
@@ -4291,12 +4307,11 @@
     "gold_answer": "Carabao Cup",
     "task_type": "bridge",
     "sub_queries": [
-      "What is the name of the league cup that Wigan Athletic F.C. competed in during the 2017–18 season?",
-      "What are the sponsorship reasons for the name of the league cup?"
+      "What is the name of the league cup that Wigan Athletic F.C. competed in during the 2017–18 season for sponsorship reasons?"
     ],
     "steps": {
       "0": {
-        "sub_query": "What is the name of the league cup that Wigan Athletic F.C. competed in during the 2017–18 season?",
+        "sub_query": "What is the name of the league cup that Wigan Athletic F.C. competed in during the 2017–18 season for sponsorship reasons?",
         "retrieved_titles": [
           "2017–18 Wigan Athletic F.C. season",
           "2007–08 Wigan Athletic F.C. season",
@@ -4304,48 +4319,32 @@
           "Nick Powell",
           "1979–80 Wigan Athletic F.C. season"
         ],
-        "intermediate_answer": "EFL Cup",
+        "intermediate_answer": "Not found in documents.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
-      "1": {
-        "sub_query": "What are the sponsorship reasons for the name of the league cup?",
-        "retrieved_titles": [
-          "EFL Cup",
-          "Trinidad and Tobago League Cup",
-          "2017–18 Wigan Athletic F.C. season",
-          "2006–07 Wigan Athletic F.C. season",
-          "List of Wigan Borough F.C. players"
-        ],
-        "intermediate_answer": "The EFL Cup is currently known as the Carabao Cup for sponsorship reasons.",
-        "confidence": 0.6,
-        "score_1": 0.6,
-        "score_2": null,
-        "flag": "verified"
-      },
       "final": {
-        "final_answer": "Carabao Cup",
-        "is_not_found": false,
-        "flag": "passed",
-        "reasoning": "[Q-Constraint]: The name of a league cup for sponsorship reasons | [A-Category]: The name of a cup competition | [Alignment]: Yes"
+        "final_answer": "Not found",
+        "is_not_found": true,
+        "flag": "not_found"
       }
     },
-    "final_answer": "Carabao Cup",
-    "elapsed_sec": 10.7,
+    "final_answer": "Not found",
+    "elapsed_sec": 3.79,
     "error": null,
     "llm_calls": {
       "planner": 1,
-      "retrieval": 2,
-      "score_1": 1,
-      "refine_query": 1,
+      "retrieval": 1,
+      "score_1": 0,
+      "refine_query": 0,
       "answer": 1,
-      "final_verify": 1,
+      "final_verify": 0,
       "logprob": 0,
       "other": 0
     },
-    "llm_calls_total": 7
+    "llm_calls_total": 3
   },
   {
     "question": "Which of Tara Strong major voice role in animated series is an American animated television series based on the DC Comics fictional superhero team, the \"Teen Titans\"?",
@@ -4353,7 +4352,7 @@
     "task_type": "bridge",
     "sub_queries": [
       "What is the name of the animated series based on the DC Comics superhero team, the Teen Titans?",
-      "What major voice role did Tara Strong have in that animated series?"
+      "Who is Tara Strong's major voice role in that animated series?"
     ],
     "steps": {
       "0": {
@@ -4372,17 +4371,17 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What major voice role did Tara Strong have in that animated series?",
+        "sub_query": "Who is Tara Strong's major voice role in that animated series?",
         "retrieved_titles": [
           "Tara Strong filmography",
           "Tara Strong",
-          "List of Teen Titans episodes",
           "Teen Titans (season 4)",
+          "List of Teen Titans episodes",
           "Teen Titans Go! (TV series)"
         ],
-        "intermediate_answer": "Raven in Teen Titans and Teen Titans Go!",
-        "confidence": 0.8,
-        "score_1": 0.8,
+        "intermediate_answer": "Tara Strong's major voice role in the animated series is Raven.",
+        "confidence": 1.0,
+        "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
@@ -4390,11 +4389,11 @@
         "final_answer": "Raven",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a character name from an animated series | [A-Category]: a character name | [Alignment]: Yes"
+        "reasoning": "The question asks for a major voice role in an animated series, and 'Raven' is a character from the 'Teen Titans' series, which is consistent with the request."
       }
     },
     "final_answer": "Raven",
-    "elapsed_sec": 8.19,
+    "elapsed_sec": 11.55,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4441,7 +4440,7 @@
           "122nd Division (Imperial Japanese Army)",
           "122nd Fighter Aviation Squadron"
         ],
-        "intermediate_answer": "The city is Strasbourg, and the term used to refer to its inhabitants is \"Strasbourgeois.\"",
+        "intermediate_answer": "Strasbourg; Strasbourgeois.",
         "confidence": 0.6,
         "score_1": 0.6,
         "score_2": null,
@@ -4451,11 +4450,11 @@
         "final_answer": "Strasbourgeois",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The inhabitant of a city | [A-Category]: A demonym (specific to a city) | [Alignment]: Yes"
+        "reasoning": "The question asks for the inhabitant of a city, and the answer 'Strasbourgeois' refers to the inhabitant of Strasbourg, which is a city. Therefore, there is no contradiction."
       }
     },
     "final_answer": "Strasbourgeois",
-    "elapsed_sec": 11.47,
+    "elapsed_sec": 10.27,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4512,11 +4511,11 @@
         "final_answer": "orange",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a color of clothing | [A-Category]: a color | [Alignment]: Yes"
+        "reasoning": "The question asks for a color of clothing, and the answer 'orange' is a color, which aligns with the categorical constraint."
       }
     },
     "final_answer": "orange",
-    "elapsed_sec": 9.58,
+    "elapsed_sec": 9.72,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4535,11 +4534,11 @@
     "gold_answer": "Tromeo and Juliet",
     "task_type": "bridge",
     "sub_queries": [
-      "Find the name of the 1996 loose adaptation of Romeo & Juliet written by James Gunn"
+      "Find the loose adaptation of Romeo & Juliet written by James Gunn in 1996"
     ],
     "steps": {
       "0": {
-        "sub_query": "Find the name of the 1996 loose adaptation of Romeo & Juliet written by James Gunn",
+        "sub_query": "Find the loose adaptation of Romeo & Juliet written by James Gunn in 1996",
         "retrieved_titles": [
           "Tromeo and Juliet",
           "Romeo + Juliet",
@@ -4547,7 +4546,7 @@
           "Romeo and Juliet on screen",
           "Romeo × Juliet"
         ],
-        "intermediate_answer": "Tromeo and Juliet",
+        "intermediate_answer": "Tromeo and Juliet, 1996.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -4557,11 +4556,11 @@
         "final_answer": "Tromeo and Juliet",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The name of a film that is a loose adaptation of a specific literary work. | [A-Category]: The title of a film. | [Alignment]: Yes"
+        "reasoning": "The question asks for the name of a film, and the answer provided is a film title, which is consistent with the categorical constraint."
       }
     },
     "final_answer": "Tromeo and Juliet",
-    "elapsed_sec": 4.75,
+    "elapsed_sec": 5.69,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4618,11 +4617,11 @@
         "final_answer": "Bill Clinton",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a person's name | [A-Category]: a person's name | [Alignment]: Yes"
+        "reasoning": "The question asks for a person (the former Governor of Arkansas), and the answer provided is also a person's name (Bill Clinton), which is consistent with the categorical constraint."
       }
     },
     "final_answer": "Bill Clinton",
-    "elapsed_sec": 14.32,
+    "elapsed_sec": 12.53,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4654,7 +4653,7 @@
           "Andy Irons",
           "Barton Lynch"
         ],
-        "intermediate_answer": "John John Florence, born 18 October 1992.",
+        "intermediate_answer": "John John Florence, born on 18 October 1992.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -4679,11 +4678,11 @@
         "final_answer": "John John Florence",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a person's name | [A-Category]: a person's name | [Alignment]: Yes"
+        "reasoning": "The question asks for an American professional Hawaiian surfer, and the answer provided is a person's name, which fits the category of 'who'."
       }
     },
     "final_answer": "John John Florence",
-    "elapsed_sec": 9.05,
+    "elapsed_sec": 8.99,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4703,7 +4702,7 @@
     "task_type": "bridge",
     "sub_queries": [
       "Who plays Bobbi Bacha in Suburban Madness?",
-      "What is the middle name of the actress found in the previous query?"
+      "What is the middle name of the actress found in the first sub-query?"
     ],
     "steps": {
       "0": {
@@ -4722,7 +4721,7 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What is the middle name of the actress found in the previous query?",
+        "sub_query": "What is the middle name of the actress found in the first sub-query?",
         "retrieved_titles": [
           "Sela Ward",
           "Suburban Madness",
@@ -4740,11 +4739,11 @@
         "final_answer": "Ann",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A person's name (specifically, a middle name). | [A-Category]: A person's name (specifically, a middle name). | [Alignment]: Yes"
+        "reasoning": "The question asks for a middle name, and the answer provided is a middle name ('Ann'), which is consistent with the categorical constraint."
       }
     },
     "final_answer": "Ann",
-    "elapsed_sec": 9.23,
+    "elapsed_sec": 8.88,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4801,11 +4800,11 @@
         "final_answer": "Ais",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The name of a tribe of indigenous people. | [A-Category]: The name of a tribe of indigenous people. | [Alignment]: Yes"
+        "reasoning": "The question asks for a tribe of indigenous people, and the answer 'Ais' is a valid name of a tribe, thus it does not violate the categorical constraint."
       }
     },
     "final_answer": "Ais",
-    "elapsed_sec": 12.29,
+    "elapsed_sec": 10.11,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4824,18 +4823,18 @@
     "gold_answer": "British",
     "task_type": "comparison",
     "sub_queries": [
-      "What nationality was Alfred Gell?",
-      "What nationality was Edmund Leach?"
+      "What is the nationality of Alfred Gell?",
+      "What is the nationality of Edmund Leach?"
     ],
     "steps": {
       "0": {
-        "sub_query": "What nationality was Alfred Gell?",
+        "sub_query": "What is the nationality of Alfred Gell?",
         "retrieved_titles": [
           "Alfred Gell",
           "Edmund Leach",
           "Thomas Hylland Eriksen",
           "Network Analysis and Ethnographic Problems",
-          "Coral Gardens and Their Magic"
+          "Aleksandar Bošković"
         ],
         "intermediate_answer": "British",
         "confidence": 1.0,
@@ -4844,13 +4843,13 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What nationality was Edmund Leach?",
+        "sub_query": "What is the nationality of Edmund Leach?",
         "retrieved_titles": [
           "Edmund Leach",
           "Alfred Gell",
           "Thomas Hylland Eriksen",
           "Aleksandar Bošković",
-          "Coral Gardens and Their Magic"
+          "Social Anthropology (journal)"
         ],
         "intermediate_answer": "British",
         "confidence": 1.0,
@@ -4862,11 +4861,11 @@
         "final_answer": "British",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: Nationality of social anthropologists | [A-Category]: Nationality | [Alignment]: Yes"
+        "reasoning": "The question asks for nationality, and the answer provided is a valid nationality (British), which does not violate the categorical constraint."
       }
     },
     "final_answer": "British",
-    "elapsed_sec": 7.9,
+    "elapsed_sec": 11.25,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4885,12 +4884,12 @@
     "gold_answer": "1865",
     "task_type": "bridge",
     "sub_queries": [
-      "Who was the King that made the 1925 Birthday Honours?",
+      "Who was the King who made the 1925 Birthday Honours?",
       "In which year was that King born?"
     ],
     "steps": {
       "0": {
-        "sub_query": "Who was the King that made the 1925 Birthday Honours?",
+        "sub_query": "Who was the King who made the 1925 Birthday Honours?",
         "retrieved_titles": [
           "1925 Birthday Honours",
           "1951 Birthday Honours",
@@ -4923,11 +4922,11 @@
         "final_answer": "1865",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A specific year | [A-Category]: A specific year | [Alignment]: Yes"
+        "reasoning": "The question asks for a 'year', and the answer provided is also a 'year' (1865), which does not violate any categorical constraints."
       }
     },
     "final_answer": "1865",
-    "elapsed_sec": 8.19,
+    "elapsed_sec": 9.17,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4984,11 +4983,11 @@
         "final_answer": "Newport",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a geographic location | [A-Category]: a geographic location | [Alignment]: Yes"
+        "reasoning": "The question asks for a 'county seat', and the answer provided is 'Newport', which is a valid name for a county seat."
       }
     },
     "final_answer": "Newport",
-    "elapsed_sec": 8.07,
+    "elapsed_sec": 8.14,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5029,11 +5028,11 @@
         "final_answer": "Bob Seger",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a person's name | [A-Category]: a person's name | [Alignment]: Yes"
+        "reasoning": "The question asks for the rock singer's stage name, and the answer provided is 'Bob Seger', which is indeed a person's name and fits the category of a stage name."
       }
     },
     "final_answer": "Bob Seger",
-    "elapsed_sec": 4.95,
+    "elapsed_sec": 5.92,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5053,7 +5052,7 @@
     "task_type": "bridge",
     "sub_queries": [
       "What was the practice of filling armed forces vacancies in Rostker v. Goldberg?",
-      "What did the Supreme Court rule regarding this practice?"
+      "What did the Supreme Court rule regarding this practice in Rostker v. Goldberg?"
     ],
     "steps": {
       "0": {
@@ -5072,7 +5071,7 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What did the Supreme Court rule regarding this practice?",
+        "sub_query": "What did the Supreme Court rule regarding this practice in Rostker v. Goldberg?",
         "retrieved_titles": [
           "Rostker v. Goldberg",
           "Franklin D. Roosevelt's record on civil rights",
@@ -5087,14 +5086,14 @@
         "flag": "verified"
       },
       "final": {
-        "final_answer": "men registering for the draft",
+        "final_answer": "men",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The practice of filling armed forces vacancies constitutionally. | [A-Category]: A specific practice related to military recruitment. | [Alignment]: Yes"
+        "reasoning": "The question asks about a practice related to filling armed forces vacancies, and the answer 'men' refers to a specific demographic group involved in that practice, which is consistent with the question's context."
       }
     },
-    "final_answer": "men registering for the draft",
-    "elapsed_sec": 9.33,
+    "final_answer": "men",
+    "elapsed_sec": 11.07,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5113,12 +5112,12 @@
     "gold_answer": "Mondelez International, Inc.",
     "task_type": "bridge",
     "sub_queries": [
-      "What American multinational confectionery, food, and beverage company is based in Illinois?",
-      "What snack food product line is sold by that company?"
+      "What is the American multinational confectionery, food, and beverage company based in Illinois?",
+      "What are Handi-Snacks?"
     ],
     "steps": {
       "0": {
-        "sub_query": "What American multinational confectionery, food, and beverage company is based in Illinois?",
+        "sub_query": "What is the American multinational confectionery, food, and beverage company based in Illinois?",
         "retrieved_titles": [
           "PepsiCo",
           "Mondelez International",
@@ -5133,15 +5132,15 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What snack food product line is sold by that company?",
+        "sub_query": "What are Handi-Snacks?",
         "retrieved_titles": [
-          "Mondelez International",
           "Handi-Snacks",
-          "PepsiCo",
           "Snack Foods Limited",
+          "Robert's American Gourmet Food",
+          "PepsiCo",
           "Twisties"
         ],
-        "intermediate_answer": "Handi-Snacks",
+        "intermediate_answer": "Handi-Snacks are a snack food product line sold by Mondelez International, consisting of a two-compartment package with a spread compartment and a larger compartment for crackers, including a red plastic spreader.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -5151,11 +5150,11 @@
         "final_answer": "Mondelez International, Inc.",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The name of an American multinational confectionery, food, and beverage company based in Illinois. | [A-Category]: The name of a company. | [Alignment]: Yes"
+        "reasoning": "The question asks for a company, and the answer provided is a company name."
       }
     },
     "final_answer": "Mondelez International, Inc.",
-    "elapsed_sec": 14.48,
+    "elapsed_sec": 10.24,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5174,16 +5173,16 @@
     "gold_answer": "Monica Lewinsky",
     "task_type": "bridge",
     "sub_queries": [
-      "Find the name of a woman from the book 'Their Lives: The Women Targeted by the Clinton Machine'",
-      "Find out if the woman identified was a former White House intern"
+      "Find the names of women mentioned in the book 'Their Lives: The Women Targeted by the Clinton Machine'",
+      "Identify which of those women was a former White House intern"
     ],
     "steps": {
       "0": {
-        "sub_query": "Find the name of a woman from the book 'Their Lives: The Women Targeted by the Clinton Machine'",
+        "sub_query": "Find the names of women mentioned in the book 'Their Lives: The Women Targeted by the Clinton Machine'",
         "retrieved_titles": [
           "Their Lives",
-          "Once Upon a Secret",
           "The White House Doctor",
+          "Once Upon a Secret",
           "William H. Ginsburg",
           "Monica Lewinsky"
         ],
@@ -5194,15 +5193,15 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Find out if the woman identified was a former White House intern",
+        "sub_query": "Identify which of those women was a former White House intern",
         "retrieved_titles": [
+          "Their Lives",
           "William H. Ginsburg",
-          "Monica Lewinsky",
-          "Gregory B. Craig",
-          "Mark D. Fabiani",
-          "Eric Schultz"
+          "The White House Doctor",
+          "Eric Schultz",
+          "Gregory B. Craig"
         ],
-        "intermediate_answer": "Yes, Monica Lewinsky was a former White House intern.",
+        "intermediate_answer": "Monica Lewinsky.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -5212,11 +5211,11 @@
         "final_answer": "Monica Lewinsky",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a person's name | [A-Category]: a person's name | [Alignment]: Yes"
+        "reasoning": "The question asks for the name of a woman, and the answer provided is a person's name, which is appropriate and does not violate the categorical constraint."
       }
     },
     "final_answer": "Monica Lewinsky",
-    "elapsed_sec": 9.71,
+    "elapsed_sec": 9.83,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5236,7 +5235,7 @@
     "task_type": "bridge",
     "sub_queries": [
       "Who is the American lawyer, lobbyist and political consultant who was a senior member of the presidential campaign of Donald Trump?",
-      "When was that person born?"
+      "When was this person born?"
     ],
     "steps": {
       "0": {
@@ -5255,7 +5254,7 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "When was that person born?",
+        "sub_query": "When was this person born?",
         "retrieved_titles": [
           "Paul Manafort",
           "David Urban",
@@ -5272,12 +5271,12 @@
       "final": {
         "final_answer": "April 1, 1949",
         "is_not_found": false,
-        "flag": "passed",
-        "reasoning": "[Q-Constraint]: a specific date | [A-Category]: a specific date | [Alignment]: Yes"
+        "flag": "contradicted",
+        "reasoning": "The question asks for the birth date of a person, but the answer provides a specific date (April 1, 1949) instead of a person's name or other relevant information."
       }
     },
     "final_answer": "April 1, 1949",
-    "elapsed_sec": 7.89,
+    "elapsed_sec": 7.95,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5334,11 +5333,11 @@
         "final_answer": "1866",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a specific date | [A-Category]: a specific date | [Alignment]: Yes"
+        "reasoning": "The question asks for a 'year', and the answer provided is a 'year' (1866), which does not violate the categorical constraint."
       }
     },
     "final_answer": "1866",
-    "elapsed_sec": 11.35,
+    "elapsed_sec": 11.37,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5392,14 +5391,14 @@
         "flag": "verified"
       },
       "final": {
-        "final_answer": "Canary Islands, Spain",
+        "final_answer": "Tenerife, La Gomera, Canary Islands, Spain",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: geographic location | [A-Category]: geographic location | [Alignment]: Yes"
+        "reasoning": "The question asks for locations of two national parks, and the answer provides specific locations (Tenerife and La Gomera) that are consistent with the context of national parks."
       }
     },
-    "final_answer": "Canary Islands, Spain",
-    "elapsed_sec": 8.27,
+    "final_answer": "Tenerife, La Gomera, Canary Islands, Spain",
+    "elapsed_sec": 16.16,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5451,7 +5450,7 @@
         "score_1": 0.0,
         "score_2": null,
         "flag": "uncertain",
-        "refined_query": "Find the total number of copies sold of \"Mrs. Bixby and the Colonel's Coat\" by Roald Dahl.",
+        "refined_query": "Find the total number of copies sold for \"Mrs. Bixby and the Colonel's Coat\" by Roald Dahl.",
         "refined_titles": [
           "Mrs. Bixby and the Colonel's Coat",
           "The Roald Dahl Treasury",
@@ -5467,7 +5466,7 @@
       }
     },
     "final_answer": "Not found",
-    "elapsed_sec": 7.65,
+    "elapsed_sec": 8.11,
     "error": null,
     "llm_calls": {
       "planner": 2,
@@ -5486,17 +5485,17 @@
     "gold_answer": "director",
     "task_type": "comparison",
     "sub_queries": [
-      "What is the occupation of Chris Menges?",
-      "What is the occupation of Aram Avakian?"
+      "What is Chris Menges' occupation?",
+      "What is Aram Avakian's occupation?"
     ],
     "steps": {
       "0": {
-        "sub_query": "What is the occupation of Chris Menges?",
+        "sub_query": "What is Chris Menges' occupation?",
         "retrieved_titles": [
           "Chris Menges",
           "Linda Mvusi",
-          "Second Best (film)",
           "Aram Avakian",
+          "Second Best (film)",
           "A World Apart (film)"
         ],
         "intermediate_answer": "Cinematographer and film director.",
@@ -5506,7 +5505,7 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What is the occupation of Aram Avakian?",
+        "sub_query": "What is Aram Avakian's occupation?",
         "retrieved_titles": [
           "Aram Avakian",
           "Chris Menges",
@@ -5515,8 +5514,8 @@
           "Cops and Robbers (1973 film)"
         ],
         "intermediate_answer": "Film editor and director.",
-        "confidence": 0.8,
-        "score_1": 0.8,
+        "confidence": 1.0,
+        "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
@@ -5524,11 +5523,11 @@
         "final_answer": "Director",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: Occupation shared by two individuals | [A-Category]: Occupation | [Alignment]: Yes"
+        "reasoning": "The question asks for an occupation, and the answer 'Director' is a valid occupation."
       }
     },
     "final_answer": "Director",
-    "elapsed_sec": 10.36,
+    "elapsed_sec": 8.52,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5585,11 +5584,11 @@
         "final_answer": "The Conversation",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The name of a not-for-profit media outlet co-founded by Andrew Jaspan. | [A-Category]: The name of a not-for-profit media outlet. | [Alignment]: Yes"
+        "reasoning": "The question asks for a not-for-profit media outlet, and the answer 'The Conversation' is indeed a not-for-profit media outlet, thus there is no categorical contradiction."
       }
     },
     "final_answer": "The Conversation",
-    "elapsed_sec": 13.27,
+    "elapsed_sec": 10.93,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5636,7 +5635,7 @@
           "Silent Light",
           "Independent Spirit Award for Best First Feature"
         ],
-        "intermediate_answer": "Yes, John Waters is an American film director.",
+        "intermediate_answer": "Yes.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -5646,11 +5645,11 @@
         "final_answer": "John Waters",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a person's name | [A-Category]: a person's name | [Alignment]: Yes"
+        "reasoning": "The question asks for an American film director, and the answer provided is a person's name, which fits the category of a film director."
       }
     },
     "final_answer": "John Waters",
-    "elapsed_sec": 7.95,
+    "elapsed_sec": 8.79,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5670,7 +5669,7 @@
     "task_type": "bridge",
     "sub_queries": [
       "Where was Bill Cosby's third album recorded?",
-      "What hotel and casino is located in the place where the album was recorded?"
+      "What hotel and casino is located in that city?"
     ],
     "steps": {
       "0": {
@@ -5689,29 +5688,29 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What hotel and casino is located in the place where the album was recorded?",
+        "sub_query": "What hotel and casino is located in that city?",
         "retrieved_titles": [
-          "Why Is There Air?",
           "Flamingo Las Vegas",
+          "Why Is There Air?",
           "Bill Cosby Is a Very Funny Fellow...Right!",
-          "Hikky Burr",
-          "Bill's Best Friend"
+          "Bill's Best Friend",
+          "The Original Jam Sessions 1969"
         ],
-        "intermediate_answer": "Flamingo Hotel in Las Vegas, Nevada.",
+        "intermediate_answer": "Flamingo Las Vegas",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
       "final": {
-        "final_answer": "Flamingo Hotel, Las Vegas, Nevada",
+        "final_answer": "Flamingo Las Vegas",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A geographic location | [A-Category]: A geographic location | [Alignment]: Yes"
+        "reasoning": "The question asks for a location (hotel and casino), and the answer provided is a specific hotel and casino name, which fits the categorical requirement."
       }
     },
-    "final_answer": "Flamingo Hotel, Las Vegas, Nevada",
-    "elapsed_sec": 7.55,
+    "final_answer": "Flamingo Las Vegas",
+    "elapsed_sec": 8.81,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5778,11 +5777,11 @@
         "final_answer": "no",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: boolean yes/no | [A-Category]: boolean no | [Alignment]: Yes"
+        "reasoning": "The question asks if both drinks contain gin, and the answer is a yes/no response. This aligns with the expected format of the question."
       }
     },
     "final_answer": "no",
-    "elapsed_sec": 7.56,
+    "elapsed_sec": 8.23,
     "error": null,
     "llm_calls": {
       "planner": 2,
@@ -5839,11 +5838,11 @@
         "final_answer": "March",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A specific month | [A-Category]: A specific month | [Alignment]: Yes"
+        "reasoning": "The question asks for a month, and the answer provided is a month (March), which does not violate any categorical constraints."
       }
     },
     "final_answer": "March",
-    "elapsed_sec": 15.06,
+    "elapsed_sec": 8.95,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5900,11 +5899,11 @@
         "final_answer": "Fairfax County",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a geographic location | [A-Category]: a geographic location | [Alignment]: Yes"
+        "reasoning": "The question asks for a county, and the answer provided is a county name, which is a valid response."
       }
     },
     "final_answer": "Fairfax County",
-    "elapsed_sec": 8.75,
+    "elapsed_sec": 10.77,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5961,11 +5960,11 @@
         "final_answer": "IT products and services",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The type of products provided by a company. | [A-Category]: IT products and services | [Alignment]: Yes"
+        "reasoning": "The question asks for the type of products provided by a company, and the answer specifies 'IT products and services', which is a valid category of products."
       }
     },
     "final_answer": "IT products and services",
-    "elapsed_sec": 8.67,
+    "elapsed_sec": 10.9,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -6012,18 +6011,18 @@
           "AES+F",
           "Aryanto Yuniawan"
         ],
-        "intermediate_answer": "Not found in documents.",
-        "confidence": 0.0,
-        "score_1": 0.0,
+        "intermediate_answer": "Pamela B. Green is known for her contribution to the field of animation through her work as the director and producer of the documentary \"Be Natural: The Untold Story of Alice Guy-Blache,\" which highlights the contributions of Alice Guy-Blache, an early pioneer in the field of filmmaking and animation.",
+        "confidence": 0.8,
+        "score_1": 0.8,
         "score_2": null,
-        "flag": "uncertain",
-        "refined_query": "What is Pamela B. Green's involvement in animation or animated films?",
+        "flag": "refined",
+        "refined_query": "What is Pamela B. Green's contribution to the field of animation?",
         "refined_titles": [
           "Pamela B. Green",
           "Pamela Gilbert",
+          "AES+F",
           "Lev Yilmaz",
-          "Aryanto Yuniawan",
-          "AES+F"
+          "Aryanto Yuniawan"
         ],
         "score_1_initial": 0.0,
         "score_2_initial": null
@@ -6032,23 +6031,23 @@
         "final_answer": "Lev Yilmaz",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a person's name | [A-Category]: a person's name | [Alignment]: Yes"
+        "reasoning": "The question asks for a filmmaker known for animation, and the answer provides a filmmaker's name, which is appropriate for the query."
       }
     },
     "final_answer": "Lev Yilmaz",
-    "elapsed_sec": 8.06,
+    "elapsed_sec": 11.52,
     "error": null,
     "llm_calls": {
       "planner": 2,
       "retrieval": 2,
-      "score_1": 0,
+      "score_1": 1,
       "refine_query": 0,
       "answer": 1,
       "final_verify": 1,
       "logprob": 0,
       "other": 1
     },
-    "llm_calls_total": 7
+    "llm_calls_total": 8
   },
   {
     "question": "In which city is the ambassador of the Rabat-Salé-Kénitra administrative region to China based?",
@@ -6093,11 +6092,11 @@
         "final_answer": "Beijing",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a geographic location | [A-Category]: a geographic location | [Alignment]: Yes"
+        "reasoning": "The question asks for a 'city', and the answer provided is 'Beijing', which is a city."
       }
     },
     "final_answer": "Beijing",
-    "elapsed_sec": 11.02,
+    "elapsed_sec": 10.73,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -6154,11 +6153,11 @@
         "final_answer": "no",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: boolean yes/no | [A-Category]: boolean yes/no | [Alignment]: Yes"
+        "reasoning": "The question asks if two cities are of the same level, and the answer is a simple 'no', which is a valid response to the question."
       }
     },
     "final_answer": "no",
-    "elapsed_sec": 7.35,
+    "elapsed_sec": 7.46,
     "error": null,
     "llm_calls": {
       "planner": 1,
