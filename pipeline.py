@@ -107,14 +107,14 @@ def _print_verify_result(step_idx: int, v_result: dict):
     verify_type = v_result.get("verify_type", "")
     conf = v_result.get("confidence")
     s1 = v_result.get("score_1") or v_result.get("score_1_initial")
-    s2 = v_result.get("score_2") or v_result.get("score_2_initial")
+    s2 = v_result.get("score_2")
     failure_type = v_result.get("failure_type", "")
 
     if conf is not None and s1 is not None:
         print(
             f"  [Step {step_idx}] Verification({verify_type}) → "
             f"flag={flag}, confidence={conf:.3f} "
-            f"(score_1={s1:.3f}, score_2={s2:.3f})"
+            f"(score_1={s1:.3f})"
             + (f", failure={failure_type}" if failure_type else "")
         )
     else:

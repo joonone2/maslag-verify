@@ -19,7 +19,10 @@ into a single, direct answer to the original question.
   (name, place, date, number — no full sentences)
 - Steps marked [uncertain] may still contain useful information.
   Use all available information to synthesize the best possible answer.
-- If information is contradictory across steps, use the higher-confidence step.
+- If a step contains multiple possible answers, pick the one most
+  directly relevant to the original question.
+- If information across steps points to a single most specific answer,
+  use that. Do not list multiple answers.
 - Only say "Not found" if every single step returned "Not found in documents."
 
 ## Output
@@ -27,15 +30,17 @@ One word, phrase, or "yes"/"no" — nothing more."""
 
 
 def _format_verified(verified: dict) -> str:
-    """필요한 정보만 전달: sub_query + answer + flag"""
+    """필요한 정보만 전달: sub_query + answer + flag + confidence"""
     if not verified:
         return "(No verified information available)"
     parts = []
     for idx in sorted(verified.keys()):
         step = verified[idx]
         flag = step.get("flag", "unknown")
+        conf = step.get("confidence")
+        conf_str = f", confidence={conf:.2f}" if isinstance(conf, float) else ""
         parts.append(
-            f"Step {idx} [{flag}]\n"
+            f"Step {idx} [{flag}{conf_str}]\n"
             f"Q: {step['sub_query']}\n"
             f"A: {step['intermediate_answer']}"
         )
@@ -49,7 +54,8 @@ def generate_final_answer(question: str, pool: EvidencePool) -> str:
     user = (
         f"Original question: {question}\n\n"
         f"Information from each step:\n{context}\n\n"
-        "Synthesize a final answer following the rules above."
+        "Synthesize a final answer following the rules above. "
+        "Pick the single most specific and relevant answer."
     )
 
     return call_llm(
