@@ -1,9 +1,9 @@
 """
 modules/final_verify.py
-Final Verify - Global Consistency Check (전역 일관성 및 모순 체크)
+Final Verify - Constraint & Data Type Validator (제약 조건 및 형식 검사기)
 
-단순히 Not Found만 체크하는 것이 아니라, 최종 답변이 
-원래 질문의 전제 조건과 모순되지 않는지 LLM을 통해 검증합니다.
+내부 지식(Parametric Knowledge)을 활용한 팩트체크를 철저히 차단하고,
+오직 질문이 요구하는 데이터 타입(형식, 범주)을 만족하는지만 엄격하게 검수합니다.
 """
 
 from pool.evidence_pool import EvidencePool
@@ -18,10 +18,9 @@ NOT_FOUND_KEYWORDS = [
 def _is_not_found(text: str) -> bool:
     return any(kw in text.lower() for kw in NOT_FOUND_KEYWORDS)
 
-
 def final_verify(question: str, pool: EvidencePool, final_answer: str) -> str:
     """
-    최종 답변이 원래 질문의 의도나 제약 조건에 모순되지 않는지 검증합니다.
+    최종 답변이 원래 질문의 의도나 제약 조건(Data Type)에 모순되지 않는지 검증합니다.
     """
     is_nf = _is_not_found(final_answer)
     
@@ -33,15 +32,21 @@ def final_verify(question: str, pool: EvidencePool, final_answer: str) -> str:
         }
         return final_answer
 
-    # 전역 모순 검증 (Global Contradiction Check) 프롬프트
+    # 🚨 변경된 부분: 외부 지식 개입 금지 및 데이터 형식(Type) 위반만 검사하도록 강제
     prompt = f"""Original Question: {question}
     Synthesized Final Answer: {final_answer}
 
-    Does this synthesized answer logically contradict the premise or constraints of the original question?
-    For example, if the question asks for a 'city' and the answer is a 'person', that is a contradiction.
+    TASK: Perform a strict "Type and Constraint" contradiction check.
+    CRITICAL RULE: DO NOT fact-check using your internal knowledge. Assume the 'Synthesized Final Answer' is factually correct based on the retrieved documents.
+    
+    ONLY flag a contradiction if the answer completely violates the categorical constraint of the question.
+    Examples of true contradictions:
+    - The question asks for a 'city', but the answer is a 'person's name'.
+    - The question asks for a 'year', but the answer is a 'yes/no'.
+    - The question asks for 'who', but the answer is a 'date'.
     
     Output ONLY valid JSON:
-    {{"contradiction": true or false, "reasoning": "Brief explanation"}}"""
+    {{"contradiction": true or false, "reasoning": "Brief explanation focused ONLY on categorical constraints"}}"""
 
     try:
         res = call_llm_json([{"role": "user", "content": prompt}], label="final_verify")

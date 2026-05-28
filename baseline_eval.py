@@ -9,6 +9,9 @@ def normalize_answer(s: str) -> str:
     NLP QA 논문 표준 정규화 함수 (SQuAD style)
     - 소문자화, 구두점 제거, 관사(a, an, the) 제거, 다중 공백 제거
     """
+    if not s:
+        return ""
+    
     def remove_articles(text):
         return re.sub(r'\b(a|an|the)\b', ' ', text)
 
@@ -49,12 +52,12 @@ def f1_score(prediction: str, ground_truth: str) -> float:
     
     return f1
 
-def evaluate_logs(log_path: str):
+def evaluate_early_logs(log_path: str):
     try:
         with open(log_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
     except FileNotFoundError:
-        print(f"Error: {log_path} 파일을 찾을 수 없습니다.")
+        print(f"Error: '{log_path}' 파일을 찾을 수 없습니다.")
         return
 
     total_samples = len(data)
@@ -68,23 +71,22 @@ def evaluate_logs(log_path: str):
     yesno_total = 0
     yesno_correct = 0
     
-    total_llm_calls = 0
-    total_elapsed_sec = 0.0
-    
-    final_flags = Counter()
-    task_types = Counter()
-
-    # 에러가 발생하여 정상 처리되지 않은 샘플 추적
-    error_count = 0
+    empty_answer_count = 0
+    total_steps = 0
 
     for item in data:
-        if item.get("error"):
-            error_count += 1
-            continue
-
-        pred = item.get("final_answer", "")
-        gold = item.get("gold_answer", "")
+        pred = item.get("final_answer", "").strip()
+        gold = item.get("gold_answer", "").strip()
+        steps = item.get("steps", [])
         
+        # 스텝 수 누적
+        total_steps += len(steps)
+        
+        # 응답 실패 (빈 문자열) 체크
+        if not pred:
+            empty_answer_count += 1
+            continue  # 빈 답변은 EM/F1 계산에서 0점 처리됨과 동일하므로 넘어감 (F1 계산 시 오류 방지)
+            
         # 1. EM & F1
         if exact_match_score(pred, gold):
             em_count += 1
@@ -94,57 +96,36 @@ def evaluate_logs(log_path: str):
         gold_norm = normalize_answer(gold)
         if gold_norm in ['yes', 'no']:
             yesno_total += 1
-            if normalize_answer(pred) == gold_norm:
+            # 예측 답변에 yes 또는 no가 명확히 포함되어 있는지 확인 (초기 모델은 문장형으로 답하므로 in 사용)
+            pred_norm = normalize_answer(pred)
+            if gold_norm == "yes" and "yes" in pred_norm.split():
                 yesno_correct += 1
-
-        # 3. Efficiency Metrics (Calls & Time)
-        total_llm_calls += item.get("llm_calls_total", 0)
-        total_elapsed_sec += item.get("elapsed_sec", 0.0)
-
-        # 4. Final Verify Flags & Task Types
-        steps = item.get("steps", {})
-        final_step = steps.get("final", {})
-        flag = final_step.get("flag", "unknown")
-        final_flags[flag] += 1
-        
-        task_types[item.get("task_type", "unknown")] += 1
-
-    valid_samples = total_samples - error_count
+            elif gold_norm == "no" and "no" in pred_norm.split():
+                yesno_correct += 1
 
     # 결과 출력
     print("=" * 50)
-    print("🚀 MAS-RAG Evaluation Report 🚀")
+    print("🛠️ Early MA-RAG (Baseline) Evaluation Report 🛠️")
     print("=" * 50)
-    print(f"Total Samples    : {total_samples}")
-    if error_count > 0:
-        print(f"Errors Occurred  : {error_count} (Excluded from metric calc)")
+    print(f"Total Samples      : {total_samples}")
+    print(f"Empty Answers      : {empty_answer_count} ({(empty_answer_count/total_samples)*100:.1f}% Failure Rate)")
     
     print("-" * 50)
-    print("[1] Accuracy Metrics")
-    print(f"  Exact Match (EM) : {em_count / valid_samples * 100:.2f}% ({em_count}/{valid_samples})")
-    print(f"  F1 Score         : {f1_sum / valid_samples * 100:.2f}%")
+    print("[1] Accuracy Metrics (Strict String Match)")
+    print(f"  Exact Match (EM) : {(em_count / total_samples) * 100:.2f}% ({em_count}/{total_samples})")
+    print(f"  Avg F1 Score     : {(f1_sum / total_samples) * 100:.2f}%")
     if yesno_total > 0:
-        print(f"  Yes/No Accuracy  : {yesno_correct / yesno_total * 100:.2f}% ({yesno_correct}/{yesno_total})")
+        print(f"  Yes/No Accuracy  : {(yesno_correct / yesno_total) * 100:.2f}% ({yesno_correct}/{yesno_total})")
     
     print("-" * 50)
-    print("[2] Efficiency Metrics")
-    print(f"  Avg LLM Calls    : {total_llm_calls / valid_samples:.2f} calls/query")
-    print(f"  Avg Elapsed Time : {total_elapsed_sec / valid_samples:.2f} sec/query")
-    
-    print("-" * 50)
-    print("[3] System Behavior (Final Flags)")
-    for flag, cnt in sorted(final_flags.items()):
-        print(f"  - {flag:<12} : {cnt}")
-        
-    print("-" * 50)
-    print("[4] Task Distribution")
-    for t_type, cnt in sorted(task_types.items()):
-        print(f"  - {t_type:<12} : {cnt}")
+    print("[2] Search Behavior")
+    print(f"  Avg Search Steps : {total_steps / total_samples:.2f} steps/query")
     print("=" * 50)
+    print("* Note: EM score might be artificially low due to the model's verbose, sentence-style answers.")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--log", type=str, default="logs/results.json", help="Path to the log JSON file")
+    parser.add_argument("--log", type=str, default="bs_logs.json", help="Path to the early log JSON file")
     args = parser.parse_args()
     
-    evaluate_logs(args.log)
+    evaluate_early_logs(args.log)
