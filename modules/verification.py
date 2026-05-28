@@ -1,17 +1,15 @@
 """
 modules/verification.py
-Verification Module - Blind Acceptance 방지
+Verification Module - LLM-as-a-Judge 기반 자가 검증 (Self-Reflective Verification)
 
-bridge     타입: 이전 답변과 현재 답변의 일관성 검증
-comparison 타입: 각 스텝 답변이 원래 질문에 관련성/구체성 있는지 검증
+bridge     타입: 이전 답변과 현재 답변의 일관성 및 맥락 포함 여부 검증
+comparison 타입: 원래 질문에 대한 관련성 및 구체적 사실 포함 여부 검증
 """
 
 from pool.evidence_pool import EvidencePool
 from retriever.dense_retriever import DenseRetriever
-from utils.logprobs import get_yesno_prob
-from utils.llm import call_llm
+from utils.llm import call_llm, call_llm_json
 from agents.planner import replan_failed_step
-
 
 # ─────────────────────────────────────────────
 # 포맷 헬퍼
@@ -24,7 +22,6 @@ def _format_docs(docs: list) -> str:
         f"[{i}] Title: {d['title']}\n{d['text']}"
         for i, d in enumerate(docs, 1)
     )
-
 
 def _format_context(prev_context: dict) -> str:
     if not prev_context:
@@ -49,10 +46,6 @@ def verify(
     retriever: DenseRetriever,
     question: str = "",
 ) -> dict:
-    """
-    bridge     타입: _verify_bridge() 호출
-    comparison 타입: _verify_comparison() 호출
-    """
     if pool.task_type == "comparison":
         return _verify_comparison(step_idx, pool, retriever, question)
     else:
@@ -60,14 +53,72 @@ def verify(
 
 
 # ─────────────────────────────────────────────
-# Bridge 검증 - 이전 답변과 일관성
+# LLM-as-a-Judge 채점 로직 (Logprob 대체)
+# ─────────────────────────────────────────────
+
+NOT_FOUND_KEYWORDS = ["not found", "i don't know", "i do not know", "unknown", "no information", "cannot be determined"]
+
+def _is_not_found(text: str) -> bool:
+    return any(kw in text.lower() for kw in NOT_FOUND_KEYWORDS)
+
+def _compute_bridge_score(prev_answer: str, curr_answer: str, sub_query: str = "") -> float:
+    if _is_not_found(curr_answer):
+        return 0.0
+    
+    prompt = f"""Evaluate if the 'Current answer' logically addresses the 'Sub-query' based on the context of the 'Previous step found'.
+    Previous step found: {prev_answer}
+    Sub-query: {sub_query}
+    Current answer: {curr_answer}
+
+    Evaluation Rubric (1-5 scale):
+    1: Completely fails, contradicts, or is totally irrelevant.
+    2: Mentions keywords but lacks any specific answer.
+    3: Partially answers the query but lacks exact specific details.
+    4: Good, specific answer, but slightly ambiguous or verbose.
+    5: Perfect, specific, and unambiguous fact.
+
+    Output ONLY valid JSON:
+    {{"reasoning": "Brief explanation of the score", "support_score": <int 1-5>}}"""
+    
+    try:
+        res = call_llm_json([{"role": "user", "content": prompt}], label="score_1")
+        score_int = res.get("support_score", 1)
+        return score_int / 5.0  # 1~5점을 0.2 ~ 1.0으로 정규화
+    except Exception:
+        return 0.2
+
+def _compute_comparison_score(question: str, sub_query: str, curr_answer: str) -> float:
+    if _is_not_found(curr_answer):
+        return 0.0
+    
+    prompt = f"""Evaluate if the 'Current answer' provides a specific concrete fact to answer the 'Sub-query' in the context of the 'Original question'.
+    Original question: {question}
+    Sub-query: {sub_query}
+    Current answer: {curr_answer}
+
+    Evaluation Rubric (1-5 scale):
+    1: Completely fails or is irrelevant.
+    2: Vague answer, missing the specific comparative attribute (e.g. name, date, country).
+    3: Contains some relevant info but misses the core specific fact.
+    4: Specific fact is present but mixed with unnecessary information.
+    5: Perfect, concise, and exact specific fact found.
+
+    Output ONLY valid JSON:
+    {{"reasoning": "Brief explanation of the score", "support_score": <int 1-5>}}"""
+    
+    try:
+        res = call_llm_json([{"role": "user", "content": prompt}], label="score_1")
+        score_int = res.get("support_score", 1)
+        return score_int / 5.0  # 1~5점을 0.2 ~ 1.0으로 정규화
+    except Exception:
+        return 0.2
+
+
+# ─────────────────────────────────────────────
+# Bridge / Comparison 검증 흐름
 # ─────────────────────────────────────────────
 
 def _verify_bridge(step_idx: int, pool: EvidencePool, retriever: DenseRetriever) -> dict:
-    """
-    score_1: 이전 정보 포함 여부
-    score_2: 의미론적 일관성
-    """
     prev_answer = pool.get_latest_answer(step_idx)
     curr_answer = pool.steps[step_idx]["intermediate_answer"]
 
@@ -78,296 +129,50 @@ def _verify_bridge(step_idx: int, pool: EvidencePool, retriever: DenseRetriever)
     sub_query = pool.steps[step_idx].get("sub_query", "")
     score_1 = _compute_bridge_score(prev_answer, curr_answer, sub_query)
     score_2 = None
-    # score_1만으로 판단, Not Found → 즉시 uncertain
     confidence = score_1
 
-    if _is_not_found(pool.steps[step_idx].get("intermediate_answer", "")):
-        # Not Found → 1회 재검색 시도
+    # ESWA 기준: Threshold 0.6 (3점 이상)으로 강건함 확보
+    if confidence >= 0.6 and not _is_not_found(curr_answer):
+        pool.update_verification(step_idx, confidence, "verified", score_1, score_2)
+        return {"flag": "verified", "confidence": confidence, "score_1": score_1, "score_2": score_2, "verify_type": "bridge"}
+    else:
         result = _refine_and_retry_bridge(step_idx, pool, retriever, max_retry=1)
         result["score_1_initial"] = score_1
         result["score_2_initial"] = score_2
         result["verify_type"] = "bridge"
-        result["not_found_retry"] = True
         return result
 
-    if confidence >= 0.5:
-        pool.update_verification(step_idx, confidence, "verified", score_1, score_2)
-        return {"flag": "verified", "confidence": confidence, "score_1": score_1, "score_2": score_2, "verify_type": "bridge"}
-    else:
-        result = _refine_and_retry_bridge(step_idx, pool, retriever)
-        result["score_1_initial"] = score_1
-        result["score_2_initial"] = score_2
-        result["verify_type"] = "bridge"
-        return result
-
-
-NOT_FOUND_KEYWORDS = ["not found", "i don't know", "i do not know",
-                      "unknown", "no information", "cannot be determined"]
-
-
-def _is_not_found(text: str) -> bool:
-    return any(kw in text.lower() for kw in NOT_FOUND_KEYWORDS)
-
-
-def _compute_bridge_score(prev_answer: str, curr_answer: str, sub_query: str = "") -> float:
-    """score_2 제거. Not Found → 0.0, 아니면 로그확률."""
-    if _is_not_found(curr_answer):
-        return 0.0
-    prompt_1 = (
-        f"Sub-query: {sub_query}\n"
-        f"Previous step found: {prev_answer}\n"
-        f"Current answer: {curr_answer}\n\n"
-        "Does the current answer address the sub-query "
-        "in the context of the previous finding?\n"
-        "Note: pronouns like 'she', 'he', 'it', 'they' likely refer to the previous finding.\n"
-        "Note: a partial or indirect answer still counts as Yes.\n"
-        "Answer Yes or No only."
-    )
-    return get_yesno_prob(prompt_1)
-
-
-# ─────────────────────────────────────────────
-# Comparison 검증 - 관련성 + 구체성
-# ─────────────────────────────────────────────
-
-def _verify_comparison(
-    step_idx: int,
-    pool: EvidencePool,
-    retriever: DenseRetriever,
-    question: str,
-) -> dict:
-    """
-    score_1: 원래 질문에 대한 관련성
-    score_2: 답변의 구체성 (vague/not found 아닌가)
-    """
+def _verify_comparison(step_idx: int, pool: EvidencePool, retriever: DenseRetriever, question: str) -> dict:
     curr_answer = pool.steps[step_idx]["intermediate_answer"]
     sub_query = pool.steps[step_idx]["sub_query"]
 
     score_1 = _compute_comparison_score(question, sub_query, curr_answer)
     score_2 = None
-    # score_1만으로 판단, Not Found → 즉시 uncertain
     confidence = score_1
 
-    if _is_not_found(pool.steps[step_idx].get("intermediate_answer", "")):
-        # Not Found → 1회 재검색 시도
+    if confidence >= 0.6 and not _is_not_found(curr_answer):
+        pool.update_verification(step_idx, confidence, "verified", score_1, score_2)
+        return {"flag": "verified", "confidence": confidence, "score_1": score_1, "score_2": score_2, "verify_type": "comparison"}
+    else:
         result = _refine_and_retry_comparison(step_idx, pool, retriever, question, max_retry=1)
         result["score_1_initial"] = score_1
         result["score_2_initial"] = score_2
         result["verify_type"] = "comparison"
-        result["not_found_retry"] = True
-        pool.steps[step_idx]["score_1_initial"] = score_1
-        pool.steps[step_idx]["score_2_initial"] = score_2
-        return result
-
-    if confidence >= 0.5:
-        pool.update_verification(step_idx, confidence, "verified", score_1, score_2)
-        return {"flag": "verified", "confidence": confidence, "score_1": score_1, "score_2": score_2, "verify_type": "comparison"}
-    else:
-        result = _refine_and_retry_comparison(step_idx, pool, retriever, question)
-        result["score_1_initial"] = score_1
-        result["score_2_initial"] = score_2
-        result["verify_type"] = "comparison"
         pool.steps[step_idx]["score_1_initial"] = score_1
         pool.steps[step_idx]["score_2_initial"] = score_2
         return result
 
 
-def _compute_comparison_score(question: str, sub_query: str, curr_answer: str) -> float:
-    """score_2 제거. Not Found → 0.0, 아니면 로그확률."""
-    if _is_not_found(curr_answer):
-        return 0.0
-    prompt_1 = (
-        f"Original question: {question}\n"
-        f"Sub-query: {sub_query}\n"
-        f"Answer: {curr_answer}\n\n"
-        "Does this answer contain a specific fact "
-        "(name, place, date, number, or yes/no) "
-        "that directly contributes to answering the original question?\n"
-        "Answer Yes if there is ANY concrete information, even partial.\n"
-        "Answer No only if the answer is completely unrelated or empty.\n"
-        "Answer Yes or No only."
-    )
-    return get_yesno_prob(prompt_1)
-
-
-def _classify_comparison_failure(score_1: float, score_2: float) -> str:
-    """
-    comparison 실패 유형:
-    IRRELEVANT  - 관련성 낮음 (score_1 < 0.7)
-    VAGUE       - 구체성 낮음 (score_2 < 0.7)
-    BOTH        - 둘 다 낮음
-    """
-    if score_2 is None: return "IRRELEVANT"
-    if score_1 < 0.7 and score_2 < 0.7:
-        return "BOTH"
-    elif score_1 < 0.7:
-        return "IRRELEVANT"
-    else:
-        return "VAGUE"
-
-
-def _generate_comparison_refined_query(
-    sub_query: str,
-    question: str,
-    curr_answer: str,
-    failure_type: str,
-) -> str:
-    prompts = {
-        "IRRELEVANT": (
-            f"Original question: {question}\n"
-            f"Sub-query: {sub_query}\n"
-            f"Current answer: {curr_answer}\n\n"
-            "The answer is not relevant to the original question. "
-            "Rewrite the sub-query to explicitly connect it to the original question.\n"
-            "Output ONLY the refined query."
-        ),
-        "VAGUE": (
-            f"Sub-query: {sub_query}\n"
-            f"Current answer: {curr_answer}\n\n"
-            "The answer is too vague or not found. "
-            "Rewrite the sub-query to be more specific and targeted.\n"
-            "Output ONLY the refined query."
-        ),
-        "BOTH": (
-            f"Original question: {question}\n"
-            f"Sub-query: {sub_query}\n"
-            f"Current answer: {curr_answer}\n\n"
-            "The answer is both irrelevant and vague. "
-            "Rewrite the sub-query to be specific and directly relevant to the original question.\n"
-            "Output ONLY the refined query."
-        ),
-    }
-    return call_llm(
-        [{"role": "user", "content": prompts.get(failure_type, prompts["BOTH"])}],
-        max_tokens=128,
-    )
-
-
-def _refine_and_retry_comparison(
-    step_idx: int,
-    pool: EvidencePool,
-    retriever: DenseRetriever,
-    question: str,
-    max_retry: int = 2,
-) -> dict:
-    final_confidence = 0.0
-    final_s1 = 0.0
-    final_s2 = 0.0
-
-    for attempt in range(max_retry):
-        successful_steps = {
-            k: v for k, v in pool.steps.items()
-            if isinstance(v, dict)
-            and k != step_idx
-            and v.get("flag") in ("skipped", "verified", "refined")
-        }
-        refined_query = replan_failed_step(
-            question=question,
-            failed_sub_query=pool.steps[step_idx]["sub_query"],
-            failed_answer=pool.steps[step_idx]["intermediate_answer"],
-            successful_steps=successful_steps,
-        )
-
-        new_docs = retriever.search(refined_query, top_k=5)
-        new_answer = _generate_answer(
-            refined_query=refined_query,
-            docs=new_docs,
-            prev_context={},  # comparison은 이전 컨텍스트 불필요
-        )
-
-        pool.steps[step_idx]["intermediate_answer"] = new_answer
-        pool.steps[step_idx]["refined_query"] = refined_query
-        pool.steps[step_idx]["refined_titles"] = [d["title"] for d in new_docs]
-
-        score_1 = _compute_comparison_score(
-            question,
-            pool.steps[step_idx]["sub_query"],
-            new_answer,
-        )
-        score_2 = None
-        final_confidence = score_1
-        final_s1 = score_1
-        final_s2 = score_2
-
-        if final_confidence >= 0.5:
-            pool.update_verification(step_idx, final_confidence, "refined", score_1, score_2)
-            return {
-                "flag": "refined",
-                "confidence": final_confidence,
-                "score_1": score_1,
-                "score_2": score_2,
-                "attempts": attempt + 1,
-                "refined_query": refined_query,
-            }
-
-    pool.update_verification(step_idx, final_confidence, "uncertain", final_s1, final_s2)
-    return {
-        "flag": "uncertain",
-        "confidence": final_confidence,
-        "score_1": final_s1,
-        "score_2": final_s2,
-        "attempts": max_retry,
-    }
-
-
 # ─────────────────────────────────────────────
-# Bridge 실패 분류 + Refinement
+# Retry / Refine 로직
 # ─────────────────────────────────────────────
-
-def classify_failure(prev_answer: str, curr_answer: str) -> str:
-    prompt = (
-        f"Previous information: {prev_answer}\n"
-        f"Current answer: {curr_answer}\n\n"
-        "Classify the failure:\n"
-        "A: DILUTION - previous info partially present but weakened\n"
-        "B: IGNORED - previous info completely absent\n"
-        "C: CONTRADICTION - current answer contradicts previous\n\n"
-        "Output ONLY one letter: A, B, or C"
-    )
-    response = call_llm([{"role": "user", "content": prompt}], max_tokens=1)
-    letter = response.strip().upper()
-    return letter if letter in {"A", "B", "C"} else "B"
-
-
-def _generate_bridge_refined_query(
-    sub_query: str,
-    prev_answer: str,
-    curr_answer: str,
-    failure_type: str,
-) -> str:
-    prompts = {
-        "A": (
-            f"Original query: {sub_query}\n"
-            f"Key info to preserve: {prev_answer}\n\n"
-            "Rewrite the query to explicitly require preservation of the key information.\n"
-            "Output ONLY the refined query."
-        ),
-        "B": (
-            f"Original query: {sub_query}\n"
-            f"Ignored information: {prev_answer}\n\n"
-            "Rewrite the query to explicitly incorporate the ignored information as context.\n"
-            "Output ONLY the refined query."
-        ),
-        "C": (
-            f"Original query: {sub_query}\n"
-            f"Established info: {prev_answer}\n"
-            f"Contradicting answer: {curr_answer}\n\n"
-            "Rewrite the query to verify the established facts and exclude contradicting information.\n"
-            "Output ONLY the refined query."
-        ),
-    }
-    return call_llm(
-        [{"role": "user", "content": prompts.get(failure_type, prompts["B"])}],
-        max_tokens=128,
-    )
-
 
 def _generate_answer(refined_query: str, docs: list, prev_context: dict) -> str:
     system = (
         "You are a precise question answering agent.\n"
         "Answer ONLY based on the provided documents.\n"
         "Be concise and specific.\n"
-        'If not found, say "Not found in documents".'
+        "If not found, say 'Not found in documents'."
     )
     user = (
         f"Sub-query: {refined_query}\n\n"
@@ -375,72 +180,83 @@ def _generate_answer(refined_query: str, docs: list, prev_context: dict) -> str:
         f"Retrieved documents:\n{_format_docs(docs)}\n\n"
         "Answer the sub-query concisely."
     )
-    return call_llm(
-        [{"role": "system", "content": system}, {"role": "user", "content": user}],
-        max_tokens=256,
-    )
+    return call_llm([{"role": "system", "content": system}, {"role": "user", "content": user}], max_tokens=128)
 
 
-def _refine_and_retry_bridge(
-    step_idx: int,
-    pool: EvidencePool,
-    retriever: DenseRetriever,
-    max_retry: int = 2,
-) -> dict:
+def _refine_and_retry_bridge(step_idx: int, pool: EvidencePool, retriever: DenseRetriever, max_retry: int = 1) -> dict:
     final_confidence = 0.0
     final_s1 = 0.0
-    final_s2 = 0.0
 
     for attempt in range(max_retry):
-        # 성공한 스텝 수집
         successful_steps = {
-            k: v for k, v in pool.steps.items()
-            if isinstance(v, dict)
-            and k != step_idx
-            and v.get("flag") in ("skipped", "verified", "refined")
+            k: v for k, v in pool.steps.items() 
+            if isinstance(v, dict) and k != step_idx and v.get("flag") in ("skipped", "verified", "refined")
         }
         refined_query = replan_failed_step(
             question=pool.question if hasattr(pool, "question") else "",
             failed_sub_query=pool.steps[step_idx]["sub_query"],
             failed_answer=pool.steps[step_idx]["intermediate_answer"],
-            successful_steps=successful_steps,
+            successful_steps=successful_steps
         )
 
         new_docs = retriever.search(refined_query, top_k=5)
-        new_answer = _generate_answer(
-            refined_query=refined_query,
-            docs=new_docs,
-            prev_context=pool.get_previous_verified(step_idx),
-        )
+        new_answer = _generate_answer(refined_query, new_docs, pool.get_previous_verified(step_idx))
 
         pool.steps[step_idx]["intermediate_answer"] = new_answer
         pool.steps[step_idx]["refined_query"] = refined_query
         pool.steps[step_idx]["refined_titles"] = [d["title"] for d in new_docs]
 
         prev_answer = pool.get_latest_answer(step_idx)
-        sub_query_r = pool.steps[step_idx].get("sub_query", "")
-        score_1 = _compute_bridge_score(prev_answer, new_answer, sub_query_r)
-        score_2 = None
+        score_1 = _compute_bridge_score(prev_answer, new_answer, pool.steps[step_idx].get("sub_query", ""))
+        
         final_confidence = score_1
         final_s1 = score_1
-        final_s2 = score_2
 
-        if final_confidence >= 0.5:
-            pool.update_verification(step_idx, final_confidence, "refined", score_1, score_2)
+        if final_confidence >= 0.6:
+            pool.update_verification(step_idx, final_confidence, "refined", score_1, None)
             return {
-                "flag": "refined",
-                "confidence": final_confidence,
-                "score_1": score_1,
-                "score_2": score_2,
-                "attempts": attempt + 1,
-                "refined_query": refined_query,
+                "flag": "refined", "confidence": final_confidence, "score_1": score_1, 
+                "score_2": None, "attempts": attempt + 1, "refined_query": refined_query
             }
 
-    pool.update_verification(step_idx, final_confidence, "uncertain", final_s1, final_s2)
+    pool.update_verification(step_idx, final_confidence, "uncertain", final_s1, None)
     return {
-        "flag": "uncertain",
-        "confidence": final_confidence,
-        "score_1": final_s1,
-        "score_2": final_s2,
-        "attempts": max_retry,
+        "flag": "uncertain", "confidence": final_confidence, "score_1": final_s1, 
+        "score_2": None, "attempts": max_retry
+    }
+
+
+def _refine_and_retry_comparison(step_idx: int, pool: EvidencePool, retriever: DenseRetriever, question: str, max_retry: int = 1) -> dict:
+    final_confidence = 0.0
+    final_s1 = 0.0
+
+    for attempt in range(max_retry):
+        successful_steps = {
+            k: v for k, v in pool.steps.items() 
+            if isinstance(v, dict) and k != step_idx and v.get("flag") in ("skipped", "verified", "refined")
+        }
+        refined_query = replan_failed_step(question, pool.steps[step_idx]["sub_query"], pool.steps[step_idx]["intermediate_answer"], successful_steps)
+        
+        new_docs = retriever.search(refined_query, top_k=5)
+        new_answer = _generate_answer(refined_query, new_docs, {})
+
+        pool.steps[step_idx]["intermediate_answer"] = new_answer
+        pool.steps[step_idx]["refined_query"] = refined_query
+        pool.steps[step_idx]["refined_titles"] = [d["title"] for d in new_docs]
+
+        score_1 = _compute_comparison_score(question, pool.steps[step_idx]["sub_query"], new_answer)
+        final_confidence = score_1
+        final_s1 = score_1
+
+        if final_confidence >= 0.6:
+            pool.update_verification(step_idx, final_confidence, "refined", score_1, None)
+            return {
+                "flag": "refined", "confidence": final_confidence, "score_1": score_1, 
+                "score_2": None, "attempts": attempt + 1, "refined_query": refined_query
+            }
+
+    pool.update_verification(step_idx, final_confidence, "uncertain", final_s1, None)
+    return {
+        "flag": "uncertain", "confidence": final_confidence, "score_1": final_s1, 
+        "score_2": None, "attempts": max_retry
     }

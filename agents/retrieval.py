@@ -47,6 +47,20 @@ def format_context(prev_context: dict) -> str:
     return "\n\n".join(parts)
 
 
+def _rewrite_query_with_context(sub_query: str, prev_answers: list) -> str:
+    """이전 답변의 핵심 엔티티를 서브 쿼리의 대명사와 치환하여 독립적인 검색 쿼리 생성"""
+    context_str = " | ".join(prev_answers)
+    prompt = (
+        f"Context from previous steps: {context_str}\n"
+        f"Original Query: {sub_query}\n\n"
+        "Rewrite the Original Query to be completely self-contained for a search engine. "
+        "Replace ambiguous pronouns (he, she, it, they, that person, the director, etc.) "
+        "with the exact specific entities found in the Context. "
+        "Do NOT add unnecessary words, just output the clean rewritten query."
+    )
+    return call_llm([{"role": "user", "content": prompt}], max_tokens=64, label="refine_query")
+
+
 def retrieve_and_answer(
     sub_query: str,
     pool: EvidencePool,
@@ -68,7 +82,8 @@ def retrieve_and_answer(
                        for kw in ["not found", "i don't know", "unknown"])
         ]
         if prev_answers:
-            search_query = f"{sub_query} {' '.join(prev_answers)}"
+            # === 변경된 부분: 단순 결합 대신 LLM 기반 쿼리 재작성 ===
+            search_query = _rewrite_query_with_context(sub_query, prev_answers)
 
     docs = retriever.search(search_query, top_k=5)
 
