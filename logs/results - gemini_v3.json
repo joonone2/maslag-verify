@@ -46,7 +46,7 @@
       }
     },
     "final_answer": "yes",
-    "elapsed_sec": 12.68,
+    "elapsed_sec": 12.27,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -93,21 +93,21 @@
           "Kiss and Tell (1945 film)",
           "Janet Waldo"
         ],
-        "intermediate_answer": "United States ambassador to Ghana and to Czechoslovakia",
+        "intermediate_answer": "United States ambassador to Ghana and to Czechoslovakia; Chief of Protocol of the United States.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
       "final": {
-        "final_answer": "ambassador",
+        "final_answer": "United States ambassador to Ghana",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A specific government position held by a person. | [A-Category]: A specific government position (ambassador). | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: A specific government position held by a person. | [A-Category]: A specific government position (United States ambassador to Ghana). | [Alignment]: Yes"
       }
     },
-    "final_answer": "ambassador",
-    "elapsed_sec": 11.57,
+    "final_answer": "United States ambassador to Ghana",
+    "elapsed_sec": 15.57,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -127,7 +127,7 @@
     "task_type": "bridge",
     "sub_queries": [
       "What is the name of the science fantasy young adult series told in first person?",
-      "What are the titles of the companion books that narrate the stories of enslaved worlds and alien species in that series?"
+      "What are the titles of the companion books that narrate the stories of enslaved worlds and alien species?"
     ],
     "steps": {
       "0": {
@@ -146,7 +146,7 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What are the titles of the companion books that narrate the stories of enslaved worlds and alien species in that series?",
+        "sub_query": "What are the titles of the companion books that narrate the stories of enslaved worlds and alien species?",
         "retrieved_titles": [
           "The Hork-Bajir Chronicles",
           "Animorphs",
@@ -168,7 +168,7 @@
       }
     },
     "final_answer": "Animorphs",
-    "elapsed_sec": 13.09,
+    "elapsed_sec": 12.07,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -200,7 +200,7 @@
           "Esma Sultan Mansion",
           "Gevheri Kadın"
         ],
-        "intermediate_answer": "Laleli, Fatih, Istanbul, Turkey",
+        "intermediate_answer": "Laleli, Fatih, Istanbul, Turkey.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -215,7 +215,7 @@
           "Esma Sultan (daughter of Ahmed III)",
           "Esma Sultan (daughter of Abdülaziz)"
         ],
-        "intermediate_answer": "Ortaköy",
+        "intermediate_answer": "Ortaköy neighborhood, Istanbul, Turkey.",
         "confidence": 0.6,
         "score_1": 0.6,
         "score_2": null,
@@ -229,7 +229,7 @@
       }
     },
     "final_answer": "no",
-    "elapsed_sec": 10.12,
+    "elapsed_sec": 7.02,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -248,18 +248,18 @@
     "gold_answer": "Greenwich Village, New York City",
     "task_type": "bridge",
     "sub_queries": [
-      "Who is the director of the romantic comedy Big Stone Gap?",
+      "Who is the director of the romantic comedy 'Big Stone Gap'?",
       "In which New York city is the director based?"
     ],
     "steps": {
       "0": {
-        "sub_query": "Who is the director of the romantic comedy Big Stone Gap?",
+        "sub_query": "Who is the director of the romantic comedy 'Big Stone Gap'?",
         "retrieved_titles": [
           "Big Stone Gap (film)",
           "I Love NY (2015 film)",
           "Nola (film)",
           "Just Another Romantic Wrestling Comedy",
-          "Adriana Trigiani"
+          "Hamish and Andy's Gap Year"
         ],
         "intermediate_answer": "Adriana Trigiani",
         "confidence": 1.0,
@@ -276,7 +276,7 @@
           "Great Eastern Conventions",
           "Nola (film)"
         ],
-        "intermediate_answer": "Greenwich Village, New York City",
+        "intermediate_answer": "Greenwich Village, New York City.",
         "confidence": 0.8,
         "score_1": 0.8,
         "score_2": null,
@@ -290,7 +290,7 @@
       }
     },
     "final_answer": "Greenwich Village",
-    "elapsed_sec": 12.97,
+    "elapsed_sec": 8.57,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -322,56 +322,48 @@
           "Winner (band)",
           "BTS discography"
         ],
-        "intermediate_answer": "Not found in documents",
+        "intermediate_answer": "The South Korean boy group that released the album 2014 S/S is WINNER.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Who is the founder of the South Korean boy group that released the debut album 2014 S/S?",
+        "sub_query": "Who formed the South Korean boy group that released the album 2014 S/S?",
         "retrieved_titles": [
           "2014 S/S",
+          "Winner (band)",
           "Madtown",
-          "SF9 (band)",
           "List of songs written by Ravi",
-          "Winner (band)"
+          "SF9 (band)"
         ],
-        "intermediate_answer": "The South Korean boy group known for their debut album 2014 S/S, WINNER, was established by YG Entertainment.",
+        "intermediate_answer": "YG Entertainment",
         "confidence": 0.8,
         "score_1": 0.8,
         "score_2": null,
-        "flag": "refined",
-        "refined_query": "Who is the founder or agency that established the South Korean boy group known for their debut album 2014 S/S?",
-        "refined_titles": [
-          "2014 S/S",
-          "Madtown",
-          "SF9 (band)",
-          "Winner (band)",
-          "List of songs written by Ravi"
-        ]
+        "flag": "verified"
       },
       "final": {
         "final_answer": "YG Entertainment",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The name of the entertainment company that formed a South Korean boy group. | [A-Category]: The name of an entertainment company. | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: The name of the company that formed a South Korean boy group. | [A-Category]: The name of a company. | [Alignment]: Yes"
       }
     },
     "final_answer": "YG Entertainment",
-    "elapsed_sec": 19.67,
+    "elapsed_sec": 8.37,
     "error": null,
     "llm_calls": {
-      "planner": 2,
+      "planner": 1,
       "retrieval": 2,
       "score_1": 1,
-      "refine_query": 0,
+      "refine_query": 1,
       "answer": 1,
       "final_verify": 1,
       "logprob": 0,
-      "other": 2
+      "other": 0
     },
-    "llm_calls_total": 9
+    "llm_calls_total": 7
   },
   {
     "question": "Who was known by his stage name Aladin and helped organizations improve their performance as a consultant?",
@@ -410,7 +402,7 @@
         "confidence": 0.0,
         "score_1": 0.0,
         "score_2": null,
-        "flag": "not_found",
+        "flag": "uncertain",
         "refined_query": "Find the names of organizations that Eenasul Fateh, known by the stage name Aladin, has worked with as a performance improvement consultant.",
         "refined_titles": [
           "Eenasul Fateh",
@@ -428,7 +420,7 @@
       }
     },
     "final_answer": "Eenasul Fateh",
-    "elapsed_sec": 12.19,
+    "elapsed_sec": 10.03,
     "error": null,
     "llm_calls": {
       "planner": 2,
@@ -475,21 +467,21 @@
           "Billings Bulls",
           "Lewiston Maineiacs"
         ],
-        "intermediate_answer": "4000",
+        "intermediate_answer": "3,677 seated",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
       "final": {
-        "final_answer": "4000",
+        "final_answer": "3,677",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The question requires a numerical value representing the seating capacity of an arena. | [A-Category]: The answer is a numerical value indicating the seating capacity. | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: The seating capacity of an arena | [A-Category]: A numerical value representing a quantity | [Alignment]: Yes"
       }
     },
-    "final_answer": "4000",
-    "elapsed_sec": 13.63,
+    "final_answer": "3,677",
+    "elapsed_sec": 11.1,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -550,7 +542,7 @@
       }
     },
     "final_answer": "Terry Richardson",
-    "elapsed_sec": 10.78,
+    "elapsed_sec": 7.76,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -569,35 +561,35 @@
     "gold_answer": "yes",
     "task_type": "comparison",
     "sub_queries": [
-      "Where is Local H from?",
-      "Where is For Against from?"
+      "Find the country of origin for Local H",
+      "Find the country of origin for For Against"
     ],
     "steps": {
       "0": {
-        "sub_query": "Where is Local H from?",
+        "sub_query": "Find the country of origin for Local H",
         "retrieved_titles": [
           "Local H",
+          "Mendocino County GMO Ban",
+          "Amherst, Massachusetts",
           "Ophur",
-          "Hallelujah! I'm a Bum (album)",
-          "Suffrajett",
-          "Mendocino County GMO Ban"
+          "For Against"
         ],
-        "intermediate_answer": "Zion, Illinois",
+        "intermediate_answer": "Local H is an American rock band.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Where is For Against from?",
+        "sub_query": "Find the country of origin for For Against",
         "retrieved_titles": [
           "For Against",
           "Mendocino County GMO Ban",
-          "Suffrajett",
           "Local H",
-          "Ophur"
+          "Ophur",
+          "Suffrajett"
         ],
-        "intermediate_answer": "Lincoln, Nebraska",
+        "intermediate_answer": "For Against is a band from the United States.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -611,7 +603,7 @@
       }
     },
     "final_answer": "yes",
-    "elapsed_sec": 9.68,
+    "elapsed_sec": 7.98,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -631,7 +623,7 @@
     "task_type": "bridge",
     "sub_queries": [
       "What is the name of the university with a main campus in Lawrence, Kansas and branch campuses in the Kansas City metropolitan area?",
-      "What is the fight song of the university identified in the first sub-query?"
+      "What is the fight song of the university named in the previous answer?"
     ],
     "steps": {
       "0": {
@@ -650,7 +642,7 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What is the fight song of the university identified in the first sub-query?",
+        "sub_query": "What is the fight song of the university named in the previous answer?",
         "retrieved_titles": [
           "Kansas Song",
           "University of the Incarnate Word",
@@ -658,21 +650,21 @@
           "University of Missouri–Kansas City",
           "Kansas City Scout"
         ],
-        "intermediate_answer": "Kansas Song (We’re From Kansas)",
+        "intermediate_answer": "Kansas Song (We’re From Kansas) is the fight song of the University of Kansas.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
       "final": {
-        "final_answer": "Kansas Song (We’re From Kansas)",
+        "final_answer": "Kansas Song",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The name of a fight song associated with a university. | [A-Category]: The name of a fight song. | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: The name of a fight song | [A-Category]: The name of a song | [Alignment]: Yes"
       }
     },
-    "final_answer": "Kansas Song (We’re From Kansas)",
-    "elapsed_sec": 12.76,
+    "final_answer": "Kansas Song",
+    "elapsed_sec": 9.05,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -691,16 +683,16 @@
     "gold_answer": "David Weissman",
     "task_type": "bridge",
     "sub_queries": [
-      "Who is the screenwriter with credits for 'Evolution'?",
+      "Who is the screenwriter credited for the film 'Evolution'?",
       "What film starring Nicolas Cage and Téa Leoni did that screenwriter co-write?"
     ],
     "steps": {
       "0": {
-        "sub_query": "Who is the screenwriter with credits for 'Evolution'?",
+        "sub_query": "Who is the screenwriter credited for the film 'Evolution'?",
         "retrieved_titles": [
           "David Weissman",
-          "Deadfall (1993 film)",
           "Gone in 60 Seconds (2000 film)",
+          "Deadfall (1993 film)",
           "Drive Angry",
           "The Family Man"
         ],
@@ -733,7 +725,7 @@
       }
     },
     "final_answer": "David Weissman",
-    "elapsed_sec": 10.49,
+    "elapsed_sec": 8.96,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -781,8 +773,8 @@
           "Faction Punk"
         ],
         "intermediate_answer": "1999",
-        "confidence": 0.6,
-        "score_1": 0.6,
+        "confidence": 0.8,
+        "score_1": 0.8,
         "score_2": null,
         "flag": "verified"
       },
@@ -794,7 +786,7 @@
       }
     },
     "final_answer": "1999",
-    "elapsed_sec": 16.1,
+    "elapsed_sec": 9.4,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -826,7 +818,7 @@
           "Pershing Square Capital Management",
           "Villard (imprint)"
         ],
-        "intermediate_answer": "Yes",
+        "intermediate_answer": "Yes, Random House Tower is used as a luxury apartment complex.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -841,11 +833,21 @@
           "Carl B. Stokes United States Courthouse",
           "Hounsfield Heights/Briar Hill, Calgary"
         ],
-        "intermediate_answer": "Yes",
-        "confidence": 1.0,
-        "score_1": 1.0,
+        "intermediate_answer": "888 7th Avenue is currently used as the corporate headquarters for Vornado Realty Trust and also houses the Red Eye Grill at street level. Additionally, it is the location of Pershing Square Capital Management.",
+        "confidence": 0.8,
+        "score_1": 0.8,
         "score_2": null,
-        "flag": "verified"
+        "flag": "refined",
+        "refined_query": "What is the current use of 888 7th Avenue in terms of real estate?",
+        "refined_titles": [
+          "888 7th Avenue",
+          "Random House Tower",
+          "Hounsfield Heights/Briar Hill, Calgary",
+          "Villard (imprint)",
+          "Pershing Square Capital Management"
+        ],
+        "score_1_initial": 0.0,
+        "score_2_initial": null
       },
       "final": {
         "final_answer": "yes",
@@ -855,56 +857,56 @@
       }
     },
     "final_answer": "yes",
-    "elapsed_sec": 13.93,
+    "elapsed_sec": 14.83,
     "error": null,
     "llm_calls": {
-      "planner": 1,
+      "planner": 2,
       "retrieval": 2,
       "score_1": 1,
       "refine_query": 0,
       "answer": 1,
       "final_verify": 1,
       "logprob": 0,
-      "other": 0
+      "other": 1
     },
-    "llm_calls_total": 6
+    "llm_calls_total": 8
   },
   {
     "question": "The football manager who recruited David Beckham managed Manchester United during what timeframe?",
     "gold_answer": "from 1986 to 2013",
     "task_type": "bridge",
     "sub_queries": [
-      "Who recruited David Beckham?",
-      "What was the timeframe that the manager of Manchester United managed the team?"
+      "Who was the football manager that recruited David Beckham?",
+      "What was the timeframe during which that manager managed Manchester United?"
     ],
     "steps": {
       "0": {
-        "sub_query": "Who recruited David Beckham?",
+        "sub_query": "Who was the football manager that recruited David Beckham?",
         "retrieved_titles": [
-          "The Class of '92",
           "1995–96 Manchester United F.C. season",
-          "David Beckham Academy",
-          "Joshua Parlby",
-          "David Beckham's Soccer USA"
+          "The Class of '92",
+          "Matt Busby",
+          "Ernest Mangnall",
+          "Alex Ferguson"
         ],
-        "intermediate_answer": "Not found in documents",
+        "intermediate_answer": "Alex Ferguson",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What were the years that the manager of Manchester United, who was in charge when David Beckham was recruited, managed the team?",
+        "sub_query": "What was the timeframe during which that manager managed Manchester United?",
         "retrieved_titles": [
-          "1995–96 Manchester United F.C. season",
           "Matt Busby",
           "Ernest Mangnall",
           "Alex Ferguson",
-          "1996 FA Charity Shield"
+          "1995–96 Manchester United F.C. season",
+          "Joshua Parlby"
         ],
-        "intermediate_answer": "1986 to 2013",
-        "confidence": 0.6,
-        "score_1": 0.6,
+        "intermediate_answer": "Alex Ferguson managed Manchester United from 1986 to 2013.",
+        "confidence": 1.0,
+        "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
@@ -916,17 +918,17 @@
       }
     },
     "final_answer": "1986 to 2013",
-    "elapsed_sec": 10.78,
+    "elapsed_sec": 7.3,
     "error": null,
     "llm_calls": {
       "planner": 1,
       "retrieval": 2,
       "score_1": 1,
-      "refine_query": 0,
+      "refine_query": 1,
       "answer": 1,
       "final_verify": 1,
       "logprob": 0,
-      "other": 1
+      "other": 0
     },
     "llm_calls_total": 7
   },
@@ -948,7 +950,7 @@
           "Narrow Hills Provincial Park",
           "Shawnee State Fishing Lake"
         ],
-        "intermediate_answer": "United States",
+        "intermediate_answer": "Brown County, Kansas, United States.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -961,59 +963,51 @@
           "Brown State Fishing Lake",
           "Osage State Fishing Lake",
           "Neosho State Fishing Lake",
-          "Higgins Lake"
+          "Higgins Lake, Michigan"
         ],
-        "intermediate_answer": "Not found in documents.",
-        "confidence": 0.0,
-        "score_1": 0.0,
+        "intermediate_answer": "9,984",
+        "confidence": 0.6,
+        "score_1": 0.6,
         "score_2": null,
-        "flag": "not_found",
-        "refined_query": "What is the population of the United States?",
-        "refined_titles": [
-          "Brown County, Kansas",
-          "Brown State Fishing Lake",
-          "Osage State Fishing Lake",
-          "Neosho State Fishing Lake",
-          "Higgins Lake"
-        ]
+        "flag": "verified"
       },
       "final": {
-        "final_answer": "331 million",
+        "final_answer": "9,984",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a population number | [A-Category]: a population number | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: A specific population number | [A-Category]: A specific population number | [Alignment]: Yes"
       }
     },
-    "final_answer": "331 million",
-    "elapsed_sec": 10.63,
+    "final_answer": "9,984",
+    "elapsed_sec": 10.47,
     "error": null,
     "llm_calls": {
-      "planner": 2,
+      "planner": 1,
       "retrieval": 2,
-      "score_1": 0,
+      "score_1": 1,
       "refine_query": 1,
       "answer": 1,
       "final_verify": 1,
       "logprob": 0,
-      "other": 1
+      "other": 0
     },
-    "llm_calls_total": 8
+    "llm_calls_total": 7
   },
   {
     "question": "The Vermont Catamounts men's soccer team currently competes in a conference that was formerly known as what from 1988 to 1996?",
     "gold_answer": "the North Atlantic Conference",
     "task_type": "bridge",
     "sub_queries": [
-      "What is the current conference of the Vermont Catamounts men's soccer team?",
+      "What is the current name of the conference that the Vermont Catamounts men's soccer team competes in?",
       "What was the name of the conference from 1988 to 1996?"
     ],
     "steps": {
       "0": {
-        "sub_query": "What is the current conference of the Vermont Catamounts men's soccer team?",
+        "sub_query": "What is the current name of the conference that the Vermont Catamounts men's soccer team competes in?",
         "retrieved_titles": [
           "Vermont Catamounts men's soccer",
-          "Vermont Catamounts men's basketball",
           "Vermont Catamounts men's ice hockey",
+          "Vermont Catamounts men's basketball",
           "2016–17 Vermont Catamounts men's basketball team",
           "2011–12 Vermont Catamounts men's basketball team"
         ],
@@ -1046,7 +1040,7 @@
       }
     },
     "final_answer": "North Atlantic Conference",
-    "elapsed_sec": 33.02,
+    "elapsed_sec": 21.89,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -1078,7 +1072,7 @@
           "Giuseppe Verdi (film)",
           "Teatro Giuseppe Verdi"
         ],
-        "intermediate_answer": "Yes",
+        "intermediate_answer": "Yes, Giuseppe Verdi was an opera composer.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -1093,9 +1087,9 @@
           "Ferdinando Provesi",
           "List of major opera composers"
         ],
-        "intermediate_answer": "Yes",
-        "confidence": 0.8,
-        "score_1": 0.8,
+        "intermediate_answer": "Yes, Ambroise Thomas was an opera composer.",
+        "confidence": 1.0,
+        "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
@@ -1107,7 +1101,7 @@
       }
     },
     "final_answer": "yes",
-    "elapsed_sec": 10.08,
+    "elapsed_sec": 7.84,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -1154,112 +1148,93 @@
           "Roger O. Egeberg",
           "Bradford P. Campbell"
         ],
-        "intermediate_answer": "Richard Nixon's presidency lasted from 1969 until 1974.",
+        "intermediate_answer": "1969 to 1974",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
-        "flag": "refined",
-        "refined_query": "What were the years of Richard Nixon's presidency?",
-        "refined_titles": [
-          "Douglas J. Bennet",
-          "Richard Nixon",
-          "Robert Hormats",
-          "Roger O. Egeberg",
-          "Bradford P. Campbell"
-        ]
+        "flag": "verified"
       },
       "final": {
-        "final_answer": "1969-1974",
+        "final_answer": "1969 to 1974",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A range of years during which a president served. | [A-Category]: A specific range of years (1969-1974). | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: A range of years during which a president served. | [A-Category]: A specific range of years (1969 to 1974). | [Alignment]: Yes"
       }
     },
-    "final_answer": "1969-1974",
-    "elapsed_sec": 12.12,
+    "final_answer": "1969 to 1974",
+    "elapsed_sec": 8.73,
     "error": null,
     "llm_calls": {
-      "planner": 2,
+      "planner": 1,
       "retrieval": 2,
       "score_1": 1,
       "refine_query": 1,
       "answer": 1,
       "final_verify": 1,
       "logprob": 0,
-      "other": 1
+      "other": 0
     },
-    "llm_calls_total": 9
+    "llm_calls_total": 7
   },
   {
     "question": "Which writer was from England, Henry Roth or Robert Erskine Childers?",
     "gold_answer": "Robert Erskine Childers DSC",
     "task_type": "comparison",
     "sub_queries": [
-      "Find the country of origin for Henry Roth",
-      "Find the country of origin for Robert Erskine Childers"
+      "Find the nationality of Henry Roth",
+      "Find the nationality of Robert Erskine Childers"
     ],
     "steps": {
       "0": {
-        "sub_query": "Find the country of origin for Henry Roth",
+        "sub_query": "Find the nationality of Henry Roth",
         "retrieved_titles": [
           "Henry Roth",
           "Robert Caesar Childers",
           "Robert Barton",
           "Robert Erskine Childers",
-          "Molly Childers"
+          "Asgard (yacht)"
         ],
-        "intermediate_answer": "Not found in documents",
+        "intermediate_answer": "American",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Determine the country of origin for the writer Robert Erskine Childers.",
+        "sub_query": "Find the nationality of Robert Erskine Childers",
         "retrieved_titles": [
-          "Robert Erskine Childers",
           "Robert Caesar Childers",
+          "Robert Erskine Childers",
+          "Robert Barton",
           "Molly Childers",
-          "Erskine Barton Childers",
-          "Gretchen Osgood Warren"
+          "Erskine Barton Childers"
         ],
-        "intermediate_answer": "Robert Erskine Childers was of British nationality, born in England. He was a writer and a Fenian revolutionary, known for his novel \"The Riddle of the Sands\" and for smuggling guns to Ireland. He was executed during the Irish Civil War.",
-        "confidence": 1.0,
-        "score_1": 1.0,
+        "intermediate_answer": "Irish",
+        "confidence": 0.8,
+        "score_1": 0.8,
         "score_2": null,
-        "flag": "refined",
-        "refined_query": "Identify the country of origin for the writer Robert Erskine Childers, specifically focusing on his nationality and any relevant biographical details.",
-        "refined_titles": [
-          "Robert Erskine Childers",
-          "Robert Caesar Childers",
-          "Molly Childers",
-          "Erskine Barton Childers",
-          "Robert Barton"
-        ],
-        "score_1_initial": 0.0,
-        "score_2_initial": null
+        "flag": "verified"
       },
       "final": {
-        "final_answer": "Robert Erskine Childers",
-        "is_not_found": false,
-        "flag": "passed",
-        "reasoning": "[Q-Constraint]: A person's name | [A-Category]: A person's name | [Alignment]: Yes"
+        "final_answer": "Not found",
+        "is_not_found": true,
+        "flag": "not_found"
       }
     },
-    "final_answer": "Robert Erskine Childers",
-    "elapsed_sec": 12.04,
+    "final_answer": "Not found",
+    "elapsed_sec": 5.38,
     "error": null,
     "llm_calls": {
-      "planner": 2,
+      "planner": 1,
       "retrieval": 2,
       "score_1": 1,
       "refine_query": 0,
       "answer": 1,
-      "final_verify": 1,
+      "final_verify": 0,
       "logprob": 0,
-      "other": 2
+      "other": 0
     },
-    "llm_calls_total": 9
+    "llm_calls_total": 5
   },
   {
     "question": "Which other Mexican Formula One race car driver has held the podium besides the Force India driver born in 1990?",
@@ -1294,7 +1269,7 @@
           "2014 Bahrain Grand Prix",
           "Eduardo Troconis"
         ],
-        "intermediate_answer": "Pedro Rodríguez",
+        "intermediate_answer": "Pedro Rodríguez and Sergio Pérez",
         "confidence": 0.8,
         "score_1": 0.8,
         "score_2": null,
@@ -1308,7 +1283,7 @@
       }
     },
     "final_answer": "Pedro Rodríguez",
-    "elapsed_sec": 10.96,
+    "elapsed_sec": 10.31,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -1355,7 +1330,7 @@
           "The House That Jack Built (1967 film)",
           "Hip Hip Pooh-Ray!"
         ],
-        "intermediate_answer": "Dr. Robotnik is the character voiced by Jim Cummings who is associated with a hedgehog, specifically in the \"Sonic the Hedgehog\" franchise.",
+        "intermediate_answer": "Dr. Robotnik is the character voiced by Jim Cummings who is associated with a hedgehog, specifically from the \"Sonic the Hedgehog\" franchise.",
         "confidence": 0.6,
         "score_1": 0.6,
         "score_2": null,
@@ -1373,11 +1348,11 @@
         "final_answer": "Dr. Robotnik",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A person's name who voiced a hedgehog. | [A-Category]: A person's name (Dr. Robotnik). | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: A person's name who voiced a character. | [A-Category]: A person's name (Dr. Robotnik). | [Alignment]: Yes"
       }
     },
     "final_answer": "Dr. Robotnik",
-    "elapsed_sec": 12.35,
+    "elapsed_sec": 10.83,
     "error": null,
     "llm_calls": {
       "planner": 2,
@@ -1397,7 +1372,7 @@
     "task_type": "bridge",
     "sub_queries": [
       "What program was the Apple Remote originally designed to interact with?",
-      "What other devices can control the program identified in the first sub-query?"
+      "What other devices can control the program that the Apple Remote was originally designed to interact with?"
     ],
     "steps": {
       "0": {
@@ -1409,24 +1384,24 @@
           "Front Row (software)",
           "NetSupport Manager"
         ],
-        "intermediate_answer": "Front Row",
+        "intermediate_answer": "The Apple Remote was originally designed to interact with the Front Row media program.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What other devices can control the program identified in the first sub-query?",
+        "sub_query": "What other devices can control the program that the Apple Remote was originally designed to interact with?",
         "retrieved_titles": [
-          "Front Row (software)",
           "Apple Remote",
+          "Front Row (software)",
+          "Siri Remote",
           "Apple Remote Desktop",
-          "NetSupport Manager",
-          "Siri Remote"
+          "NetSupport Manager"
         ],
-        "intermediate_answer": "keyboard function keys",
-        "confidence": 0.6,
-        "score_1": 0.6,
+        "intermediate_answer": "The program that the Apple Remote was originally designed to interact with can also be controlled by the keyboard function keys.",
+        "confidence": 0.8,
+        "score_1": 0.8,
         "score_2": null,
         "flag": "verified"
       },
@@ -1434,11 +1409,11 @@
         "final_answer": "keyboard function keys",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: Identify a device that can control a specific program originally designed for the Apple Remote. | [A-Category]: A type of input device (keyboard function keys). | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: a device that can control the program Apple Remote was originally designed to interact with | [A-Category]: a type of input device (keyboard function keys) | [Alignment]: Yes"
       }
     },
     "final_answer": "keyboard function keys",
-    "elapsed_sec": 12.92,
+    "elapsed_sec": 11.34,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -1458,9 +1433,9 @@
     "task_type": "comparison",
     "sub_queries": [
       "Find the number of instruments used by Badly Drawn Boy",
-      "Find the number of people in Badly Drawn Boy's performance act",
       "Find the number of instruments used by Wolf Alice",
-      "Find the number of people in Wolf Alice's performance act"
+      "Find the number of members in Badly Drawn Boy",
+      "Find the number of members in Wolf Alice"
     ],
     "steps": {
       "0": {
@@ -1472,38 +1447,13 @@
           "Under an Hour",
           "Badly Drawn Boy discography"
         ],
-        "intermediate_answer": "Not found in documents",
+        "intermediate_answer": "Not found in documents.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Find the total number of members in Badly Drawn Boy's performance act, including both musicians and vocalists.",
-        "retrieved_titles": [
-          "Badly Drawn Boy",
-          "The Hour of Bewilderbeast",
-          "Wolf Alice",
-          "About a Boy (soundtrack)",
-          "Under an Hour"
-        ],
-        "intermediate_answer": "Not found in documents.",
-        "confidence": 0.0,
-        "score_1": 0.0,
-        "score_2": null,
-        "flag": "not_found",
-        "refined_query": "Find the total number of members in Badly Drawn Boy's live performance act, specifically counting all musicians and vocalists involved in their performances.",
-        "refined_titles": [
-          "The Hour of Bewilderbeast",
-          "Wolf Alice",
-          "Badly Drawn Boy",
-          "About a Boy (soundtrack)",
-          "Under an Hour"
-        ],
-        "score_1_initial": 0.0,
-        "score_2_initial": null
-      },
-      "2": {
         "sub_query": "Find the total number of instruments used by Wolf Alice in their performances.",
         "retrieved_titles": [
           "Wolf Alice",
@@ -1516,7 +1466,7 @@
         "confidence": 0.0,
         "score_1": 0.0,
         "score_2": null,
-        "flag": "not_found",
+        "flag": "uncertain",
         "refined_query": "Find the total number of instruments used by Wolf Alice during their live performances or concerts.",
         "refined_titles": [
           "Wolf Alice",
@@ -1528,16 +1478,41 @@
         "score_1_initial": 0.0,
         "score_2_initial": null
       },
-      "3": {
-        "sub_query": "What is the total number of members in the Wolf Alice performance act?",
+      "2": {
+        "sub_query": "What is the total number of members in the band Badly Drawn Boy?",
         "retrieved_titles": [
-          "Wolf Alice",
-          "Under an Hour",
+          "Badly Drawn Boy",
           "The Hour of Bewilderbeast",
+          "Wolf Alice",
+          "Badly Drawn Boy discography",
+          "About a Boy (soundtrack)"
+        ],
+        "intermediate_answer": "Not found in documents.",
+        "confidence": 0.0,
+        "score_1": 0.0,
+        "score_2": null,
+        "flag": "uncertain",
+        "refined_query": "How many members are in the band Badly Drawn Boy, including all musicians and performers?",
+        "refined_titles": [
+          "Badly Drawn Boy",
+          "The Hour of Bewilderbeast",
+          "Wolf Alice",
           "About a Boy (soundtrack)",
           "Badly Drawn Boy discography"
         ],
-        "intermediate_answer": "4",
+        "score_1_initial": 0.0,
+        "score_2_initial": null
+      },
+      "3": {
+        "sub_query": "What is the total number of members in the band Wolf Alice, and what instruments do they play?",
+        "retrieved_titles": [
+          "Wolf Alice",
+          "The Hour of Bewilderbeast",
+          "Under an Hour",
+          "Badly Drawn Boy",
+          "Badly Drawn Boy discography"
+        ],
+        "intermediate_answer": "Wolf Alice has four members: Ellie Rowsell (vocals, guitar), Joff Oddie (guitars, vocals), Theo Ellis (bass), and Joel Amey (drums, vocals).",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -1550,7 +1525,7 @@
       }
     },
     "final_answer": "Not found",
-    "elapsed_sec": 21.42,
+    "elapsed_sec": 17.6,
     "error": null,
     "llm_calls": {
       "planner": 3,
@@ -1569,12 +1544,12 @@
     "gold_answer": "World's Best Goalkeeper",
     "task_type": "bridge",
     "sub_queries": [
-      "Who is the father of Kasper Schmeichel?",
-      "What was the IFFHS award voted for in 1992?"
+      "What is the name of Kasper Schmeichel's father?",
+      "What was the IFFHS award given to Kasper Schmeichel's father in 1992?"
     ],
     "steps": {
       "0": {
-        "sub_query": "Who is the father of Kasper Schmeichel?",
+        "sub_query": "What is the name of Kasper Schmeichel's father?",
         "retrieved_titles": [
           "Kasper Schmeichel",
           "Peter Schmeichel",
@@ -1589,7 +1564,7 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What was the IFFHS award voted for in 1992?",
+        "sub_query": "What was the IFFHS award given to Kasper Schmeichel's father in 1992?",
         "retrieved_titles": [
           "Peter Schmeichel",
           "IFFHS World's Best Goalkeeper",
@@ -1604,14 +1579,14 @@
         "flag": "verified"
       },
       "final": {
-        "final_answer": "World's Best Goalkeeper",
+        "final_answer": "IFFHS World's Best Goalkeeper",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The title awarded to a person by the IFFHS in a specific year. | [A-Category]: A title or award. | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: The title or award received by a person in a specific year. | [A-Category]: An award title. | [Alignment]: Yes"
       }
     },
-    "final_answer": "World's Best Goalkeeper",
-    "elapsed_sec": 12.84,
+    "final_answer": "IFFHS World's Best Goalkeeper",
+    "elapsed_sec": 9.88,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -1628,7 +1603,7 @@
   {
     "question": "Who was the writer of These Boots Are Made for Walkin' and who died in 2007?",
     "gold_answer": "Barton Lee Hazlewood",
-    "task_type": "comparison",
+    "task_type": "bridge",
     "sub_queries": [
       "Who wrote These Boots Are Made for Walkin'?",
       "Who died in 2007?"
@@ -1652,39 +1627,39 @@
       "1": {
         "sub_query": "Who died in 2007?",
         "retrieved_titles": [
+          "Lee Hazlewood",
           "Jim Shoulders",
           "Death of Abdul Wali",
-          "Lee Hazlewood",
           "Nancy Sinatra",
-          "Kon Kan"
+          "The Twenty-fifth Anniversary Anthology"
         ],
-        "intermediate_answer": "James A. Shoulders",
-        "confidence": 1.0,
-        "score_1": 1.0,
+        "intermediate_answer": "Lee Hazlewood and Jim Shoulders both died in 2007.",
+        "confidence": 0.8,
+        "score_1": 0.8,
         "score_2": null,
         "flag": "verified"
       },
       "final": {
-        "final_answer": "Lee Hazlewood, James A. Shoulders",
+        "final_answer": "Lee Hazlewood",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A person's name who wrote a specific song and a person's name who died in a specific year. | [A-Category]: Two names of individuals. | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: A person's name who wrote a specific song and died in a specific year. | [A-Category]: A person's name. | [Alignment]: Yes"
       }
     },
-    "final_answer": "Lee Hazlewood, James A. Shoulders",
-    "elapsed_sec": 10.35,
+    "final_answer": "Lee Hazlewood",
+    "elapsed_sec": 12.33,
     "error": null,
     "llm_calls": {
       "planner": 1,
       "retrieval": 2,
       "score_1": 1,
-      "refine_query": 0,
+      "refine_query": 1,
       "answer": 1,
       "final_verify": 1,
       "logprob": 0,
       "other": 0
     },
-    "llm_calls_total": 6
+    "llm_calls_total": 7
   },
   {
     "question": "The 2011–12 VCU Rams men's basketball team, led by third year head coach Shaka Smart, represented Virginia Commonwealth University which was founded in what year?",
@@ -1704,7 +1679,7 @@
           "2015–16 VCU Rams men's basketball team",
           "2010–11 VCU Rams men's basketball team"
         ],
-        "intermediate_answer": "1968",
+        "intermediate_answer": "Virginia Commonwealth University was founded in 1968.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -1733,7 +1708,7 @@
       }
     },
     "final_answer": "1968",
-    "elapsed_sec": 12.32,
+    "elapsed_sec": 10.05,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -1762,7 +1737,7 @@
           "Dictyosperma",
           "Huernia"
         ],
-        "intermediate_answer": "Yes",
+        "intermediate_answer": "Yes, Dictyosperma is described as a genus.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -1774,7 +1749,7 @@
           "Huernia",
           "Dictyosperma"
         ],
-        "intermediate_answer": "Yes",
+        "intermediate_answer": "Yes, Huernia is described as a genus.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -1788,7 +1763,7 @@
       }
     },
     "final_answer": "yes",
-    "elapsed_sec": 12.2,
+    "elapsed_sec": 6.4,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -1835,19 +1810,11 @@
           "Kaiser Ventures",
           "John Roach &amp; Sons"
         ],
-        "intermediate_answer": "Henry J. Kaiser made significant contributions to modern American shipbuilding by establishing the Kaiser Shipyards, which built Liberty ships during World War II. He is recognized as the father of modern American shipbuilding and played a crucial role in meeting wartime construction goals set by the U.S. Maritime Commission. His shipyards ranked 20th among U.S. corporations in wartime production contracts.",
+        "intermediate_answer": "Henry J. Kaiser is known as the father of modern American shipbuilding.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
-        "flag": "refined",
-        "refined_query": "What contributions did Henry J. Kaiser make to modern American shipbuilding?",
-        "refined_titles": [
-          "Kaiser Shipyards",
-          "Edgar Kaiser Sr.",
-          "Henry J. Kaiser",
-          "Kaiser Ventures",
-          "John Roach &amp; Sons"
-        ]
+        "flag": "verified"
       },
       "final": {
         "final_answer": "Henry J. Kaiser",
@@ -1857,37 +1824,37 @@
       }
     },
     "final_answer": "Henry J. Kaiser",
-    "elapsed_sec": 17.11,
+    "elapsed_sec": 8.22,
     "error": null,
     "llm_calls": {
-      "planner": 2,
+      "planner": 1,
       "retrieval": 2,
-      "score_1": 2,
+      "score_1": 1,
       "refine_query": 1,
       "answer": 1,
       "final_verify": 1,
       "logprob": 0,
-      "other": 1
+      "other": 0
     },
-    "llm_calls_total": 10
+    "llm_calls_total": 7
   },
   {
     "question": "What is the name for the adventure in \"Tunnels and Trolls\", a game designed by Ken St. Andre?",
     "gold_answer": "Arena of Khazan",
     "task_type": "bridge",
     "sub_queries": [
-      "Who is the designer of Tunnels and Trolls?",
-      "What is the name of the adventure in Tunnels and Trolls designed by Ken St. Andre?"
+      "Who designed the game Tunnels and Trolls?",
+      "What is the name of the adventure in Tunnels and Trolls?"
     ],
     "steps": {
       "0": {
-        "sub_query": "Who is the designer of Tunnels and Trolls?",
+        "sub_query": "Who designed the game Tunnels and Trolls?",
         "retrieved_titles": [
           "Tunnels &amp; Trolls",
-          "Ken St. Andre",
-          "Mercenaries, Spies and Private Eyes",
           "Arena of Khazan",
-          "Tunnels &amp; Trolls: Crusaders of Khazan"
+          "Tunnels &amp; Trolls: Crusaders of Khazan",
+          "Mercenaries, Spies and Private Eyes",
+          "Ken St. Andre"
         ],
         "intermediate_answer": "Ken St. Andre",
         "confidence": 1.0,
@@ -1896,7 +1863,7 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What is the name of the adventure in Tunnels and Trolls designed by Ken St. Andre?",
+        "sub_query": "What is the name of the adventure in Tunnels and Trolls?",
         "retrieved_titles": [
           "Tunnels &amp; Trolls",
           "Ken St. Andre",
@@ -1904,21 +1871,21 @@
           "Arena of Khazan",
           "Mercenaries, Spies and Private Eyes"
         ],
-        "intermediate_answer": "Arena of Khazan",
-        "confidence": 1.0,
-        "score_1": 1.0,
+        "intermediate_answer": "Crusaders of Khazan, Arena of Khazan",
+        "confidence": 0.6,
+        "score_1": 0.6,
         "score_2": null,
         "flag": "verified"
       },
       "final": {
-        "final_answer": "Arena of Khazan",
+        "final_answer": "Crusaders of Khazan",
         "is_not_found": false,
         "flag": "passed",
         "reasoning": "[Q-Constraint]: The name of an adventure in a specific role-playing game. | [A-Category]: The name of an adventure. | [Alignment]: Yes"
       }
     },
-    "final_answer": "Arena of Khazan",
-    "elapsed_sec": 16.07,
+    "final_answer": "Crusaders of Khazan",
+    "elapsed_sec": 8.51,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -1963,7 +1930,7 @@
       }
     },
     "final_answer": "March 14, 2000",
-    "elapsed_sec": 6.14,
+    "elapsed_sec": 4.75,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -1994,21 +1961,21 @@
           "Kyo (musician)",
           "Hayden (musician)"
         ],
-        "intermediate_answer": "Fujioka, Gunma",
+        "intermediate_answer": "Buck-Tick is from Fujioka, Gunma, Japan.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "final": {
-        "final_answer": "Fujioka, Gunma",
+        "final_answer": "Fujioka, Gunma, Japan",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a geographic location | [A-Category]: a geographic location | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: A geographic location | [A-Category]: A geographic location | [Alignment]: Yes"
       }
     },
-    "final_answer": "Fujioka, Gunma",
-    "elapsed_sec": 5.22,
+    "final_answer": "Fujioka, Gunma, Japan",
+    "elapsed_sec": 5.15,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -2040,7 +2007,7 @@
           "L'Oiseau Blanc",
           "Paul Sauvage (aviator)"
         ],
-        "intermediate_answer": "Charles Nungesser",
+        "intermediate_answer": "François Coli and Charles Nungesser.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -2049,25 +2016,17 @@
       "1": {
         "sub_query": "What is L'Oiseau Blanc?",
         "retrieved_titles": [
-          "Charles Nungesser",
           "François Coli",
-          "L'Oiseau Blanc",
           "Levasseur PL.8",
+          "L'Oiseau Blanc",
+          "Charles Nungesser",
           "L'Oiseau bleu (Metzinger)"
         ],
-        "intermediate_answer": "L'Oiseau Blanc is significant as it was the aircraft flown by Charles Nungesser and François Coli during their attempt to make the first non-stop transatlantic flight in 1927, competing for the Orteig Prize.",
+        "intermediate_answer": "L'Oiseau Blanc was a French Levasseur PL.8 biplane that disappeared in 1927 during an attempt to make the first non-stop transatlantic flight between Paris and New York City.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
-        "flag": "refined",
-        "refined_query": "What is the significance of L'Oiseau Blanc in relation to Charles Nungesser?",
-        "refined_titles": [
-          "Charles Nungesser",
-          "François Coli",
-          "L'Oiseau Blanc",
-          "L'Oiseau bleu (Metzinger)",
-          "Levasseur PL.8"
-        ]
+        "flag": "verified"
       },
       "final": {
         "final_answer": "Charles Nungesser",
@@ -2077,19 +2036,19 @@
       }
     },
     "final_answer": "Charles Nungesser",
-    "elapsed_sec": 13.51,
+    "elapsed_sec": 9.06,
     "error": null,
     "llm_calls": {
-      "planner": 2,
+      "planner": 1,
       "retrieval": 2,
-      "score_1": 2,
+      "score_1": 1,
       "refine_query": 1,
       "answer": 1,
       "final_verify": 1,
       "logprob": 0,
-      "other": 1
+      "other": 0
     },
-    "llm_calls_total": 10
+    "llm_calls_total": 7
   },
   {
     "question": "Are Freakonomics and In the Realm of the Hackers both American documentaries?",
@@ -2109,7 +2068,7 @@
           "Robin Goldstein",
           "In the Realm of the Hackers"
         ],
-        "intermediate_answer": "Yes",
+        "intermediate_answer": "Yes, Freakonomics is an American documentary.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -2124,9 +2083,9 @@
           "Heidi Ewing",
           "Jay Leiderman"
         ],
-        "intermediate_answer": "No",
-        "confidence": 0.8,
-        "score_1": 0.8,
+        "intermediate_answer": "No, In the Realm of the Hackers is an Australian documentary.",
+        "confidence": 1.0,
+        "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
@@ -2138,7 +2097,7 @@
       }
     },
     "final_answer": "no",
-    "elapsed_sec": 13.13,
+    "elapsed_sec": 7.55,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -2170,7 +2129,7 @@
           "Van Conner",
           "Gary Lee Conner"
         ],
-        "intermediate_answer": "6",
+        "intermediate_answer": "Letters to Cleo had six members.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -2185,21 +2144,21 @@
           "Gary Lee Conner",
           "Mad Season (band)"
         ],
-        "intermediate_answer": "4",
-        "confidence": 0.8,
-        "score_1": 0.8,
+        "intermediate_answer": "Screaming Trees had four members.",
+        "confidence": 1.0,
+        "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
       "final": {
-        "final_answer": "6",
+        "final_answer": "Letters to Cleo",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The question requires a comparison of the number of members in two bands. | [A-Category]: The answer provides a numerical value representing the number of members. | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: Which band had more members? | [A-Category]: Band name | [Alignment]: Yes"
       }
     },
-    "final_answer": "6",
-    "elapsed_sec": 9.99,
+    "final_answer": "Letters to Cleo",
+    "elapsed_sec": 8.07,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -2218,8 +2177,7 @@
     "gold_answer": "October 1922",
     "task_type": "bridge",
     "sub_queries": [
-      "When did the Russian Civil War end?",
-      "What was the role of Alexander Kerensky in the Russian Civil War?"
+      "When did the Russian Civil War end?"
     ],
     "steps": {
       "0": {
@@ -2231,48 +2189,33 @@
           "Alexander Kerensky",
           "Socialist Revolutionary Party"
         ],
-        "intermediate_answer": "October 1922",
+        "intermediate_answer": "The Russian Civil War ended in 1923.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
-      "1": {
-        "sub_query": "What was the role of Alexander Kerensky in the Russian Civil War?",
-        "retrieved_titles": [
-          "Lavr Kornilov",
-          "Alexander Kerensky",
-          "Timofey Samsonov",
-          "Socialist Revolutionary Party",
-          "Kerensky–Krasnov uprising"
-        ],
-        "intermediate_answer": "key political figure in the Russian Revolution of 1917 and leader of the moderate-socialist Trudoviks faction of the Socialist Revolutionary Party",
-        "confidence": 0.6,
-        "score_1": 0.6,
-        "score_2": null,
-        "flag": "verified"
-      },
       "final": {
-        "final_answer": "October 1922",
+        "final_answer": "1923",
         "is_not_found": false,
         "flag": "passed",
         "reasoning": "[Q-Constraint]: a specific date | [A-Category]: a specific date | [Alignment]: Yes"
       }
     },
-    "final_answer": "October 1922",
-    "elapsed_sec": 13.39,
+    "final_answer": "1923",
+    "elapsed_sec": 4.27,
     "error": null,
     "llm_calls": {
       "planner": 1,
-      "retrieval": 2,
-      "score_1": 1,
-      "refine_query": 1,
+      "retrieval": 1,
+      "score_1": 0,
+      "refine_query": 0,
       "answer": 1,
       "final_verify": 1,
       "logprob": 0,
       "other": 0
     },
-    "llm_calls_total": 7
+    "llm_calls_total": 4
   },
   {
     "question": "Seven Brief Lessons on Physics was written by an Italian physicist that has worked in France since what year?",
@@ -2321,7 +2264,7 @@
       }
     },
     "final_answer": "2000",
-    "elapsed_sec": 11.25,
+    "elapsed_sec": 8.41,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -2340,17 +2283,18 @@
     "gold_answer": "World War II",
     "task_type": "bridge",
     "sub_queries": [
-      "What war had over 60 million casualties?"
+      "Identify the war with over 60 million casualties",
+      "Find the name of the memorial that commemorates the fallen of that war"
     ],
     "steps": {
       "0": {
-        "sub_query": "What war had over 60 million casualties?",
+        "sub_query": "Identify the war with over 60 million casualties",
         "retrieved_titles": [
           "World War II casualties",
-          "Freetown Memorial",
-          "Portsmouth Naval Memorial",
           "Rainham War Memorial",
-          "Alamein Memorial"
+          "Freetown Memorial",
+          "Alamein Memorial",
+          "Portsmouth Naval Memorial"
         ],
         "intermediate_answer": "World War II",
         "confidence": 1.0,
@@ -2358,27 +2302,50 @@
         "score_2": null,
         "flag": "skipped"
       },
+      "1": {
+        "sub_query": "Find the name of the memorial that commemorates the fallen of that war",
+        "retrieved_titles": [
+          "Rainham War Memorial",
+          "Vietnam War Memorial, Hanoi",
+          "Portsmouth Naval Memorial",
+          "Freetown Memorial",
+          "Alamein Memorial"
+        ],
+        "intermediate_answer": "The Alamein Memorial specifically commemorates the fallen of World War II.",
+        "confidence": 0.8,
+        "score_1": 0.8,
+        "score_2": null,
+        "flag": "refined",
+        "refined_query": "Find the name of the memorial that specifically commemorates the fallen of World War II.",
+        "refined_titles": [
+          "Rainham War Memorial",
+          "Vietnam War Memorial, Hanoi",
+          "Alamein Memorial",
+          "Portsmouth Naval Memorial",
+          "Freetown Memorial"
+        ]
+      },
       "final": {
         "final_answer": "World War II",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The question requires the identification of a specific war. | [A-Category]: The answer identifies World War II as a specific war. | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: The question requires the identification of a specific war. | [A-Category]: The answer identifies a specific war, World War II. | [Alignment]: Yes"
       }
     },
     "final_answer": "World War II",
-    "elapsed_sec": 5.42,
+    "elapsed_sec": 12.57,
     "error": null,
     "llm_calls": {
-      "planner": 1,
-      "retrieval": 1,
-      "score_1": 0,
-      "refine_query": 0,
+      "planner": 2,
+      "retrieval": 2,
+      "score_1": 2,
+      "refine_query": 1,
       "answer": 1,
       "final_verify": 1,
       "logprob": 0,
-      "other": 0
+      "other": 1
     },
-    "llm_calls_total": 4
+    "llm_calls_total": 10
   },
   {
     "question": "Are both Elko Regional Airport and Gerald R. Ford International Airport located in Michigan?",
@@ -2398,22 +2365,22 @@
           "John Glenn Columbus International Airport",
           "Raleigh Executive Jetport"
         ],
-        "intermediate_answer": "Not found in documents",
+        "intermediate_answer": "No, Elko Regional Airport is located in Elko County, Nevada.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Is Gerald R. Ford International Airport situated in the state of Michigan?",
+        "sub_query": "Is Gerald R. Ford International Airport located in Michigan?",
         "retrieved_titles": [
           "Gerald R. Ford International Airport",
           "Gerald R. Ford Freeway",
+          "Gerald R. Ford Presidential Library",
           "John Glenn Columbus International Airport",
-          "Grantley Adams International Airport",
-          "Gerald R. Ford Presidential Library"
+          "Grantley Adams International Airport"
         ],
-        "intermediate_answer": "Yes",
+        "intermediate_answer": "Yes, Gerald R. Ford International Airport is located in Michigan.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -2427,7 +2394,7 @@
       }
     },
     "final_answer": "no",
-    "elapsed_sec": 10.02,
+    "elapsed_sec": 7.3,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -2437,21 +2404,21 @@
       "answer": 1,
       "final_verify": 1,
       "logprob": 0,
-      "other": 1
+      "other": 0
     },
-    "llm_calls_total": 7
+    "llm_calls_total": 6
   },
   {
     "question": "Ralph Hefferline was a psychology professor at a university that is located in what city?",
     "gold_answer": "New York City",
     "task_type": "bridge",
     "sub_queries": [
-      "What university did Ralph Hefferline teach at?",
-      "What city is that university located in?"
+      "What university did Ralph Hefferline work at?",
+      "In which city is that university located?"
     ],
     "steps": {
       "0": {
-        "sub_query": "What university did Ralph Hefferline teach at?",
+        "sub_query": "What university did Ralph Hefferline work at?",
         "retrieved_titles": [
           "Ralph Hefferline",
           "David C. Funder",
@@ -2466,13 +2433,13 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What city is that university located in?",
+        "sub_query": "In which city is that university located?",
         "retrieved_titles": [
           "Columbia University",
           "Ralph Hefferline",
           "Princeton Neuroscience Institute",
           "Stanley Coren",
-          "Mathematically Alive"
+          "Abraham Maslow"
         ],
         "intermediate_answer": "New York City",
         "confidence": 1.0,
@@ -2488,7 +2455,7 @@
       }
     },
     "final_answer": "New York City",
-    "elapsed_sec": 12.46,
+    "elapsed_sec": 11.77,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -2520,7 +2487,7 @@
           "Teddy Roosevelt Terrier",
           "Feist (dog)"
         ],
-        "intermediate_answer": "Smooth Fox Terrier",
+        "intermediate_answer": "The ancestors of the Manchester Terrier include the Smooth Fox Terrier and the now extinct English White Terrier.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -2535,7 +2502,7 @@
           "Feist (dog)",
           "Russkiy Toy"
         ],
-        "intermediate_answer": "Roman Cattle Dogs, Native Celtic Dogs, Viking Herding Spitzes, Gordon Setters, Irish Setters",
+        "intermediate_answer": "The ancestors of the Scotch Collie include Roman Cattle Dogs, Native Celtic Dogs, Viking Herding Spitzes, and the Gordon and Irish Setters.",
         "confidence": 0.8,
         "score_1": 0.8,
         "score_2": null,
@@ -2549,7 +2516,7 @@
       }
     },
     "final_answer": "Scotch Collie",
-    "elapsed_sec": 15.2,
+    "elapsed_sec": 8.83,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -2568,18 +2535,18 @@
     "gold_answer": "Mumbai",
     "task_type": "bridge",
     "sub_queries": [
-      "What company did Sachin Warrier work for as a software engineer?",
-      "Where is that company headquartered?"
+      "Find the company that Sachin Warrier worked for as a software engineer",
+      "Find the headquarters of that company"
     ],
     "steps": {
       "0": {
-        "sub_query": "What company did Sachin Warrier work for as a software engineer?",
+        "sub_query": "Find the company that Sachin Warrier worked for as a software engineer",
         "retrieved_titles": [
           "Sachin Bansal",
-          "Alec Muffett",
           "Sachin Warrier",
-          "William Connolley",
-          "Wes McKinney"
+          "Wes McKinney",
+          "Alec Muffett",
+          "Kanave Kalayathe"
         ],
         "intermediate_answer": "Tata Consultancy Services",
         "confidence": 1.0,
@@ -2588,13 +2555,13 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Where is that company headquartered?",
+        "sub_query": "Find the headquarters of that company",
         "retrieved_titles": [
           "Tata Consultancy Services",
           "Sachin Bansal",
           "Sachin Warrier",
-          "William Connolley",
-          "Divya S. Menon"
+          "Divya S. Menon",
+          "Kanave Kalayathe"
         ],
         "intermediate_answer": "Mumbai, Maharashtra",
         "confidence": 1.0,
@@ -2610,7 +2577,7 @@
       }
     },
     "final_answer": "Mumbai, Maharashtra",
-    "elapsed_sec": 13.43,
+    "elapsed_sec": 8.57,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -2642,24 +2609,24 @@
           "The Kindaichi Case Files",
           "Clear Skies!"
         ],
-        "intermediate_answer": "Masakazu Katsura",
+        "intermediate_answer": "Not found in documents.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What year was the author of the manga series born?",
+        "sub_query": "What is the birth year of the author of the manga series featuring the character Ichitaka Seto?",
         "retrieved_titles": [
           "Masakazu Katsura",
           "Neuro: Supernatural Detective",
+          "The Kindaichi Case Files",
           "Haven't You Heard? I'm Sakamoto",
-          "Clear Skies!",
-          "The Kindaichi Case Files"
+          "Clear Skies!"
         ],
-        "intermediate_answer": "December 10, 1962",
-        "confidence": 1.0,
-        "score_1": 1.0,
+        "intermediate_answer": "1962",
+        "confidence": 0.6,
+        "score_1": 0.6,
         "score_2": null,
         "flag": "verified"
       },
@@ -2671,17 +2638,17 @@
       }
     },
     "final_answer": "1962",
-    "elapsed_sec": 13.68,
+    "elapsed_sec": 8.63,
     "error": null,
     "llm_calls": {
       "planner": 1,
       "retrieval": 2,
       "score_1": 1,
-      "refine_query": 1,
+      "refine_query": 0,
       "answer": 1,
       "final_verify": 1,
       "logprob": 0,
-      "other": 0
+      "other": 1
     },
     "llm_calls_total": 7
   },
@@ -2703,7 +2670,7 @@
           "Treaty of Addis Ababa",
           "Ethiopia–Japan relations"
         ],
-        "intermediate_answer": "Battle of Adwa",
+        "intermediate_answer": "Giuseppe Arimondi lost his life in the Battle of Adwa.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -2713,26 +2680,26 @@
         "sub_query": "What was secured for Ethiopia as a result of that battle?",
         "retrieved_titles": [
           "Battle of Adwa",
-          "Treaty of Addis Ababa",
-          "Second Battle of Agordat",
           "Giuseppe Arimondi",
-          "Ethiopia–Japan relations"
+          "Second Battle of Agordat",
+          "Treaty of Addis Ababa",
+          "First Italo-Ethiopian War"
         ],
-        "intermediate_answer": "Ethiopian sovereignty",
+        "intermediate_answer": "Ethiopian sovereignty.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
       "final": {
-        "final_answer": "Ethiopian sovereignty",
+        "final_answer": "Ethiopian sovereignty.",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The question asks for the outcome or significance of a battle, specifically what it secured for Ethiopia. | [A-Category]: The answer refers to a concept of political status or condition, specifically Ethiopian sovereignty. | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: The outcome or significance of a battle in relation to a country's status or sovereignty. | [A-Category]: A statement regarding the sovereignty of Ethiopia. | [Alignment]: Yes"
       }
     },
-    "final_answer": "Ethiopian sovereignty",
-    "elapsed_sec": 16.74,
+    "final_answer": "Ethiopian sovereignty.",
+    "elapsed_sec": 9.88,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -2751,68 +2718,77 @@
     "gold_answer": "Nelson Rockefeller",
     "task_type": "bridge",
     "sub_queries": [
-      "Who was the secretary of the Committee on the Employment of Minority Groups in the News Media?",
-      "Under which United States Vice President did this committee operate?"
+      "Who was the United States Vice President during Alfred Balk's tenure as secretary of the Committee on the Employment of Minority Groups in the News Media?",
+      "What were the dates of Alfred Balk's tenure as secretary of the Committee on the Employment of Minority Groups in the News Media?"
     ],
     "steps": {
       "0": {
-        "sub_query": "Who was the secretary of the Committee on the Employment of Minority Groups in the News Media?",
+        "sub_query": "Who was the United States Vice President during Alfred Balk's tenure as secretary of the Committee on the Employment of Minority Groups in the News Media?",
         "retrieved_titles": [
           "Executive Order 10925",
           "Alfred Balk",
           "Cynthia Hogan",
-          "Gordon Johndroe",
-          "Gerald Ford"
+          "Gerald Ford",
+          "Gordon Johndroe"
         ],
-        "intermediate_answer": "Alfred Balk",
+        "intermediate_answer": "Lyndon Johnson",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Under which United States Vice President did this committee operate?",
+        "sub_query": "What were the dates of Alfred Balk's tenure as secretary of the Committee on the Employment of Minority Groups in the News Media?",
         "retrieved_titles": [
-          "Gore-Chernomyrdin Commission",
-          "Executive Order 10925",
           "Alfred Balk",
-          "Cynthia Hogan",
-          "Gerald Ford"
+          "Executive Order 10925",
+          "Gerald Ford",
+          "Gordon Johndroe",
+          "Gore-Chernomyrdin Commission"
         ],
-        "intermediate_answer": "Lyndon Johnson",
-        "confidence": 0.8,
-        "score_1": 0.8,
+        "intermediate_answer": "Not found in documents.",
+        "confidence": 0.0,
+        "score_1": 0.0,
         "score_2": null,
-        "flag": "verified"
+        "flag": "uncertain",
+        "refined_query": "What were the specific start and end dates of Alfred Balk's tenure as secretary of the Committee on the Employment of Minority Groups in the News Media during Lyndon Johnson's vice presidency?",
+        "refined_titles": [
+          "Alfred Balk",
+          "Executive Order 10925",
+          "Gerald Ford",
+          "Nelson Rockefeller",
+          "Gordon Johndroe"
+        ]
       },
       "final": {
         "final_answer": "Lyndon Johnson",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A person's name | [A-Category]: A person's name | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: a person's name | [A-Category]: a person's name | [Alignment]: Yes"
       }
     },
     "final_answer": "Lyndon Johnson",
-    "elapsed_sec": 16.35,
+    "elapsed_sec": 15.38,
     "error": null,
     "llm_calls": {
-      "planner": 1,
+      "planner": 2,
       "retrieval": 2,
-      "score_1": 1,
+      "score_1": 0,
       "refine_query": 1,
       "answer": 1,
       "final_verify": 1,
       "logprob": 0,
-      "other": 0
+      "other": 1
     },
-    "llm_calls_total": 7
+    "llm_calls_total": 8
   },
   {
     "question": "A medieval fortress in Dirleton, East Lothian, Scotland borders on the south side of what coastal area?",
     "gold_answer": "Yellowcraig",
     "task_type": "bridge",
     "sub_queries": [
-      "What is the name of the coastal area south of Dirleton, East Lothian, Scotland?"
+      "What is the name of the coastal area south of Dirleton, East Lothian, Scotland?",
+      "What is the location of the medieval fortress in Dirleton, East Lothian, Scotland?"
     ],
     "steps": {
       "0": {
@@ -2830,64 +2806,79 @@
         "score_2": null,
         "flag": "skipped"
       },
+      "1": {
+        "sub_query": "What is the location of the medieval fortress in Dirleton, East Lothian, Scotland?",
+        "retrieved_titles": [
+          "Dirleton Castle",
+          "Dirleton Kirk",
+          "Yellowcraigs",
+          "Lord Haliburton of Dirleton",
+          "Dirleton"
+        ],
+        "intermediate_answer": "Dirleton, East Lothian, Scotland.",
+        "confidence": 1.0,
+        "score_1": 1.0,
+        "score_2": null,
+        "flag": "verified"
+      },
       "final": {
         "final_answer": "Yellowcraig",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a geographic location | [A-Category]: a geographic location | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: A geographic location | [A-Category]: A geographic location | [Alignment]: Yes"
       }
     },
     "final_answer": "Yellowcraig",
-    "elapsed_sec": 5.78,
+    "elapsed_sec": 9.28,
     "error": null,
     "llm_calls": {
       "planner": 1,
-      "retrieval": 1,
-      "score_1": 0,
-      "refine_query": 0,
+      "retrieval": 2,
+      "score_1": 1,
+      "refine_query": 1,
       "answer": 1,
       "final_verify": 1,
       "logprob": 0,
       "other": 0
     },
-    "llm_calls_total": 4
+    "llm_calls_total": 7
   },
   {
     "question": "Who is the writer of this song that was inspired by words on a tombstone and was the first track on the box set Back to Mono?",
     "gold_answer": "Phil Spector",
     "task_type": "bridge",
     "sub_queries": [
-      "Identify the song that was inspired by words on a tombstone and is the first track on the box set Back to Mono.",
-      "Find the writer of the identified song."
+      "What is the first track on the box set Back to Mono?",
+      "Who is the writer of the song inspired by words on a tombstone?"
     ],
     "steps": {
       "0": {
-        "sub_query": "Identify the song that was inspired by words on a tombstone and is the first track on the box set Back to Mono.",
+        "sub_query": "What is the first track on the box set Back to Mono?",
         "retrieved_titles": [
           "Back to Mono (1958–1969)",
-          "To Know Him Is to Love Him",
           "Chrome, Smoke &amp; BBQ",
           "Led Zeppelin Boxed Set 2",
-          "Nashville Rebel (box set)"
+          "Radiohead Box Set",
+          "The Doors: Vinyl Box Set"
         ],
-        "intermediate_answer": "To Know Him Is to Love Him",
+        "intermediate_answer": "The first track on the box set Back to Mono is \"To Know Him Is to Love Him.\"",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Find the writer of the identified song.",
+        "sub_query": "Who is the writer of the song inspired by words on a tombstone?",
         "retrieved_titles": [
           "To Know Him Is to Love Him",
           "Back to Mono (1958–1969)",
-          "Nashville Rebel (box set)",
           "Chrome, Smoke &amp; BBQ",
+          "Nashville Rebel (box set)",
           "Led Zeppelin Boxed Set 2"
         ],
         "intermediate_answer": "Phil Spector",
-        "confidence": 1.0,
-        "score_1": 1.0,
+        "confidence": 0.6,
+        "score_1": 0.6,
         "score_2": null,
         "flag": "verified"
       },
@@ -2899,7 +2890,7 @@
       }
     },
     "final_answer": "Phil Spector",
-    "elapsed_sec": 14.66,
+    "elapsed_sec": 9.4,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -2946,33 +2937,40 @@
           "World Summit of Nobel Peace Laureates",
           "Sergo Mikoyan"
         ],
-        "intermediate_answer": "World Summit of Nobel Peace Laureates",
-        "confidence": 0.6,
-        "score_1": 0.6,
+        "intermediate_answer": "Not found in documents.",
+        "confidence": 0.0,
+        "score_1": 0.0,
         "score_2": null,
-        "flag": "verified"
+        "flag": "uncertain",
+        "refined_query": "What specific forum did Mikhail Gorbachev initiate?",
+        "refined_titles": [
+          "Nikolai Podgorny",
+          "Mikhail Gorbachev",
+          "Mikhail Suslov",
+          "Andrei Kirilenko (politician)",
+          "Sergo Mikoyan"
+        ]
       },
       "final": {
-        "final_answer": "World Summit of Nobel Peace Laureates",
-        "is_not_found": false,
-        "flag": "passed",
-        "reasoning": "[Q-Constraint]: A type of forum initiated by a former Soviet statesman | [A-Category]: A specific forum event | [Alignment]: Yes"
+        "final_answer": "Not found",
+        "is_not_found": true,
+        "flag": "not_found"
       }
     },
-    "final_answer": "World Summit of Nobel Peace Laureates",
-    "elapsed_sec": 14.05,
+    "final_answer": "Not found",
+    "elapsed_sec": 8.37,
     "error": null,
     "llm_calls": {
-      "planner": 1,
+      "planner": 2,
       "retrieval": 2,
       "score_1": 1,
       "refine_query": 1,
       "answer": 1,
-      "final_verify": 1,
+      "final_verify": 0,
       "logprob": 0,
-      "other": 0
+      "other": 1
     },
-    "llm_calls_total": 7
+    "llm_calls_total": 8
   },
   {
     "question": "Are Ferocactus and Silene both types of plant?",
@@ -2992,36 +2990,36 @@
           "Silene",
           "Silene stenophylla"
         ],
-        "intermediate_answer": "Not found in documents",
+        "intermediate_answer": "Yes, Ferocactus is a type of plant.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Is Silene a genus of flowering plants?",
+        "sub_query": "Is Silene a type of plant?",
         "retrieved_titles": [
           "Silene",
           "Silene tomentosa",
-          "Sex determination in Silene",
           "Silene latifolia",
+          "Silene stenophylla",
           "Silene conoidea"
         ],
-        "intermediate_answer": "Yes",
+        "intermediate_answer": "Yes, Silene is a type of plant.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
       "final": {
-        "final_answer": "no",
+        "final_answer": "yes",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: boolean yes/no | [A-Category]: boolean no | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: boolean yes/no | [A-Category]: boolean yes/no | [Alignment]: Yes"
       }
     },
-    "final_answer": "no",
-    "elapsed_sec": 9.5,
+    "final_answer": "yes",
+    "elapsed_sec": 6.58,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -3031,21 +3029,21 @@
       "answer": 1,
       "final_verify": 1,
       "logprob": 0,
-      "other": 1
+      "other": 0
     },
-    "llm_calls_total": 7
+    "llm_calls_total": 6
   },
   {
     "question": "Which British first-generation jet-powered medium bomber was used in the South West Pacific theatre of World War II?",
     "gold_answer": "English Electric Canberra",
     "task_type": "bridge",
     "sub_queries": [
-      "Identify the British first-generation jet-powered medium bombers used in World War II",
-      "Determine which of these bombers was specifically used in the South West Pacific theatre"
+      "Identify British first-generation jet-powered medium bombers",
+      "Determine which of these bombers was used in the South West Pacific theatre of World War II"
     ],
     "steps": {
       "0": {
-        "sub_query": "Identify the British first-generation jet-powered medium bombers used in World War II",
+        "sub_query": "Identify British first-generation jet-powered medium bombers",
         "retrieved_titles": [
           "English Electric Canberra",
           "Tupolev Tu-12",
@@ -3053,92 +3051,93 @@
           "No. 2 Squadron RAAF",
           "No. 12 Squadron RAAF"
         ],
-        "intermediate_answer": "Not found in documents",
+        "intermediate_answer": "English Electric Canberra",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Identify the British first-generation jet-powered medium bomber that was specifically deployed in the South West Pacific theatre during World War II.",
+        "sub_query": "Determine which of these bombers was used in the South West Pacific theatre of World War II",
         "retrieved_titles": [
-          "English Electric Canberra",
-          "Tupolev Tu-12",
           "No. 12 Squadron RAAF",
-          "Savoia-Marchetti SM.79",
-          "No. 2 Squadron RAAF"
+          "No. 2 Squadron RAAF",
+          "English Electric Canberra",
+          "South West Pacific Area (command)",
+          "South West Pacific theatre of World War II"
         ],
         "intermediate_answer": "Not found in documents.",
         "confidence": 0.0,
         "score_1": 0.0,
         "score_2": null,
-        "flag": "not_found",
-        "refined_query": "Identify the specific British first-generation jet-powered medium bomber that was operational in the South West Pacific theatre during World War II, including its model and deployment details.",
+        "flag": "uncertain",
+        "refined_query": "Identify the specific role and deployment of the English Electric Canberra in the South West Pacific theatre of World War II.",
         "refined_titles": [
-          "English Electric Canberra",
           "No. 12 Squadron RAAF",
-          "Tupolev Tu-12",
-          "Savoia-Marchetti SM.79",
-          "No. 2 Squadron RAAF"
+          "Coastwatchers",
+          "No. 2 Squadron RAAF",
+          "South West Pacific theatre of World War II",
+          "English Electric Canberra"
         ]
       },
       "final": {
-        "final_answer": "Not found",
-        "is_not_found": true,
-        "flag": "not_found"
+        "final_answer": "English Electric Canberra",
+        "is_not_found": false,
+        "flag": "passed",
+        "reasoning": "[Q-Constraint]: A specific type of military aircraft used in World War II | [A-Category]: A specific military aircraft model | [Alignment]: Yes"
       }
     },
-    "final_answer": "Not found",
-    "elapsed_sec": 11.29,
+    "final_answer": "English Electric Canberra",
+    "elapsed_sec": 15.36,
     "error": null,
     "llm_calls": {
       "planner": 2,
       "retrieval": 2,
-      "score_1": 0,
-      "refine_query": 0,
+      "score_1": 1,
+      "refine_query": 1,
       "answer": 1,
-      "final_verify": 0,
+      "final_verify": 1,
       "logprob": 0,
-      "other": 2
+      "other": 1
     },
-    "llm_calls_total": 7
+    "llm_calls_total": 9
   },
   {
     "question": "Which year and which conference was the 14th season for this conference as part of the NCAA Division that the Colorado Buffaloes played in with a record of 2-6 in conference play?",
     "gold_answer": "2009 Big 12 Conference",
     "task_type": "bridge",
     "sub_queries": [
-      "Find the year when the Colorado Buffaloes had a record of 2-6 in conference play.",
-      "Identify the conference in which the Colorado Buffaloes played during that year."
+      "What year did the Colorado Buffaloes have a record of 2-6 in conference play?",
+      "Which conference was the Colorado Buffaloes part of during that year?"
     ],
     "steps": {
       "0": {
-        "sub_query": "Find the year when the Colorado Buffaloes had a record of 2-6 in conference play.",
+        "sub_query": "What year did the Colorado Buffaloes have a record of 2-6 in conference play?",
         "retrieved_titles": [
-          "2011 Colorado Buffaloes football team",
           "1989 Colorado Buffaloes football team",
+          "2011 Colorado Buffaloes football team",
+          "2015 Colorado Buffaloes football team",
           "2012 Colorado Buffaloes football team",
-          "2014 Colorado Buffaloes football team",
-          "2015 Colorado Buffaloes football team"
+          "2014 Colorado Buffaloes football team"
         ],
-        "intermediate_answer": "Not found in documents",
+        "intermediate_answer": "Not found in documents.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "In which conference did the Colorado Buffaloes compete during the year they recorded a 2-6 record in conference play?",
+        "sub_query": "In which NCAA conference did the Colorado Buffaloes compete during the year they recorded a 2-6 conference play record?",
         "retrieved_titles": [
-          "1989 Colorado Buffaloes football team",
-          "2011 Colorado Buffaloes football team",
           "2015–16 Colorado Buffaloes men's basketball team",
-          "2015 Colorado Buffaloes football team",
-          "2014–15 Colorado Buffaloes men's basketball team"
+          "2016–17 Colorado Buffaloes men's basketball team",
+          "1989 Colorado Buffaloes football team",
+          "2014–15 Colorado Buffaloes men's basketball team",
+          "2011 Colorado Buffaloes football team"
         ],
         "intermediate_answer": "Pac-12 Conference",
-        "confidence": 0.6,
-        "score_1": 0.6,
+        "confidence": 1.0,
+        "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
@@ -3149,7 +3148,7 @@
       }
     },
     "final_answer": "Not found",
-    "elapsed_sec": 11.0,
+    "elapsed_sec": 6.31,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -3181,7 +3180,7 @@
           "Carrefour",
           "Lewis's"
         ],
-        "intermediate_answer": "Carrefour",
+        "intermediate_answer": "Carrefour bought Euromarché in 1991.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -3190,27 +3189,27 @@
       "1": {
         "sub_query": "How many hypermarkets did that chain operate at the end of 2016?",
         "retrieved_titles": [
+          "Euromarché",
           "Carrefour",
           "SavaCentre",
-          "Euromarché",
           "Selver",
-          "Tazweed Center"
+          "Uno-X"
         ],
-        "intermediate_answer": "1462",
-        "confidence": 1.0,
-        "score_1": 1.0,
+        "intermediate_answer": "1,462 hypermarkets.",
+        "confidence": 0.6,
+        "score_1": 0.6,
         "score_2": null,
         "flag": "verified"
       },
       "final": {
-        "final_answer": "1462",
+        "final_answer": "1,462",
         "is_not_found": false,
         "flag": "passed",
         "reasoning": "[Q-Constraint]: The number of hypermarkets operated by a chain at the end of 2016. | [A-Category]: A specific numerical value representing a count. | [Alignment]: Yes"
       }
     },
-    "final_answer": "1462",
-    "elapsed_sec": 12.85,
+    "final_answer": "1,462",
+    "elapsed_sec": 8.74,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -3230,7 +3229,7 @@
     "task_type": "bridge",
     "sub_queries": [
       "What race track in the midwest hosts a 500 mile race?",
-      "What month does the 500 mile race take place?"
+      "When is the 500 mile race held?"
     ],
     "steps": {
       "0": {
@@ -3249,7 +3248,7 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What month does the 500 mile race take place?",
+        "sub_query": "When is the 500 mile race held?",
         "retrieved_titles": [
           "1957 Indianapolis 500",
           "Lean Horse Ultramarathon",
@@ -3257,9 +3256,9 @@
           "Subway 400",
           "Indianapolis Motor Speedway"
         ],
-        "intermediate_answer": "May",
-        "confidence": 1.0,
-        "score_1": 1.0,
+        "intermediate_answer": "The 500 mile race is held on May 30.",
+        "confidence": 0.8,
+        "score_1": 0.8,
         "score_2": null,
         "flag": "verified"
       },
@@ -3267,11 +3266,11 @@
         "final_answer": "Indianapolis Motor Speedway",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A specific race track that hosts a 500 mile race every May | [A-Category]: A specific race track | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: A specific race track that hosts a 500 mile race every May in the Midwest. | [A-Category]: A specific race track name. | [Alignment]: Yes"
       }
     },
     "final_answer": "Indianapolis Motor Speedway",
-    "elapsed_sec": 11.17,
+    "elapsed_sec": 8.71,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -3314,13 +3313,13 @@
         "retrieved_titles": [
           "Tosca (1956 film)",
           "La Bohème (1988 film)",
-          "Ron Bottcher",
           "Cesira Ferrani",
+          "Ron Bottcher",
           "Franco Corelli"
         ],
         "intermediate_answer": "Rome",
-        "confidence": 1.0,
-        "score_1": 1.0,
+        "confidence": 0.8,
+        "score_1": 0.8,
         "score_2": null,
         "flag": "verified"
       },
@@ -3332,7 +3331,7 @@
       }
     },
     "final_answer": "Rome",
-    "elapsed_sec": 12.97,
+    "elapsed_sec": 10.18,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -3363,7 +3362,7 @@
           "Delirium (Ellie Goulding album)",
           "Love Me like You Do"
         ],
-        "intermediate_answer": "Not found in documents",
+        "intermediate_answer": "Not found in documents.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -3376,7 +3375,7 @@
       }
     },
     "final_answer": "Not found",
-    "elapsed_sec": 5.15,
+    "elapsed_sec": 3.95,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -3408,47 +3407,48 @@
           "Grace Church School",
           "Concho Indian Boarding School"
         ],
-        "intermediate_answer": "Not found in documents",
+        "intermediate_answer": "Marion, South Australia",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Which Prime Minister of Australia is associated with the establishment of a boarding school named after a school in London?",
+        "sub_query": "Which Prime Minister of Australia opened a boarding school named after a school in London?",
         "retrieved_titles": [
           "Westminster School, Adelaide",
           "PNG solution",
           "Grace Church School",
-          "Concho Indian Boarding School",
-          "Grennaskolan"
+          "Marion, South Australia",
+          "Concho Indian Boarding School"
         ],
         "intermediate_answer": "Robert Menzies",
-        "confidence": 0.6,
-        "score_1": 0.6,
+        "confidence": 0.8,
+        "score_1": 0.8,
         "score_2": null,
         "flag": "verified"
       },
       "final": {
-        "final_answer": "Not found",
-        "is_not_found": true,
-        "flag": "not_found"
+        "final_answer": "Marion",
+        "is_not_found": false,
+        "flag": "passed",
+        "reasoning": "[Q-Constraint]: A specific geographic location (an Australian city). | [A-Category]: A specific geographic location (Marion). | [Alignment]: Yes"
       }
     },
-    "final_answer": "Not found",
-    "elapsed_sec": 14.22,
+    "final_answer": "Marion",
+    "elapsed_sec": 11.9,
     "error": null,
     "llm_calls": {
       "planner": 1,
       "retrieval": 2,
       "score_1": 1,
-      "refine_query": 0,
+      "refine_query": 1,
       "answer": 1,
-      "final_verify": 0,
+      "final_verify": 1,
       "logprob": 0,
-      "other": 1
+      "other": 0
     },
-    "llm_calls_total": 6
+    "llm_calls_total": 7
   },
   {
     "question": "D1NZ is a series based on what oversteering technique?",
@@ -3468,7 +3468,7 @@
           "Ripley's Believe It or Not! (TV series)",
           "Raimund Harmstorf"
         ],
-        "intermediate_answer": "Not found in documents",
+        "intermediate_answer": "Not found in documents.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -3483,31 +3483,38 @@
           "Raaz Pichhle Janam Ka",
           "Ripley's Believe It or Not! (TV series)"
         ],
-        "intermediate_answer": "counter-steering",
-        "confidence": 1.0,
-        "score_1": 1.0,
+        "intermediate_answer": "Not found in documents.",
+        "confidence": 0.0,
+        "score_1": 0.0,
         "score_2": null,
-        "flag": "verified"
+        "flag": "uncertain",
+        "refined_query": "What specific oversteering technique is most commonly used by drivers in D1NZ drifting competitions?",
+        "refined_titles": [
+          "Drifting (motorsport)",
+          "Raaz Pichhle Janam Ka",
+          "D1NZ",
+          "Rising Star (France)",
+          "Ripley's Believe It or Not! (TV series)"
+        ]
       },
       "final": {
-        "final_answer": "counter-steering",
-        "is_not_found": false,
-        "flag": "passed",
-        "reasoning": "[Q-Constraint]: a specific oversteering technique used in a drifting series | [A-Category]: a specific oversteering technique | [Alignment]: Yes"
+        "final_answer": "Not found",
+        "is_not_found": true,
+        "flag": "not_found"
       }
     },
-    "final_answer": "counter-steering",
-    "elapsed_sec": 10.18,
+    "final_answer": "Not found",
+    "elapsed_sec": 8.18,
     "error": null,
     "llm_calls": {
-      "planner": 1,
+      "planner": 2,
       "retrieval": 2,
-      "score_1": 1,
+      "score_1": 0,
       "refine_query": 0,
       "answer": 1,
-      "final_verify": 1,
+      "final_verify": 0,
       "logprob": 0,
-      "other": 1
+      "other": 2
     },
     "llm_calls_total": 7
   },
@@ -3516,18 +3523,18 @@
     "gold_answer": "Keith Bostic",
     "task_type": "comparison",
     "sub_queries": [
-      "Find the birthdate of Keith Bostic",
-      "Find the birthdate of Jerry Glanville"
+      "What is the birthdate of Keith Bostic?",
+      "What is the birthdate of Jerry Glanville?"
     ],
     "steps": {
       "0": {
-        "sub_query": "Find the birthdate of Keith Bostic",
+        "sub_query": "What is the birthdate of Keith Bostic?",
         "retrieved_titles": [
           "Keith Bostic",
           "Keith Bostic (American football)",
           "Jerry Glanville",
-          "Ken Herock",
-          "Mouse Davis"
+          "Mouse Davis",
+          "Lucky to Be Alive (Confederate Railroad album)"
         ],
         "intermediate_answer": "January 17, 1961",
         "confidence": 1.0,
@@ -3536,17 +3543,17 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Find the birthdate of Jerry Glanville",
+        "sub_query": "What is the birthdate of Jerry Glanville?",
         "retrieved_titles": [
           "Jerry Glanville",
           "Mouse Davis",
           "Lucky to Be Alive (Confederate Railroad album)",
-          "Ken Herock",
-          "Keith Bostic (American football)"
+          "Keith Bostic",
+          "Ken Herock"
         ],
         "intermediate_answer": "October 14, 1941",
-        "confidence": 0.8,
-        "score_1": 0.8,
+        "confidence": 1.0,
+        "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
@@ -3558,7 +3565,7 @@
       }
     },
     "final_answer": "Keith Bostic",
-    "elapsed_sec": 10.18,
+    "elapsed_sec": 8.82,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -3590,7 +3597,7 @@
           "Willoughton",
           "Boston, Lincolnshire"
         ],
-        "intermediate_answer": "Boston",
+        "intermediate_answer": "Kirton End is located in the Boston district of Lincolnshire, England.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -3599,47 +3606,47 @@
       "1": {
         "sub_query": "What was the population of that city according to the 2001 census?",
         "retrieved_titles": [
-          "2001 Bangladesh census",
-          "Boston, Lincolnshire",
-          "Borough of Berwick-upon-Tweed",
-          "Sauce Viejo, Argentina",
-          "Kirton, Nottinghamshire"
+          "Kirton End",
+          "Kirton, Nottinghamshire",
+          "Willoughton",
+          "Kirton, Suffolk",
+          "Boston, Lincolnshire"
         ],
-        "intermediate_answer": "The population of Boston according to the 2001 census was 35,124.",
-        "confidence": 0.6,
-        "score_1": 0.6,
+        "intermediate_answer": "The population of Boston, Lincolnshire, according to the 2001 census, was 35,124.",
+        "confidence": 1.0,
+        "score_1": 1.0,
         "score_2": null,
         "flag": "refined",
-        "refined_query": "What was the population of Boston according to the 2001 census?",
+        "refined_query": "What was the population of Boston, Lincolnshire, according to the 2001 census?",
         "refined_titles": [
-          "2001 Bangladesh census",
           "Boston, Lincolnshire",
+          "Kirton, Nottinghamshire",
+          "Willoughton",
           "Borough of Berwick-upon-Tweed",
-          "Sauce Viejo, Argentina",
-          "Kirton, Nottinghamshire"
+          "Kirton End"
         ]
       },
       "final": {
         "final_answer": "35,124",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A specific population number of a city based on the 2001 census. | [A-Category]: A specific population number. | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: A specific population number of a city based on census data. | [A-Category]: A specific population number. | [Alignment]: Yes"
       }
     },
     "final_answer": "35,124",
-    "elapsed_sec": 15.32,
+    "elapsed_sec": 10.23,
     "error": null,
     "llm_calls": {
       "planner": 2,
       "retrieval": 2,
-      "score_1": 2,
+      "score_1": 1,
       "refine_query": 1,
       "answer": 1,
       "final_verify": 1,
       "logprob": 0,
       "other": 1
     },
-    "llm_calls_total": 10
+    "llm_calls_total": 9
   },
   {
     "question": "Are both Cypress and Ajuga genera?",
@@ -3659,7 +3666,7 @@
           "Fokienia",
           "Libocedrus"
         ],
-        "intermediate_answer": "Yes",
+        "intermediate_answer": "Yes, Cypress is a genus.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -3674,7 +3681,7 @@
           "Fokienia",
           "Cupressus"
         ],
-        "intermediate_answer": "Yes",
+        "intermediate_answer": "Yes, Ajuga is a genus.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -3688,7 +3695,7 @@
       }
     },
     "final_answer": "yes",
-    "elapsed_sec": 8.91,
+    "elapsed_sec": 6.87,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -3707,20 +3714,20 @@
     "gold_answer": "shortest player ever to play in the National Basketball Association",
     "task_type": "bridge",
     "sub_queries": [
-      "Who was a member of the Charlotte Hornets during the 1992-93 NBA season?",
+      "Who was a member of the Charlotte Hornets during the 1992-93 season?",
       "What distinction does the head coach of the WNBA team Charlotte Sting hold?"
     ],
     "steps": {
       "0": {
-        "sub_query": "Who was a member of the Charlotte Hornets during the 1992-93 NBA season?",
+        "sub_query": "Who was a member of the Charlotte Hornets during the 1992-93 season?",
         "retrieved_titles": [
           "1992–93 Charlotte Hornets season",
           "Muggsy Bogues",
           "Charlotte Hornets",
-          "2014–15 Charlotte Hornets season",
-          "Charlotte Hornets draft history"
+          "Charlotte Hornets draft history",
+          "2014–15 Charlotte Hornets season"
         ],
-        "intermediate_answer": "Alonzo Mourning",
+        "intermediate_answer": "Alonzo Mourning, Larry Johnson, Muggsy Bogues",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -3729,35 +3736,34 @@
       "1": {
         "sub_query": "What distinction does the head coach of the WNBA team Charlotte Sting hold?",
         "retrieved_titles": [
-          "Ayana Walker",
           "List of Texas Tech Lady Raiders in the WNBA Draft",
+          "Ayana Walker",
           "Muggsy Bogues",
-          "2003 WNBA season",
-          "2014–15 Charlotte Hornets season"
+          "2014–15 Charlotte Hornets season",
+          "2003 WNBA season"
         ],
         "intermediate_answer": "Not found in documents.",
         "confidence": 0.0,
         "score_1": 0.0,
         "score_2": null,
-        "flag": "not_found",
-        "refined_query": "What notable achievement is associated with Alonzo Mourning, who was the head coach of the WNBA team Charlotte Sting?",
+        "flag": "uncertain",
+        "refined_query": "What notable achievements or distinctions does Muggsy Bogues have as the head coach of the WNBA team Charlotte Sting?",
         "refined_titles": [
           "Muggsy Bogues",
-          "Ayana Walker",
           "List of Texas Tech Lady Raiders in the WNBA Draft",
-          "1992–93 Charlotte Hornets season",
-          "2014–15 Charlotte Hornets season"
+          "Ayana Walker",
+          "2014–15 Charlotte Hornets season",
+          "2003 WNBA season"
         ]
       },
       "final": {
-        "final_answer": "Alonzo Mourning",
-        "is_not_found": false,
-        "flag": "passed",
-        "reasoning": "[Q-Constraint]: a person's name | [A-Category]: a person's name | [Alignment]: Yes"
+        "final_answer": "Not found",
+        "is_not_found": true,
+        "flag": "not_found"
       }
     },
-    "final_answer": "Alonzo Mourning",
-    "elapsed_sec": 14.58,
+    "final_answer": "Not found",
+    "elapsed_sec": 10.12,
     "error": null,
     "llm_calls": {
       "planner": 2,
@@ -3765,11 +3771,11 @@
       "score_1": 1,
       "refine_query": 1,
       "answer": 1,
-      "final_verify": 1,
+      "final_verify": 0,
       "logprob": 0,
       "other": 1
     },
-    "llm_calls_total": 9
+    "llm_calls_total": 8
   },
   {
     "question": "What is the name of the executive producer of the film that has a score composed by Jerry Goldsmith?",
@@ -3789,7 +3795,7 @@
           "Christus Apollo",
           "L.A. Confidential (soundtrack)"
         ],
-        "intermediate_answer": "L.A. Confidential",
+        "intermediate_answer": "\"Legend\" and \"L.A. Confidential\"",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -3802,20 +3808,20 @@
           "Lionheart (1987 film)",
           "Innerspace",
           "Total Recall (1990 film)",
-          "Alien (film)"
+          "Mulan (soundtrack)"
         ],
         "intermediate_answer": "Not found in documents.",
         "confidence": 0.0,
         "score_1": 0.0,
         "score_2": null,
-        "flag": "not_found",
-        "refined_query": "Who is the executive producer of the film L.A. Confidential?",
+        "flag": "uncertain",
+        "refined_query": "Who is the executive producer of the film \"Legend\"?",
         "refined_titles": [
-          "L.A. Confidential (soundtrack)",
           "Lionheart (1987 film)",
           "Innerspace",
-          "Total Recall (1990 film)",
-          "Alien (film)"
+          "L.A. Confidential (soundtrack)",
+          "Alien (film)",
+          "Legend (film score)"
         ]
       },
       "final": {
@@ -3825,7 +3831,7 @@
       }
     },
     "final_answer": "Not found",
-    "elapsed_sec": 11.67,
+    "elapsed_sec": 6.78,
     "error": null,
     "llm_calls": {
       "planner": 2,
@@ -3857,35 +3863,36 @@
           "Orlando: A Biography",
           "Moments of Being"
         ],
-        "intermediate_answer": "Not found in documents",
+        "intermediate_answer": "1954",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What year was Virginia Woolf born?",
+        "sub_query": "Find the birth year of Virginia Woolf",
         "retrieved_titles": [
           "Virginia Woolf",
-          "Jane de Gay",
+          "Moments of Being",
           "The Mark on the Wall",
-          "Orlando: A Biography",
-          "Me! I'm Afraid of Virginia Woolf"
+          "Jane de Gay",
+          "Orlando: A Biography"
         ],
-        "intermediate_answer": "25 January 1882",
+        "intermediate_answer": "1882",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
       "final": {
-        "final_answer": "Not found",
-        "is_not_found": true,
-        "flag": "not_found"
+        "final_answer": "Virginia Woolf",
+        "is_not_found": false,
+        "flag": "passed",
+        "reasoning": "[Q-Constraint]: A person's name | [A-Category]: A person's name | [Alignment]: Yes"
       }
     },
-    "final_answer": "Not found",
-    "elapsed_sec": 10.58,
+    "final_answer": "Virginia Woolf",
+    "elapsed_sec": 7.03,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -3893,9 +3900,9 @@
       "score_1": 1,
       "refine_query": 0,
       "answer": 1,
-      "final_verify": 0,
+      "final_verify": 1,
       "logprob": 0,
-      "other": 1
+      "other": 0
     },
     "llm_calls_total": 6
   },
@@ -3904,12 +3911,12 @@
     "gold_answer": "821",
     "task_type": "bridge",
     "sub_queries": [
-      "What is the nursery rhyme that inspired What Are Little Girls Made Of?",
-      "What is the Roud Folk Song Index number of the identified nursery rhyme?"
+      "Find the nursery rhyme that inspired What Are Little Girls Made Of?",
+      "Find the Roud Folk Song Index number for the identified nursery rhyme."
     ],
     "steps": {
       "0": {
-        "sub_query": "What is the nursery rhyme that inspired What Are Little Girls Made Of?",
+        "sub_query": "Find the nursery rhyme that inspired What Are Little Girls Made Of?",
         "retrieved_titles": [
           "What Are Little Boys Made Of?",
           "Pretty Little Dutch Girl",
@@ -3917,22 +3924,22 @@
           "What Are Little Girls Made Of?",
           "Tweedledum and Tweedledee"
         ],
-        "intermediate_answer": "What Are Little Boys Made Of?",
+        "intermediate_answer": "The nursery rhyme that inspired \"What Are Little Girls Made Of?\" is \"What Are Little Boys Made Of?\"",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What is the Roud Folk Song Index number of the identified nursery rhyme?",
+        "sub_query": "Find the Roud Folk Song Index number for the identified nursery rhyme.",
         "retrieved_titles": [
           "What Are Little Boys Made Of?",
           "Row, Row, Row Your Boat",
+          "Did You Ever See a Lassie?",
           "Pretty Little Dutch Girl",
-          "Billy Boy",
-          "Aiken Drum"
+          "Billy Boy"
         ],
-        "intermediate_answer": "821",
+        "intermediate_answer": "The Roud Folk Song Index number for \"What Are Little Boys Made Of?\" is 821.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -3942,11 +3949,11 @@
         "final_answer": "821",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A numerical identifier related to a specific nursery rhyme in the Roud Folk Song Index. | [A-Category]: A numerical identifier (specifically, the number 821). | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: Roud Folk Song Index number | [A-Category]: Roud Folk Song Index number | [Alignment]: Yes"
       }
     },
     "final_answer": "821",
-    "elapsed_sec": 10.96,
+    "elapsed_sec": 8.31,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -3965,18 +3972,18 @@
     "gold_answer": "more than 70 countries",
     "task_type": "bridge",
     "sub_queries": [
-      "Find out which corporation Scott Parkin has criticized along with Exxonmobil",
-      "Find out how many countries that corporation operates in"
+      "Find the name of the other corporation that Scott Parkin has criticized.",
+      "Find the number of countries where the other corporation operates."
     ],
     "steps": {
       "0": {
-        "sub_query": "Find out which corporation Scott Parkin has criticized along with Exxonmobil",
+        "sub_query": "Find the name of the other corporation that Scott Parkin has criticized.",
         "retrieved_titles": [
           "Scott Parkin",
-          "Exxon",
-          "Mobil Producing Nigeria",
           "Religious Technology Center",
-          "Oregon and Transcontinental Company"
+          "Mobil Producing Nigeria",
+          "Exxon",
+          "Yvonne Ridley"
         ],
         "intermediate_answer": "Halliburton",
         "confidence": 1.0,
@@ -3985,7 +3992,7 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Find out how many countries that corporation operates in",
+        "sub_query": "Find the number of countries where the other corporation operates.",
         "retrieved_titles": [
           "Mobil Producing Nigeria",
           "Halliburton",
@@ -3993,21 +4000,21 @@
           "Scott Parkin",
           "Oregon and Transcontinental Company"
         ],
-        "intermediate_answer": "70",
-        "confidence": 1.0,
-        "score_1": 1.0,
+        "intermediate_answer": "More than 70 countries.",
+        "confidence": 0.8,
+        "score_1": 0.8,
         "score_2": null,
         "flag": "verified"
       },
       "final": {
-        "final_answer": "70",
+        "final_answer": "More than 70 countries.",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The number of countries in which a corporation operates. | [A-Category]: A numerical value representing a count. | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: The number of countries in which a corporation operates. | [A-Category]: A numerical value representing a quantity (more than 70). | [Alignment]: Yes"
       }
     },
-    "final_answer": "70",
-    "elapsed_sec": 10.34,
+    "final_answer": "More than 70 countries.",
+    "elapsed_sec": 9.52,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4039,7 +4046,7 @@
           "Charmed (season 4)",
           "Safe Harbor (TV series)"
         ],
-        "intermediate_answer": "Charmed",
+        "intermediate_answer": "\"Charmed\"",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -4050,13 +4057,13 @@
         "retrieved_titles": [
           "Rose McGowan",
           "Kerr Smith",
-          "Sarah Drew",
           "Charmed (season 4)",
+          "Sarah Drew",
           "List of Charmed characters"
         ],
-        "intermediate_answer": "Paige Matthews",
-        "confidence": 0.8,
-        "score_1": 0.8,
+        "intermediate_answer": "Rose McGowan played Paige Matthews in \"Charmed.\"",
+        "confidence": 1.0,
+        "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
@@ -4068,7 +4075,7 @@
       }
     },
     "final_answer": "Charmed",
-    "elapsed_sec": 12.18,
+    "elapsed_sec": 8.86,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4087,20 +4094,20 @@
     "gold_answer": "International Boxing Hall of Fame",
     "task_type": "bridge",
     "sub_queries": [
-      "What organization recognized Vince Phillips' junior welterweight title?",
+      "What organization recognized Vince Phillips as a junior welterweight champion?",
       "What larger Hall of Fame is associated with that organization?"
     ],
     "steps": {
       "0": {
-        "sub_query": "What organization recognized Vince Phillips' junior welterweight title?",
+        "sub_query": "What organization recognized Vince Phillips as a junior welterweight champion?",
         "retrieved_titles": [
           "Vince Phillips",
           "Andrew Murray (Guyanese boxer)",
           "Bunny Grant",
-          "Zab Judah",
-          "Julian Holland (boxer)"
+          "Julian Holland (boxer)",
+          "Zab Judah"
         ],
-        "intermediate_answer": "IBF",
+        "intermediate_answer": "IBF (International Boxing Federation)",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -4115,7 +4122,7 @@
           "Andrew Murray (Guyanese boxer)",
           "Julian Holland (boxer)"
         ],
-        "intermediate_answer": "International Boxing Hall of Fame",
+        "intermediate_answer": "International Boxing Hall of Fame (IBHOF)",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -4125,11 +4132,11 @@
         "final_answer": "International Boxing Hall of Fame",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The name of a larger Hall of Fame recognized by an organization related to boxing. | [A-Category]: The name of a specific Hall of Fame related to boxing. | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: The name of a larger Hall of Fame recognized by an organization that sanctioned Vince Phillips' junior welterweight title. | [A-Category]: The name of a specific Hall of Fame. | [Alignment]: Yes"
       }
     },
     "final_answer": "International Boxing Hall of Fame",
-    "elapsed_sec": 11.02,
+    "elapsed_sec": 9.6,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4161,7 +4168,7 @@
           "Can't Touch It",
           "Stay (Sugarland song)"
         ],
-        "intermediate_answer": "Not found in documents",
+        "intermediate_answer": "Not found in documents.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -4180,7 +4187,7 @@
         "confidence": 0.0,
         "score_1": 0.0,
         "score_2": null,
-        "flag": "not_found",
+        "flag": "uncertain",
         "refined_query": "How many consecutive weeks did the lead single from Usher's album \"Confessions\" stay at number one on the Billboard Hot 100 charts?",
         "refined_titles": [
           "No One (Alicia Keys song)",
@@ -4197,7 +4204,7 @@
       }
     },
     "final_answer": "Not found",
-    "elapsed_sec": 9.57,
+    "elapsed_sec": 7.54,
     "error": null,
     "llm_calls": {
       "planner": 2,
@@ -4229,7 +4236,7 @@
           "Andy's Ancestry",
           "Roy's Wedding"
         ],
-        "intermediate_answer": "Henry Thomas, Vera Farmiga, David Boreanaz, Bruce Dern, Peter Weller, Gary Busey, Nick Lachey",
+        "intermediate_answer": "The guest stars of The Hard Easy are Henry Thomas, Vera Farmiga, David Boreanaz, Bruce Dern, Peter Weller, Gary Busey, and Nick Lachey.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -4238,24 +4245,24 @@
       "1": {
         "sub_query": "Who is the younger brother of the identified guest star?",
         "retrieved_titles": [
+          "The Hard Easy (film)",
           "Brother from Another Series",
-          "The Farm (The Office)",
-          "Web Weirdos",
-          "Brian Doyle-Murray",
-          "Roy's Wedding"
+          "Roy's Wedding",
+          "Andy's Ancestry",
+          "The Farm (The Office)"
         ],
         "intermediate_answer": "Not found in documents.",
         "confidence": 0.0,
         "score_1": 0.0,
         "score_2": null,
-        "flag": "not_found",
-        "refined_query": "Who is the younger brother of Henry Thomas, Vera Farmiga, David Boreanaz, Bruce Dern, Peter Weller, Gary Busey, or Nick Lachey?",
+        "flag": "uncertain",
+        "refined_query": "Who is the younger brother of Henry Thomas, Vera Farmiga, David Boreanaz, Bruce Dern, or Peter W?",
         "refined_titles": [
           "The Hard Easy (film)",
           "Brother from Another Series",
-          "Brian Doyle-Murray",
           "The Farm (The Office)",
-          "Roy's Wedding"
+          "Brian Doyle-Murray",
+          "Web Weirdos"
         ]
       },
       "final": {
@@ -4265,7 +4272,7 @@
       }
     },
     "final_answer": "Not found",
-    "elapsed_sec": 11.8,
+    "elapsed_sec": 8.63,
     "error": null,
     "llm_calls": {
       "planner": 2,
@@ -4312,19 +4319,11 @@
           "2006–07 Wigan Athletic F.C. season",
           "List of Wigan Borough F.C. players"
         ],
-        "intermediate_answer": "The name \"EFL Cup\" is currently known as the Carabao Cup for sponsorship reasons.",
+        "intermediate_answer": "The EFL Cup is currently known as the Carabao Cup for sponsorship reasons.",
         "confidence": 0.6,
         "score_1": 0.6,
         "score_2": null,
-        "flag": "refined",
-        "refined_query": "What are the sponsorship reasons for the name \"EFL Cup\"?",
-        "refined_titles": [
-          "EFL Cup",
-          "Trinidad and Tobago League Cup",
-          "2017–18 Wigan Athletic F.C. season",
-          "Springfield Park (Wigan)",
-          "2007–08 Wigan Athletic F.C. season"
-        ]
+        "flag": "verified"
       },
       "final": {
         "final_answer": "Carabao Cup",
@@ -4334,19 +4333,19 @@
       }
     },
     "final_answer": "Carabao Cup",
-    "elapsed_sec": 13.76,
+    "elapsed_sec": 10.7,
     "error": null,
     "llm_calls": {
-      "planner": 2,
+      "planner": 1,
       "retrieval": 2,
       "score_1": 1,
       "refine_query": 1,
       "answer": 1,
       "final_verify": 1,
       "logprob": 0,
-      "other": 1
+      "other": 0
     },
-    "llm_calls_total": 9
+    "llm_calls_total": 7
   },
   {
     "question": "Which of Tara Strong major voice role in animated series is an American animated television series based on the DC Comics fictional superhero team, the \"Teen Titans\"?",
@@ -4354,7 +4353,7 @@
     "task_type": "bridge",
     "sub_queries": [
       "What is the name of the animated series based on the DC Comics superhero team, the Teen Titans?",
-      "What is Tara Strong's major voice role in that animated series?"
+      "What major voice role did Tara Strong have in that animated series?"
     ],
     "steps": {
       "0": {
@@ -4373,118 +4372,102 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What is Tara Strong's major voice role in that animated series?",
+        "sub_query": "What major voice role did Tara Strong have in that animated series?",
         "retrieved_titles": [
           "Tara Strong filmography",
           "Tara Strong",
-          "Teen Titans (season 4)",
           "List of Teen Titans episodes",
+          "Teen Titans (season 4)",
           "Teen Titans Go! (TV series)"
         ],
-        "intermediate_answer": "Tara Strong voices the character Raven in the animated series \"Teen Titans Go!\".",
-        "confidence": 1.0,
-        "score_1": 1.0,
+        "intermediate_answer": "Raven in Teen Titans and Teen Titans Go!",
+        "confidence": 0.8,
+        "score_1": 0.8,
         "score_2": null,
-        "flag": "refined",
-        "refined_query": "What character does Tara Strong voice in the animated series \"Teen Titans Go!\"?",
-        "refined_titles": [
-          "Teen Titans Go! (TV series)",
-          "Teen Titans (season 4)",
-          "List of Teen Titans episodes",
-          "Tara Strong filmography",
-          "Tara Strong"
-        ]
+        "flag": "verified"
       },
       "final": {
         "final_answer": "Raven",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A specific character name from an animated series based on the DC Comics superhero team, the 'Teen Titans'. | [A-Category]: A specific character name, Raven. | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: a character name from an animated series | [A-Category]: a character name | [Alignment]: Yes"
       }
     },
     "final_answer": "Raven",
-    "elapsed_sec": 14.57,
+    "elapsed_sec": 8.19,
     "error": null,
     "llm_calls": {
-      "planner": 2,
+      "planner": 1,
       "retrieval": 2,
       "score_1": 1,
       "refine_query": 1,
       "answer": 1,
       "final_verify": 1,
       "logprob": 0,
-      "other": 1
+      "other": 0
     },
-    "llm_calls_total": 9
+    "llm_calls_total": 7
   },
   {
     "question": "What is the inhabitant of the city where  122nd SS-Standarte was formed in2014",
     "gold_answer": "276,170 inhabitants",
     "task_type": "bridge",
     "sub_queries": [
-      "Where was the 122nd SS-Standarte formed?",
+      "Where was the 122nd SS-Standarte formed in 2014?",
       "What is the inhabitant of that city?"
     ],
     "steps": {
       "0": {
-        "sub_query": "Where was the 122nd SS-Standarte formed?",
+        "sub_query": "Where was the 122nd SS-Standarte formed in 2014?",
         "retrieved_titles": [
           "122nd SS-Standarte",
+          "122d Fighter Squadron",
           "122nd Fighter Aviation Squadron",
-          "122nd (Muskoka) Battalion, CEF",
-          "122nd Division (Imperial Japanese Army)",
-          "122d Fighter Squadron"
+          "122nd Hydroplane Liaison Squadron",
+          "122nd Division (Imperial Japanese Army)"
         ],
-        "intermediate_answer": "Strasbourg",
+        "intermediate_answer": "Not found in documents.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What is the inhabitant of that city?",
+        "sub_query": "What is the name of the city where the 122nd SS-Standarte was formed in 2014, and what is the term used to refer to its inhabitants?",
         "retrieved_titles": [
-          "Strasbourg",
           "122nd SS-Standarte",
-          "122nd Fighter Aviation Squadron",
-          "122nd Infantry Regiment (United States)",
-          "122d Fighter Squadron"
+          "Strasbourg",
+          "122nd Hydroplane Liaison Squadron",
+          "122nd Division (Imperial Japanese Army)",
+          "122nd Fighter Aviation Squadron"
         ],
-        "intermediate_answer": "Not found in documents.",
-        "confidence": 0.0,
-        "score_1": 0.0,
+        "intermediate_answer": "The city is Strasbourg, and the term used to refer to its inhabitants is \"Strasbourgeois.\"",
+        "confidence": 0.6,
+        "score_1": 0.6,
         "score_2": null,
-        "flag": "not_found",
-        "refined_query": "What is the term used to refer to the inhabitants of Strasbourg?",
-        "refined_titles": [
-          "Strasbourg",
-          "122nd SS-Standarte",
-          "122nd Fighter Aviation Squadron",
-          "122nd Infantry Regiment (United States)",
-          "122nd Hydroplane Liaison Squadron"
-        ]
+        "flag": "verified"
       },
       "final": {
-        "final_answer": "Strasbourgian",
+        "final_answer": "Strasbourgeois",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A demonym for the inhabitants of a specific city. | [A-Category]: A demonym for the inhabitants of Strasbourg. | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: The inhabitant of a city | [A-Category]: A demonym (specific to a city) | [Alignment]: Yes"
       }
     },
-    "final_answer": "Strasbourgian",
-    "elapsed_sec": 14.91,
+    "final_answer": "Strasbourgeois",
+    "elapsed_sec": 11.47,
     "error": null,
     "llm_calls": {
-      "planner": 2,
+      "planner": 1,
       "retrieval": 2,
-      "score_1": 0,
-      "refine_query": 1,
+      "score_1": 1,
+      "refine_query": 0,
       "answer": 1,
       "final_verify": 1,
       "logprob": 0,
       "other": 1
     },
-    "llm_calls_total": 8
+    "llm_calls_total": 7
   },
   {
     "question": "What color clothing do people of the Netherlands wear during Oranjegekte or to celebrate the national holiday Koningsdag? ",
@@ -4492,7 +4475,7 @@
     "task_type": "bridge",
     "sub_queries": [
       "What is Oranjegekte?",
-      "What color clothing do people wear during Koningsdag in the Netherlands?"
+      "What color clothing is typically worn during Koningsdag in the Netherlands?"
     ],
     "steps": {
       "0": {
@@ -4504,22 +4487,22 @@
           "Jounen Kwéyòl",
           "White Sunday"
         ],
-        "intermediate_answer": "Oranjegekte (Orange craze) or Oranjekoorts (Orange fever) is a phenomenon in the Netherlands that occurs during major sporting events, especially international football championships, and during Koningsdag, an annual holiday celebrating the king's birthday.",
+        "intermediate_answer": "Oranjegekte is a phenomenon in the Netherlands that occurs during major sporting events and Koningsdag, characterized by wearing orange clothing and decorating in orange.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What color clothing do people wear during Koningsdag in the Netherlands?",
+        "sub_query": "What color clothing is typically worn during Koningsdag in the Netherlands?",
         "retrieved_titles": [
           "Oranjegekte",
           "Christmas in the Basque Country",
           "Queen's Day (disambiguation)",
           "White Sunday",
-          "Koningsdag"
+          "Garifuna Settlement Day"
         ],
-        "intermediate_answer": "orange",
+        "intermediate_answer": "Orange clothing.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -4533,7 +4516,7 @@
       }
     },
     "final_answer": "orange",
-    "elapsed_sec": 12.02,
+    "elapsed_sec": 9.58,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4552,11 +4535,11 @@
     "gold_answer": "Tromeo and Juliet",
     "task_type": "bridge",
     "sub_queries": [
-      "Find the loose adaptation of Romeo & Juliet written by James Gunn in 1996"
+      "Find the name of the 1996 loose adaptation of Romeo & Juliet written by James Gunn"
     ],
     "steps": {
       "0": {
-        "sub_query": "Find the loose adaptation of Romeo & Juliet written by James Gunn in 1996",
+        "sub_query": "Find the name of the 1996 loose adaptation of Romeo & Juliet written by James Gunn",
         "retrieved_titles": [
           "Tromeo and Juliet",
           "Romeo + Juliet",
@@ -4574,11 +4557,11 @@
         "final_answer": "Tromeo and Juliet",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The name of a film | [A-Category]: The name of a film | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: The name of a film that is a loose adaptation of a specific literary work. | [A-Category]: The title of a film. | [Alignment]: Yes"
       }
     },
     "final_answer": "Tromeo and Juliet",
-    "elapsed_sec": 5.9,
+    "elapsed_sec": 4.75,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4610,7 +4593,7 @@
           "National Intelligence Board",
           "Ground Intelligence Officer"
         ],
-        "intermediate_answer": "Robert Suettinger",
+        "intermediate_answer": "Robert Suettinger was the national intelligence officer for East Asia at the National Intelligence Council from 1997-1998.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -4623,9 +4606,9 @@
           "Bill Clinton",
           "Director of the Defense Intelligence Agency",
           "National Intelligence Estimate",
-          "National Intelligence Superior Service Medal"
+          "National Intelligence Reform Medal"
         ],
-        "intermediate_answer": "Bill Clinton",
+        "intermediate_answer": "Robert Suettinger served under Governor Bill Clinton.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -4639,7 +4622,7 @@
       }
     },
     "final_answer": "Bill Clinton",
-    "elapsed_sec": 12.57,
+    "elapsed_sec": 14.32,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4671,7 +4654,7 @@
           "Andy Irons",
           "Barton Lynch"
         ],
-        "intermediate_answer": "John John Florence",
+        "intermediate_answer": "John John Florence, born 18 October 1992.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -4686,7 +4669,7 @@
           "MEO Rip Curl Pro Portugal 2017",
           "MEO Rip Curl Pro Portugal 2016"
         ],
-        "intermediate_answer": "2016 World Surf League Men's Champion, MEO Rip Curl Pro Portugal 2016",
+        "intermediate_answer": "John John Florence won the 2016 World Surf League Men's Championship and the MEO Rip Curl Pro Portugal in 2016.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -4696,11 +4679,11 @@
         "final_answer": "John John Florence",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A person's name | [A-Category]: A person's name | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: a person's name | [A-Category]: a person's name | [Alignment]: Yes"
       }
     },
     "final_answer": "John John Florence",
-    "elapsed_sec": 13.28,
+    "elapsed_sec": 9.05,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4757,11 +4740,11 @@
         "final_answer": "Ann",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A person's name | [A-Category]: A person's name | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: A person's name (specifically, a middle name). | [A-Category]: A person's name (specifically, a middle name). | [Alignment]: Yes"
       }
     },
     "final_answer": "Ann",
-    "elapsed_sec": 10.33,
+    "elapsed_sec": 9.23,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4793,7 +4776,7 @@
           "Head of mission",
           "United States Mission to the European Union"
         ],
-        "intermediate_answer": "Alvaro Mexia",
+        "intermediate_answer": "Alvaro Mexia was a 17th-century Spanish explorer and cartographer of the east coast of Florida.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -4805,12 +4788,12 @@
           "Alvaro Mexia",
           "Indigenous peoples of Florida",
           "List of diplomatic missions of Azerbaijan",
-          "Head of mission",
-          "United States Mission to the European Union"
+          "United States Mission to the European Union",
+          "Head of mission"
         ],
-        "intermediate_answer": "Ais",
-        "confidence": 1.0,
-        "score_1": 1.0,
+        "intermediate_answer": "Ais native population.",
+        "confidence": 0.8,
+        "score_1": 0.8,
         "score_2": null,
         "flag": "verified"
       },
@@ -4818,11 +4801,11 @@
         "final_answer": "Ais",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A specific tribe of indigenous people | [A-Category]: A specific tribe of indigenous people | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: The name of a tribe of indigenous people. | [A-Category]: The name of a tribe of indigenous people. | [Alignment]: Yes"
       }
     },
     "final_answer": "Ais",
-    "elapsed_sec": 11.35,
+    "elapsed_sec": 12.29,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4841,18 +4824,18 @@
     "gold_answer": "British",
     "task_type": "comparison",
     "sub_queries": [
-      "What is the nationality of Alfred Gell?",
-      "What is the nationality of Edmund Leach?"
+      "What nationality was Alfred Gell?",
+      "What nationality was Edmund Leach?"
     ],
     "steps": {
       "0": {
-        "sub_query": "What is the nationality of Alfred Gell?",
+        "sub_query": "What nationality was Alfred Gell?",
         "retrieved_titles": [
           "Alfred Gell",
           "Edmund Leach",
           "Thomas Hylland Eriksen",
           "Network Analysis and Ethnographic Problems",
-          "Aleksandar Bošković"
+          "Coral Gardens and Their Magic"
         ],
         "intermediate_answer": "British",
         "confidence": 1.0,
@@ -4861,13 +4844,13 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What is the nationality of Edmund Leach?",
+        "sub_query": "What nationality was Edmund Leach?",
         "retrieved_titles": [
           "Edmund Leach",
           "Alfred Gell",
           "Thomas Hylland Eriksen",
           "Aleksandar Bošković",
-          "Social Anthropology (journal)"
+          "Coral Gardens and Their Magic"
         ],
         "intermediate_answer": "British",
         "confidence": 1.0,
@@ -4879,11 +4862,11 @@
         "final_answer": "British",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A specific nationality | [A-Category]: A specific nationality | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: Nationality of social anthropologists | [A-Category]: Nationality | [Alignment]: Yes"
       }
     },
     "final_answer": "British",
-    "elapsed_sec": 14.56,
+    "elapsed_sec": 7.9,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4902,12 +4885,12 @@
     "gold_answer": "1865",
     "task_type": "bridge",
     "sub_queries": [
-      "Who was the King who made the 1925 Birthday Honours?",
+      "Who was the King that made the 1925 Birthday Honours?",
       "In which year was that King born?"
     ],
     "steps": {
       "0": {
-        "sub_query": "Who was the King who made the 1925 Birthday Honours?",
+        "sub_query": "Who was the King that made the 1925 Birthday Honours?",
         "retrieved_titles": [
           "1925 Birthday Honours",
           "1951 Birthday Honours",
@@ -4940,11 +4923,11 @@
         "final_answer": "1865",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a specific year | [A-Category]: a specific year | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: A specific year | [A-Category]: A specific year | [Alignment]: Yes"
       }
     },
     "final_answer": "1865",
-    "elapsed_sec": 9.95,
+    "elapsed_sec": 8.19,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -4976,7 +4959,7 @@
           "Steven D. Smith",
           "Hampden County, Massachusetts"
         ],
-        "intermediate_answer": "Sullivan County",
+        "intermediate_answer": "Sullivan County, New Hampshire.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -4986,12 +4969,12 @@
         "sub_query": "What is the county seat of that county?",
         "retrieved_titles": [
           "Sullivan County, New Hampshire",
-          "Woodsville, New Hampshire",
-          "Carroll County, New Hampshire",
-          "Hampden County, Massachusetts",
-          "Dover, New Hampshire"
+          "Lempster, New Hampshire",
+          "Dover, New Hampshire",
+          "East Lempster, New Hampshire",
+          "Woodsville, New Hampshire"
         ],
-        "intermediate_answer": "Newport",
+        "intermediate_answer": "Newport.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -5005,7 +4988,7 @@
       }
     },
     "final_answer": "Newport",
-    "elapsed_sec": 10.4,
+    "elapsed_sec": 8.07,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5050,7 +5033,7 @@
       }
     },
     "final_answer": "Bob Seger",
-    "elapsed_sec": 6.64,
+    "elapsed_sec": 4.95,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5070,7 +5053,7 @@
     "task_type": "bridge",
     "sub_queries": [
       "What was the practice of filling armed forces vacancies in Rostker v. Goldberg?",
-      "What did the Supreme Court rule in Rostker v. Goldberg regarding that practice?"
+      "What did the Supreme Court rule regarding this practice?"
     ],
     "steps": {
       "0": {
@@ -5082,14 +5065,14 @@
           "One Rank, One Pension",
           "Fernando Tapias Stahelin"
         ],
-        "intermediate_answer": "the practice of requiring only men to register for the draft",
+        "intermediate_answer": "The practice of filling armed forces vacancies in Rostker v. Goldberg involved requiring only men to register for the draft.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What did the Supreme Court rule in Rostker v. Goldberg regarding that practice?",
+        "sub_query": "What did the Supreme Court rule regarding this practice?",
         "retrieved_titles": [
           "Rostker v. Goldberg",
           "Franklin D. Roosevelt's record on civil rights",
@@ -5097,7 +5080,7 @@
           "One Rank, One Pension",
           "Armed Forces Day (Poland)"
         ],
-        "intermediate_answer": "the practice of requiring only men to register for the draft was constitutional",
+        "intermediate_answer": "The Supreme Court ruled that the practice of requiring only men to register for the draft was constitutional.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -5107,11 +5090,11 @@
         "final_answer": "men registering for the draft",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: The practice of filling armed forces vacancies constitutionally. | [A-Category]: A specific method of recruitment for the armed forces. | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: The practice of filling armed forces vacancies constitutionally. | [A-Category]: A specific practice related to military recruitment. | [Alignment]: Yes"
       }
     },
     "final_answer": "men registering for the draft",
-    "elapsed_sec": 11.82,
+    "elapsed_sec": 9.33,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5143,7 +5126,7 @@
           "Twisties",
           "Snack Foods Limited"
         ],
-        "intermediate_answer": "Mondelez International",
+        "intermediate_answer": "Mondelez International, Inc.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -5156,7 +5139,7 @@
           "Handi-Snacks",
           "PepsiCo",
           "Snack Foods Limited",
-          "Robert's American Gourmet Food"
+          "Twisties"
         ],
         "intermediate_answer": "Handi-Snacks",
         "confidence": 1.0,
@@ -5165,14 +5148,14 @@
         "flag": "verified"
       },
       "final": {
-        "final_answer": "Mondelez International",
+        "final_answer": "Mondelez International, Inc.",
         "is_not_found": false,
         "flag": "passed",
         "reasoning": "[Q-Constraint]: The name of an American multinational confectionery, food, and beverage company based in Illinois. | [A-Category]: The name of a company. | [Alignment]: Yes"
       }
     },
-    "final_answer": "Mondelez International",
-    "elapsed_sec": 11.63,
+    "final_answer": "Mondelez International, Inc.",
+    "elapsed_sec": 14.48,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5204,7 +5187,7 @@
           "William H. Ginsburg",
           "Monica Lewinsky"
         ],
-        "intermediate_answer": "Monica Lewinsky",
+        "intermediate_answer": "Monica Lewinsky, Paula Jones, Gennifer Flowers, Kathleen Willey, Elizabeth Gracen, Juanita Broaddrick, Sally Perdue.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -5219,7 +5202,7 @@
           "Mark D. Fabiani",
           "Eric Schultz"
         ],
-        "intermediate_answer": "Yes",
+        "intermediate_answer": "Yes, Monica Lewinsky was a former White House intern.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -5233,7 +5216,7 @@
       }
     },
     "final_answer": "Monica Lewinsky",
-    "elapsed_sec": 12.97,
+    "elapsed_sec": 9.71,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5294,7 +5277,7 @@
       }
     },
     "final_answer": "April 1, 1949",
-    "elapsed_sec": 12.39,
+    "elapsed_sec": 7.89,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5326,7 +5309,7 @@
           "4 a.m. (novel)",
           "Before We Say Goodbye"
         ],
-        "intermediate_answer": "Crime and Punishment",
+        "intermediate_answer": "\"Crime and Punishment\" by Dostoyevsky.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -5351,11 +5334,11 @@
         "final_answer": "1866",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a specific year | [A-Category]: a specific year | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: a specific date | [A-Category]: a specific date | [Alignment]: Yes"
       }
     },
     "final_answer": "1866",
-    "elapsed_sec": 10.45,
+    "elapsed_sec": 11.35,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5387,7 +5370,7 @@
           "Garajonay National Park",
           "Alpine National Park"
         ],
-        "intermediate_answer": "Tenerife (Canary Islands, Spain)",
+        "intermediate_answer": "Teide National Park is located in Tenerife, Canary Islands, Spain.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -5402,7 +5385,7 @@
           "Teide National Park",
           "Crater Lake National Park"
         ],
-        "intermediate_answer": "La Gomera, Canary Islands, Spain",
+        "intermediate_answer": "Garajonay National Park is located in the center and north of the island of La Gomera, Canary Islands, Spain.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -5416,7 +5399,7 @@
       }
     },
     "final_answer": "Canary Islands, Spain",
-    "elapsed_sec": 9.21,
+    "elapsed_sec": 8.27,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5448,7 +5431,7 @@
           "The Collected Short Stories of Roald Dahl",
           "The Roald Dahl Treasury"
         ],
-        "intermediate_answer": "Mrs. Bixby and the Colonel's Coat",
+        "intermediate_answer": "\"Mrs. Bixby and the Colonel's Coat\"",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -5467,8 +5450,8 @@
         "confidence": 0.0,
         "score_1": 0.0,
         "score_2": null,
-        "flag": "not_found",
-        "refined_query": "Find the total number of copies sold for \"Mrs. Bixby and the Colonel's Coat\" by Roald Dahl.",
+        "flag": "uncertain",
+        "refined_query": "Find the total number of copies sold of \"Mrs. Bixby and the Colonel's Coat\" by Roald Dahl.",
         "refined_titles": [
           "Mrs. Bixby and the Colonel's Coat",
           "The Roald Dahl Treasury",
@@ -5484,7 +5467,7 @@
       }
     },
     "final_answer": "Not found",
-    "elapsed_sec": 10.68,
+    "elapsed_sec": 7.65,
     "error": null,
     "llm_calls": {
       "planner": 2,
@@ -5516,7 +5499,7 @@
           "Aram Avakian",
           "A World Apart (film)"
         ],
-        "intermediate_answer": "cinematographer and film director",
+        "intermediate_answer": "Cinematographer and film director.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -5531,21 +5514,21 @@
           "End of the Road (1970 film)",
           "Cops and Robbers (1973 film)"
         ],
-        "intermediate_answer": "film editor and director",
-        "confidence": 1.0,
-        "score_1": 1.0,
+        "intermediate_answer": "Film editor and director.",
+        "confidence": 0.8,
+        "score_1": 0.8,
         "score_2": null,
         "flag": "verified"
       },
       "final": {
-        "final_answer": "director",
+        "final_answer": "Director",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: occupation shared by two individuals | [A-Category]: occupation | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: Occupation shared by two individuals | [A-Category]: Occupation | [Alignment]: Yes"
       }
     },
-    "final_answer": "director",
-    "elapsed_sec": 9.83,
+    "final_answer": "Director",
+    "elapsed_sec": 10.36,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5577,7 +5560,7 @@
           "Chicago Public Media",
           "EvidenceNetwork.ca"
         ],
-        "intermediate_answer": "Andrew Jaspan",
+        "intermediate_answer": "Andrew Jaspan, (b. 20 April 1952) British-Australian journalist, co-founder of \"The Conversation\", and its Editor-in-Chief from March 2011 until March 2017.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -5588,8 +5571,8 @@
         "retrieved_titles": [
           "Andrew Jaspan",
           "Chicago Public Media",
-          "14ymedio",
           "Vatican leaks scandal",
+          "14ymedio",
           "EvidenceNetwork.ca"
         ],
         "intermediate_answer": "The Conversation",
@@ -5602,11 +5585,11 @@
         "final_answer": "The Conversation",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: A not-for-profit media outlet | [A-Category]: A not-for-profit media outlet | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: The name of a not-for-profit media outlet co-founded by Andrew Jaspan. | [A-Category]: The name of a not-for-profit media outlet. | [Alignment]: Yes"
       }
     },
     "final_answer": "The Conversation",
-    "elapsed_sec": 9.84,
+    "elapsed_sec": 13.27,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5626,7 +5609,7 @@
     "task_type": "bridge",
     "sub_queries": [
       "Find the host of the 18th Independent Spirit Awards in 2002",
-      "Find the nationality of the host"
+      "Find out if the host is an American film director"
     ],
     "steps": {
       "0": {
@@ -5645,15 +5628,15 @@
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Find the nationality of the host",
+        "sub_query": "Find out if the host is an American film director",
         "retrieved_titles": [
           "John Waters",
-          "18th Independent Spirit Awards",
           "Mihai Mălaimare Jr.",
-          "28th Independent Spirit Awards",
-          "Silent Light"
+          "18th Independent Spirit Awards",
+          "Silent Light",
+          "Independent Spirit Award for Best First Feature"
         ],
-        "intermediate_answer": "American",
+        "intermediate_answer": "Yes, John Waters is an American film director.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -5667,7 +5650,7 @@
       }
     },
     "final_answer": "John Waters",
-    "elapsed_sec": 11.72,
+    "elapsed_sec": 7.95,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5687,7 +5670,7 @@
     "task_type": "bridge",
     "sub_queries": [
       "Where was Bill Cosby's third album recorded?",
-      "What hotel and casino is located at that recording location?"
+      "What hotel and casino is located in the place where the album was recorded?"
     ],
     "steps": {
       "0": {
@@ -5699,36 +5682,36 @@
           "The Original Jam Sessions 1969",
           "Bill's Best Friend"
         ],
-        "intermediate_answer": "Flamingo Hotel in Las Vegas, Nevada",
+        "intermediate_answer": "The Flamingo Hotel in Las Vegas, Nevada.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What hotel and casino is located at that recording location?",
+        "sub_query": "What hotel and casino is located in the place where the album was recorded?",
         "retrieved_titles": [
-          "Flamingo Las Vegas",
           "Why Is There Air?",
+          "Flamingo Las Vegas",
           "Bill Cosby Is a Very Funny Fellow...Right!",
-          "Bill's Best Friend",
-          "Hikky Burr"
+          "Hikky Burr",
+          "Bill's Best Friend"
         ],
-        "intermediate_answer": "Flamingo Hotel",
+        "intermediate_answer": "Flamingo Hotel in Las Vegas, Nevada.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
         "flag": "verified"
       },
       "final": {
-        "final_answer": "Flamingo Hotel",
+        "final_answer": "Flamingo Hotel, Las Vegas, Nevada",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: a geographic location | [A-Category]: a geographic location | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: A geographic location | [A-Category]: A geographic location | [Alignment]: Yes"
       }
     },
-    "final_answer": "Flamingo Hotel",
-    "elapsed_sec": 12.01,
+    "final_answer": "Flamingo Hotel, Las Vegas, Nevada",
+    "elapsed_sec": 7.55,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5760,7 +5743,7 @@
           "Gin pennant",
           "CytoSport"
         ],
-        "intermediate_answer": "Yes",
+        "intermediate_answer": "Yes, the drink Gibson contains gin.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -5779,7 +5762,7 @@
         "confidence": 0.0,
         "score_1": 0.0,
         "score_2": null,
-        "flag": "not_found",
+        "flag": "uncertain",
         "refined_query": "What are the ingredients of the drink Zurracapote, and does it include gin?",
         "refined_titles": [
           "Rubicon Drinks",
@@ -5792,14 +5775,14 @@
         "score_2_initial": null
       },
       "final": {
-        "final_answer": "yes",
+        "final_answer": "no",
         "is_not_found": false,
         "flag": "passed",
-        "reasoning": "[Q-Constraint]: boolean yes/no | [A-Category]: boolean yes/no | [Alignment]: Yes"
+        "reasoning": "[Q-Constraint]: boolean yes/no | [A-Category]: boolean no | [Alignment]: Yes"
       }
     },
-    "final_answer": "yes",
-    "elapsed_sec": 10.28,
+    "final_answer": "no",
+    "elapsed_sec": 7.56,
     "error": null,
     "llm_calls": {
       "planner": 2,
@@ -5846,7 +5829,7 @@
           "New Haven Documentary Film Festival",
           "FreedomFilmFest"
         ],
-        "intermediate_answer": "March and April",
+        "intermediate_answer": "The annual documentary film festival is held in March and April.",
         "confidence": 0.8,
         "score_1": 0.8,
         "score_2": null,
@@ -5860,7 +5843,7 @@
       }
     },
     "final_answer": "March",
-    "elapsed_sec": 13.11,
+    "elapsed_sec": 15.06,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -5879,35 +5862,35 @@
     "gold_answer": "Fairfax County",
     "task_type": "bridge",
     "sub_queries": [
-      "Find the location of Tysons Galleria",
-      "Find the county for the location of Tysons Galleria"
+      "What is Tysons Galleria?",
+      "In which county is Tysons Galleria located?"
     ],
     "steps": {
       "0": {
-        "sub_query": "Find the location of Tysons Galleria",
+        "sub_query": "What is Tysons Galleria?",
         "retrieved_titles": [
           "Tysons Galleria",
-          "Tysons, Virginia",
           "Poughkeepsie Galleria",
-          "McLean station",
-          "Tysons Corner Center"
+          "Tysons, Virginia",
+          "Tysons Corner Center",
+          "McLean station"
         ],
-        "intermediate_answer": "Not found in documents",
+        "intermediate_answer": "Tysons Galleria is a three-level super-regional mall located at 2001 International Drive, McLean, Virginia.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What county is Tysons Galleria located in?",
+        "sub_query": "In which county is Tysons Galleria located?",
         "retrieved_titles": [
           "Tysons Galleria",
-          "Tysons, Virginia",
-          "Poughkeepsie Galleria",
+          "McLean station",
           "Tysons Corner Center",
-          "Cobb Galleria Centre"
+          "Tysons, Virginia",
+          "Poughkeepsie Galleria"
         ],
-        "intermediate_answer": "Fairfax County",
+        "intermediate_answer": "Fairfax County, Virginia.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -5921,17 +5904,17 @@
       }
     },
     "final_answer": "Fairfax County",
-    "elapsed_sec": 11.08,
+    "elapsed_sec": 8.75,
     "error": null,
     "llm_calls": {
       "planner": 1,
       "retrieval": 2,
       "score_1": 1,
-      "refine_query": 0,
+      "refine_query": 1,
       "answer": 1,
       "final_verify": 1,
       "logprob": 0,
-      "other": 1
+      "other": 0
     },
     "llm_calls_total": 7
   },
@@ -5940,20 +5923,20 @@
     "gold_answer": "IT products and services",
     "task_type": "bridge",
     "sub_queries": [
-      "What company was Bordan Tkachuk the CEO of?",
+      "What company did Bordan Tkachuk serve as CEO?",
       "What products does that company provide?"
     ],
     "steps": {
       "0": {
-        "sub_query": "What company was Bordan Tkachuk the CEO of?",
+        "sub_query": "What company did Bordan Tkachuk serve as CEO?",
         "retrieved_titles": [
           "Bordan Tkachuk",
           "Jonathan Michael Ansell",
           "Terren Peizer",
           "Cardinal Health",
-          "Owens &amp; Minor"
+          "Clean Power Finance"
         ],
-        "intermediate_answer": "Viglen",
+        "intermediate_answer": "Bordan Tkachuk served as CEO of Viglen.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -5968,7 +5951,7 @@
           "Owens &amp; Minor",
           "Jonathan Michael Ansell"
         ],
-        "intermediate_answer": "IT products and services, including storage systems, servers, workstations and data/voice communications equipment and services",
+        "intermediate_answer": "Viglen Ltd provides IT products and services, including storage systems, servers, workstations, and data/voice communications equipment and services.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -5982,7 +5965,7 @@
       }
     },
     "final_answer": "IT products and services",
-    "elapsed_sec": 19.67,
+    "elapsed_sec": 8.67,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -6001,27 +5984,27 @@
     "gold_answer": "Levni Yilmaz",
     "task_type": "comparison",
     "sub_queries": [
-      "Find out if Lev Yilmaz is known for animation.",
-      "Find out if Pamela B. Green is known for animation."
+      "Was Lev Yilmaz known for animation?",
+      "Was Pamela B. Green known for animation?"
     ],
     "steps": {
       "0": {
-        "sub_query": "Find out if Lev Yilmaz is known for animation.",
+        "sub_query": "Was Lev Yilmaz known for animation?",
         "retrieved_titles": [
           "Lev Yilmaz",
-          "Aryanto Yuniawan",
-          "Pamela B. Green",
+          "Lev Kuleshov",
           "AES+F",
-          "Lev Kuleshov"
+          "Pamela B. Green",
+          "Aryanto Yuniawan"
         ],
-        "intermediate_answer": "Yes",
+        "intermediate_answer": "Yes, Lev Yilmaz is known for animation.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "Find out if Pamela B. Green is known for animation.",
+        "sub_query": "Was Pamela B. Green known for animation?",
         "retrieved_titles": [
           "Pamela B. Green",
           "Pamela Gilbert",
@@ -6033,12 +6016,12 @@
         "confidence": 0.0,
         "score_1": 0.0,
         "score_2": null,
-        "flag": "not_found",
-        "refined_query": "Find out if Pamela B. Green has worked on any animated films or projects.",
+        "flag": "uncertain",
+        "refined_query": "What is Pamela B. Green's involvement in animation or animated films?",
         "refined_titles": [
           "Pamela B. Green",
-          "Lev Yilmaz",
           "Pamela Gilbert",
+          "Lev Yilmaz",
           "Aryanto Yuniawan",
           "AES+F"
         ],
@@ -6053,7 +6036,7 @@
       }
     },
     "final_answer": "Lev Yilmaz",
-    "elapsed_sec": 9.93,
+    "elapsed_sec": 8.06,
     "error": null,
     "llm_calls": {
       "planner": 2,
@@ -6085,14 +6068,14 @@
           "Rabat",
           "Sinuiju Special Administrative Region"
         ],
-        "intermediate_answer": "Not found in documents",
+        "intermediate_answer": "Not found in documents.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
         "flag": "skipped"
       },
       "1": {
-        "sub_query": "What is the city where the ambassador representing the Rabat-Salé-Kénitra administrative region of Morocco to China is located?",
+        "sub_query": "What is the city where the ambassador representing the Rabat-Salé-Kénitra administrative region in China is located?",
         "retrieved_titles": [
           "Moroccan Ambassador to China",
           "Rabat",
@@ -6100,21 +6083,21 @@
           "Wolong Special Administrative Region",
           "Sinuiju Special Administrative Region"
         ],
-        "intermediate_answer": "Rabat",
-        "confidence": 1.0,
-        "score_1": 1.0,
+        "intermediate_answer": "Beijing",
+        "confidence": 0.8,
+        "score_1": 0.8,
         "score_2": null,
         "flag": "verified"
       },
       "final": {
-        "final_answer": "Rabat",
+        "final_answer": "Beijing",
         "is_not_found": false,
         "flag": "passed",
         "reasoning": "[Q-Constraint]: a geographic location | [A-Category]: a geographic location | [Alignment]: Yes"
       }
     },
-    "final_answer": "Rabat",
-    "elapsed_sec": 10.38,
+    "final_answer": "Beijing",
+    "elapsed_sec": 11.02,
     "error": null,
     "llm_calls": {
       "planner": 1,
@@ -6146,7 +6129,7 @@
           "Tongcheng Subdistrict, Fuding",
           "Yingkou East Railway Station"
         ],
-        "intermediate_answer": "prefecture-level city",
+        "intermediate_answer": "Prefecture-level city.",
         "confidence": 1.0,
         "score_1": null,
         "score_2": null,
@@ -6161,7 +6144,7 @@
           "Fuding",
           "Fuding Railway Station"
         ],
-        "intermediate_answer": "county-level city",
+        "intermediate_answer": "County-level city.",
         "confidence": 1.0,
         "score_1": 1.0,
         "score_2": null,
@@ -6175,7 +6158,7 @@
       }
     },
     "final_answer": "no",
-    "elapsed_sec": 12.77,
+    "elapsed_sec": 7.35,
     "error": null,
     "llm_calls": {
       "planner": 1,

@@ -1,28 +1,32 @@
 """
 agents/retrieval.py
 Retrieval Agent - 서브쿼리 검색 + 중간 답변 생성 + Pool 저장
+
+(업데이트) Zero-shot CoT 기반 범용적 엔티티 추출기 적용: 
+단어의 인접성에 속지 않고, 질문이 요구하는 엔티티 범주(Category)와 추출된 정답의 범주가 
+일치하는지 스스로 검열한 뒤 정답을 반환합니다.
 """
 
 from pool.evidence_pool import EvidencePool
 from retriever.dense_retriever import ContextRetriever
-from utils.llm import call_llm
+# 🚨 변경점: JSON 형식으로 강제하기 위해 call_llm_json을 추가로 임포트합니다.
+from utils.llm import call_llm, call_llm_json
 
-_SYSTEM = """You are a precise information extraction agent for multi-hop question answering.
+# 🚨 변경점: 텍스트 추출에서 JSON 기반 4단계 사고 사슬(CoT) 프롬프트로 전면 교체
+_SYSTEM = """You are an expert reading comprehension and entity extraction agent for multi-hop question answering.
+Your task is to read the provided documents and extract the precise answer to the sub-query.
 
-## Your task
-Extract the specific answer to the sub-query from the retrieved documents.
+CRITICAL RULE: You MUST strictly align the semantic category of your extracted answer with the semantic category requested by the sub-query. 
+For example, if the sub-query asks for an 'animal', you must not extract a 'person's name' even if it appears nearby in the text.
 
-## Rules
-- Answer ONLY based on the retrieved documents. Never use outside knowledge.
-- Be as specific and concise as possible (name, date, place, number, yes/no)
-- If the answer spans multiple documents, synthesize them
-- Use the previous verified context to guide your extraction
-  (e.g. if previous step found "Christopher Nolan", focus on information about him)
-- If the answer is truly not found in the documents, say exactly: "Not found in documents."
-- Do NOT explain or elaborate. Give only the fact.
-
-## Output format
-One concise phrase or sentence containing the specific answer."""
+You MUST process your extraction step-by-step and output ONLY valid JSON in the following format:
+{
+    "expected_entity_type": "Abstractly define the type of entity requested by the sub-query (e.g., a person, a geographic location, a date, an animal, a specific object, a boolean yes/no, a numerical value).",
+    "extracted_candidate": "Extract the best candidate answer from the documents. If not found, write 'Not found'.",
+    "candidate_entity_type": "Abstractly define the actual semantic category of your 'extracted_candidate'.",
+    "type_alignment_check": "Does the 'candidate_entity_type' perfectly match the 'expected_entity_type'? (Yes or No)",
+    "intermediate_answer": "If type_alignment_check is 'Yes', output the extracted_candidate. If 'No', or if no valid candidate was found, strictly output 'Not found in documents'."
+}"""
 
 
 def format_docs(docs: list) -> str:
@@ -79,10 +83,9 @@ def retrieve_and_answer(
             if isinstance(v, dict)
             and v.get("intermediate_answer")
             and not any(kw in v.get("intermediate_answer", "").lower()
-                       for kw in ["not found", "i don't know", "unknown"])
+                        for kw in ["not found", "i don't know", "unknown"])
         ]
         if prev_answers:
-            # === 변경된 부분: 단순 결합 대신 LLM 기반 쿼리 재작성 ===
             search_query = _rewrite_query_with_context(sub_query, prev_answers)
 
     docs = retriever.search(search_query, top_k=5)
@@ -91,17 +94,27 @@ def retrieve_and_answer(
         f"Sub-query: {sub_query}\n\n"
         f"Previous verified context:\n{format_context(prev_context)}\n\n"
         f"Retrieved documents:\n{format_docs(docs)}\n\n"
-        "Extract the specific answer to the sub-query from the documents above."
+        "Extract the specific answer to the sub-query from the documents above following the strict JSON format."
     )
 
-    answer = call_llm(
-        [
-            {"role": "system", "content": _SYSTEM},
-            {"role": "user", "content": user},
-        ],
-        max_tokens=128,
-        label="retrieval",
-    )
+    # 🚨 변경점: call_llm -> call_llm_json 으로 변경하여 파싱
+    try:
+        res = call_llm_json(
+            [
+                {"role": "system", "content": _SYSTEM},
+                {"role": "user", "content": user},
+            ],
+            label="retrieval",
+        )
+        # JSON에서 안전하게 정답만 추출 (실패나 불일치 시 Not found 처리됨)
+        answer = res.get("intermediate_answer", "Not found in documents.")
+        
+        # (선택) 디버깅 및 논문 증빙을 위해 추론 과정을 Evidence Pool에 기록할 수도 있습니다.
+        reasoning = f"[Expected]: {res.get('expected_entity_type')} | [Extracted]: {res.get('extracted_candidate')} | [Align]: {res.get('type_alignment_check')}"
+        
+    except Exception:
+        answer = "Not found in documents."
+        reasoning = "JSON Parsing Error"
 
     pool.add(
         step_idx=step_idx,
@@ -109,5 +122,6 @@ def retrieve_and_answer(
         retrieved_titles=[d["title"] for d in docs],
         intermediate_answer=answer,
     )
-
+    # 추론 로그를 따로 남기고 싶다면 풀이나 리턴값에 추가 가능합니다. (현재는 기존 로직을 해치지 않게 유지)
+    
     return {"answer": answer, "docs": docs}

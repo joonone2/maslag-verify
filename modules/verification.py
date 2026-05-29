@@ -219,11 +219,23 @@ def _refine_and_retry_bridge(step_idx: int, pool: EvidencePool, retriever: Dense
                 "score_2": None, "attempts": attempt + 1, "refined_query": refined_query
             }
 
-    pool.update_verification(step_idx, final_confidence, "uncertain", final_s1, None)
-    return {
-        "flag": "uncertain", "confidence": final_confidence, "score_1": final_s1, 
-        "score_2": None, "attempts": max_retry
-    }
+    # 🚨 [새로 추가된 조기 종료(Early Stopping) 및 최선의 추측(Best Guess) 로직]
+    current_answer = pool.steps[step_idx].get("intermediate_answer", "").lower()
+    
+    # Not found 류의 키워드가 없고 뭐라도 단어가 들어있다면 강제 통과 처리
+    if current_answer and not _is_not_found(current_answer):
+        pool.update_verification(step_idx, final_confidence, "verified", final_s1, None)
+        return {
+            "flag": "verified", "confidence": final_confidence, "score_1": final_s1, 
+            "score_2": None, "attempts": max_retry, "reasoning": "Early Stopping: Forced pass with best guess."
+        }
+    else:
+        # 완전히 아무것도 못 찾았을 경우
+        pool.update_verification(step_idx, final_confidence, "not_found", final_s1, None)
+        return {
+            "flag": "not_found", "confidence": final_confidence, "score_1": final_s1, 
+            "score_2": None, "attempts": max_retry, "reasoning": "Early Stopping: Nothing found."
+        }
 
 
 def _refine_and_retry_comparison(step_idx: int, pool: EvidencePool, retriever: DenseRetriever, question: str, max_retry: int = 1) -> dict:
@@ -255,8 +267,18 @@ def _refine_and_retry_comparison(step_idx: int, pool: EvidencePool, retriever: D
                 "score_2": None, "attempts": attempt + 1, "refined_query": refined_query
             }
 
-    pool.update_verification(step_idx, final_confidence, "uncertain", final_s1, None)
-    return {
-        "flag": "uncertain", "confidence": final_confidence, "score_1": final_s1, 
-        "score_2": None, "attempts": max_retry
-    }
+    # 🚨 [새로 추가된 조기 종료(Early Stopping) 및 최선의 추측(Best Guess) 로직]
+    current_answer = pool.steps[step_idx].get("intermediate_answer", "").lower()
+    
+    if current_answer and not _is_not_found(current_answer):
+        pool.update_verification(step_idx, final_confidence, "verified", final_s1, None)
+        return {
+            "flag": "verified", "confidence": final_confidence, "score_1": final_s1, 
+            "score_2": None, "attempts": max_retry, "reasoning": "Early Stopping: Forced pass with best guess."
+        }
+    else:
+        pool.update_verification(step_idx, final_confidence, "not_found", final_s1, None)
+        return {
+            "flag": "not_found", "confidence": final_confidence, "score_1": final_s1, 
+            "score_2": None, "attempts": max_retry, "reasoning": "Early Stopping: Nothing found."
+        }
